@@ -1,0 +1,79 @@
+.landpage {
+    .cabecalho-principal {
+        display: flex;
+        flex-direction: row;
+
+        height: 80px;
+
+        background-color: #3E7797;
+
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .logo-branca {
+        color: #ffffff;
+        font-family: 'Milonga';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28.5778px;
+        line-height: 36px;
+        text-align: center;
+    }
+
+    .input-pesquisa {
+        width: 430px;
+        height: 30px;
+
+        border-radius: 10px;
+        border: none;
+        outline: none;
+    }
+    .lupa{
+        width: 36px;
+        height: 36px;
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .login>img {
+        height: 36px;
+        width: 36px;
+        margin-top: 40px;
+    }
+
+    .login>p {
+        font-size: 1em;
+
+        color: #ffffff;
+
+        height: fit-content;
+    }
+    .carrinho {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .carrinho>img {
+        height: 36px;
+        width: 36px;
+    }
+
+    .carrinho>p {
+        font-size: 1em;
+
+        color: #ffffff;
+    }
+    .mais-vendidos{
+        text-align: center;
+        color: #656464;
+    }
+    .pt-carrosel{
+        background-color: #3E7797;
+    }
+    
+}
