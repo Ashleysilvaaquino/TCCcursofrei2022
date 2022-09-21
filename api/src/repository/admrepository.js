@@ -4,13 +4,12 @@ import { con } from   './connection.js';
 export async function inserirLivro(livro){
     const comando = 
            `insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas)
-           values(?, ?, ?, ?, ?) `
+                values(?, ?, ?, ?, ?) `
 
-    const [resposta] = await con.query(comando [livro.nome, livro.autor, livro.preco, livro.descricao, livro.paginas]);
+    const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.descricao, livro.paginas]);
+    
     livro.id = resposta.insertId;
     return livro;
-
-
 
 }
 
@@ -42,4 +41,15 @@ export async function loginAdm(email,senha){
     
     return linhas[0]; 
     
+    }
+
+    //selecionar gênero
+export async function listarGenero(nome) {
+    const comando = `select id_genero       as id,
+                            nm_genero       as nome
+                     from tb_genero
+                     `
+    
+    const [linha] = await con.query(comando);
+    return linha;
     }

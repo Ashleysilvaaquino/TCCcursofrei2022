@@ -1,4 +1,4 @@
-import { inserirImagem, inserirLivro, loginAdm } from "../repository/admrepository.js";
+import { inserirImagem, inserirLivro, listarGenero, loginAdm } from "../repository/admrepository.js";
 import { Router } from "express";
 import multer from 'multer'
 const server = Router();
@@ -10,27 +10,29 @@ server.post('/livro', async (req, resp) => {
         const livronovo = req.body;
        
         if (!livronovo.nome)
-        throw new Error('Nome do livro é obrigatório!');
+            throw new Error('Nome do livro é obrigatório!');
 
         if (!livronovo.autor)
-        throw new Error('O autor do livro é obrigatório!');
+            throw new Error('O autor do livro é obrigatório!');
 
         if (livronovo.preco == undefined || livronovo < 0)
-        throw new Error('Preço do livro é obrigatório!');
+            throw new Error('Preço do livro é obrigatório!');
 
         if (!livronovo.descricao)
-        throw new Error('A Descrição do livro é obrigatória!');
+            throw new Error('A Descrição do livro é obrigatória!');
 
-       if (!livronovo.paginas)
-        throw new Error('As Páginas do livro são obrigatórias!');
+        if (!livronovo.paginas)
+            throw new Error('As Páginas do livro são obrigatórias!');
 
-
+        console.log(livronovo);
         const livroinserido = await inserirLivro(livronovo);
         resp.send(livroinserido);
 
     } catch (err) {
+        console.log(err)
         resp.status(400).send({
             erro:err.message
+           
         })
     }
 }
@@ -81,6 +83,19 @@ server.post('/loginadm', async (req, resp) => {
     
     }
     
+})
+
+//selecionar genero
+server.get('/genero' , async (req , resp) => {
+    try{
+        const linhas = await listarGenero();
+        resp.send(linhas);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
 })
 
 
