@@ -5,6 +5,7 @@ import LandPage from './pages/landpage';
 import Loginadm from './pages/loginadm';
 import CadastrarLivro from './pages/cadastrarlivro'
 import Teste from './pages/teste'
+import LoginUsuario from './pages/loginusuario';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -18,6 +19,7 @@ root.render(
         <Route path = '/loginadm' element ={<Loginadm/>}/>
         <Route path = '/cadastrarlivro' element ={<CadastrarLivro/>}/>
         <Route path = '/teste' element ={<Teste/>}/>
+        <Route path = '/loginusuario' element ={<LoginUsuario/>}/>
       </Routes>
     </BrowserRouter>
    
