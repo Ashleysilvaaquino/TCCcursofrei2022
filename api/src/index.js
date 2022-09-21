@@ -9,6 +9,10 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+// liberar arquivos da storage
+server.use('/storage/capalivros', express.static('storage/capalivros'));
+
+
 // configuração dos endpoints
 server.use(admcontroller);
 

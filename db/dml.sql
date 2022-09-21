@@ -75,9 +75,16 @@ Mistério
   */
 
 
-insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas, id_genero)
-   values('É assim que acaba', 'Colleen Hoover', '80.00', 'E é em um dos terraços de Boston que ela conhece Ryle, um neurocirurgião confiante, teimoso e talvez até um pouco arrogante, com uma grande aversão a relacionamentos, mas que se sente muito atraído por ela. Quando os dois se apaixonam, Lily se vê no meio de um relacionamento turbulento que não é o que ela esperava.e', '368', '1'); 
+/*inserir um livro*/
+insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas)
+   values('É assim que acaba', 'Colleen Hoover', '80.00', 'E é em um dos terraços de Boston que ela conhece Ryle, um neurocirurgião confiante, teimoso e talvez até um pouco arrogante, com uma grande aversão a relacionamentos, mas que se sente muito atraído por ela. Quando os dois se apaixonam, Lily se vê no meio de um relacionamento turbulento que não é o que ela esperava.e', '368'); 
 
+
+
+/*inserir uma imagem */
+UPDATE tb_livro
+   SET img_livro     = '/storage/filme/asdfasdf.jp'
+ WHERE id_filme = 1;
 select id_livro     id, 
 	nm_livro        nome,
     nm_autor 		autor,
