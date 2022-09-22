@@ -41,11 +41,14 @@ server.post('/livro', async (req, resp) => {
 //inserir imagem 
 server.put('/livro/:id/imagem', upload.single('capa'), async (req,resp) => {
     try {
+        if(!req.file)
+          throw new Error('Insira uma capa');
+
         const {id} = req.params;
         const imagem = req.file.path;
         const resposta = await inserirImagem(imagem, id);
         if (resposta != 1)
-            throw new Error('A imagem não pode ser salva.');
+            throw new Error('A capa não pode ser salva.');
         resp.status(204).send();
 
         

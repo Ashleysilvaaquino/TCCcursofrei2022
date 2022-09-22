@@ -1,5 +1,7 @@
 import './index.scss'
 import { toast } from 'react-toastify';
+import { enviarimagemLivro } from '../../api/admAPI';
+import { useEffect, useState } from 'react'
 //import Home from '../../assets/images/home.png'
 //import Cadastrar from '../../assets/images/cadastrar.png'
 //import Gerenciar from '../../assets/images/gerenciar.png'
@@ -12,18 +14,41 @@ export default function CadastrarLivro() {
     const [preco, setPreco] = useState('');
     const [descricao, setDescricao] = useState('');
     const [paginas, setPaginas] = useState('');
-
+    
+    const [imagem , setImagem] = useState();
     async function salvar() {
         try {
-            const produtoLivro = Number(preco.replace(',', '.'));
+            if(!imagem)
+               throw new Error('Escolha uma capa para o livro');
 
+            const produtoLivro = Number(preco.replace(',', '.'));
             const r = await produtoLivro(nome, autor, preco,descricao, paginas);
-            toast.dark('Produto cadastrado com sucesso');
+            await enviarimagemLivro(produtoLivro.id, imagem)
+            toast.dark('📚 Livro cadastrado com sucesso!');
         }
         catch (err) {
+            if(err.response)
             toast.error(err.response.data.erro);
+            else
+            toast.error(err.message);
         }
     }
+
+    function escolherImagem(){
+        document.getElementById('capaimagem').click();
+    }
+    function mostrarImagem(){
+        return URL.createObjectURL(imagem); 
+    }
+
+    async function carregarGenero() {
+        const r = await listarGenero();
+        setGenero(r);
+    }
+
+    useEffect(() => {
+        carregarGenero();
+    }, [])
   
 
     return (
@@ -41,8 +66,14 @@ export default function CadastrarLivro() {
   
           <div className='quadrado'>
   
-            <div className='div_imagem'>
-              imagem aqui kkkk
+            <div className='div_imagem' onClick={escolherImagem}>
+             
+             {!imagem && 
+             <img />}
+             {imagem &&
+                 <img className='imagemcapa'src={mostrarImagem()} alt='' />
+             }
+             <input type = 'file' id="capaimagem" onChange={ e => setImagem(e.target.files[0])}/>
             </div>
   
             <div className='textos'>
@@ -53,8 +84,14 @@ export default function CadastrarLivro() {
             <label>Autor</label>
             <input type="text"  value={autor} onChange={e => setAutor(e.target.value)} />
   
-            <label>Genero</label>
-            <input type="text"/>  
+            <label>Genero</label> 
+            <select value={genero} onChange={e => setGenero(e.target.value)} >
+                            <option selected disabled hidden>Selecione</option>
+
+                            {categorias.map(item =>
+                                <option value={item.id}> {item.nome} </option>
+                            )}
+                        </select> 
 
             <label>Preço</label>
             <input type="text"  value={preco} onChange={e => setPreco(e.target.value)}/>

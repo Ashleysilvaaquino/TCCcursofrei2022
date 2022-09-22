@@ -3,6 +3,10 @@
 
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 12.5em;
+    height: 100%;
+    box-sizing: 100vh;
 
     .home{
         display: flex;
@@ -43,4 +47,34 @@
         width: 34px;
     height: 34px;
     }
+    .texto1{
+        color: azure;
+        padding: 15px;
+        font-size: 20px;
+        padding-left: 2.2em;
+    }
+    .texto11{
+        color: azure;
+        font-size: 20px;
+        padding-left: 2.2em;
+        padding-top: 23.5em;
+    }
+
+    #capaimagem{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .imagemcapa{
+        //fazer scss do tamanho da div da imagem 
+        display: flex;
+    }
+}
+.paginaa{
+    display: flex;
+    flex-direction: row;
+}
+.segundo_quadrante{
+    background-color: aquamarine;
+    margin-top: 10em ;
 }
