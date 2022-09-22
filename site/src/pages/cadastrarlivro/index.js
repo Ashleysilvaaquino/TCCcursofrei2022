@@ -1,6 +1,6 @@
 import './index.scss'
 import { toast } from 'react-toastify';
-import { enviarimagemLivro } from '../../api/admAPI';
+import { enviarimagemLivro, listarGenero } from '../../api/admAPI';
 import { useEffect, useState } from 'react'
 //import Home from '../../assets/images/home.png'
 //import Cadastrar from '../../assets/images/cadastrar.png'
@@ -14,6 +14,7 @@ export default function CadastrarLivro() {
     const [preco, setPreco] = useState('');
     const [descricao, setDescricao] = useState('');
     const [paginas, setPaginas] = useState('');
+    const [genero, setGenero] = useState([]);
     
     const [imagem , setImagem] = useState();
     async function salvar() {
@@ -88,7 +89,7 @@ export default function CadastrarLivro() {
             <select value={genero} onChange={e => setGenero(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
 
-                            {categorias.map(item =>
+                            {genero.map(item =>
                                 <option value={item.id}> {item.nome} </option>
                             )}
                         </select> 
