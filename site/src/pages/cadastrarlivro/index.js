@@ -1,6 +1,6 @@
 import './index.scss'
 import { toast } from 'react-toastify';
-import { enviarimagemLivro, listarGenero } from '../../api/admAPI';
+import { enviarimagemLivro, listarGenero,inserirLivro } from '../../api/admAPI';
 import { useEffect, useState } from 'react'
 //import Home from '../../assets/images/home.png'
 //import Cadastrar from '../../assets/images/cadastrar.png'
@@ -18,20 +18,22 @@ export default function CadastrarLivro() {
     
     const [imagem , setImagem] = useState();
     async function salvar() {
-        try {
-            if(!imagem)
-               throw new Error('Escolha uma capa para o livro');
-
+      try {
+        if(!imagem)
+            throw new Error('Escolha uma capa para o livro');
+      
             const produtoLivro = Number(preco.replace(',', '.'));
-            const r = await produtoLivro(nome, autor, preco,descricao, paginas);
-            await enviarimagemLivro(produtoLivro.id, imagem)
+            const r = await inserirLivro(nome, autor, preco,descricao, paginas);
+            await enviarimagemLivro (r.insertedID,imagem);
             toast.dark('📚 Livro cadastrado com sucesso!');
         }
         catch (err) {
-            if(err.response)
-            toast.error(err.response.data.erro);
-            else
-            toast.error(err.message);
+            if(err.response){
+              toast.error(err.response.data.erro);
+            }else{
+              toast.error(err.message);
+            }
+            
         }
     }
 
@@ -55,11 +57,11 @@ export default function CadastrarLivro() {
     return (
       <main className='mae'>
         <section className='quadrado_azul'>
-          <p>Home
+            <p>Home</p>
             <p>Cadastrar</p>
             <p>Gerenciar</p>
             <p>Pedidos</p>
-          </p>
+        
         </section>
   
         <section className='segundo_quadrante'>
@@ -103,7 +105,7 @@ export default function CadastrarLivro() {
             <label>Descrição</label>
             <input type="text"  value={descricao} onChange={e => setDescricao(e.target.value)}/>
   
-            <button className='salvar_botao' onClick={salvar}>Salvar</button>
+            <button className='salvar_botao' onClick={salvar} >Salvar</button>
   
   
   

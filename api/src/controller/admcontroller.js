@@ -15,7 +15,7 @@ server.post('/livro', async (req, resp) => {
         if (!livronovo.autor)
             throw new Error('O autor do livro é obrigatório!');
 
-        if (livronovo.preco == undefined || livronovo < 0)
+        if (livronovo.preco === undefined || livronovo < 0)
             throw new Error('Preço do livro é obrigatório!');
 
         if (!livronovo.descricao)
@@ -29,7 +29,6 @@ server.post('/livro', async (req, resp) => {
         resp.send(livroinserido);
 
     } catch (err) {
-        console.log(err)
         resp.status(400).send({
             erro:err.message
            

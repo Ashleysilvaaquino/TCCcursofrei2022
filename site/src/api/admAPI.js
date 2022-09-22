@@ -33,6 +33,6 @@ export async function enviarimagemLivro(id,imagem){
 }
 
 export async function listarGenero() {
-    const r = await api.get('/api/categoria');
+    const r = await api.get('/genero');
     return r.data;
 }

@@ -95,6 +95,7 @@ select id_livro     id,
 from tb_livro;
 
 select * from tb_livro;
+
 insert into tb_livro_favorito(id_livro_favorito, id_livro, id_conta_usuario)
     values('1', '1', '2');
     
