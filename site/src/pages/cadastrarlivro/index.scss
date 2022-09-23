@@ -1,3 +1,8 @@
+* {
+
+    margin:0;
+
+}
 .rodape-esquerdo{
     background-color: #3E7797;
 
@@ -8,19 +13,49 @@
     height: 100%;
     box-sizing: 100vh;
 
+    width: 237px;
+    height: 1024px;
+
+
     .home{
         display: flex;
         flex-direction: row;
+
+        color: #ffff;
+
+        
+
+        font-family: 'Kantumruy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
     }
 
     .img-home{
+        display: flex;
+        flex-direction: row;
+
         width: 26px;
-        height: 26px;
+        height: 26.76px;
     }
 
     .cadastrar{
         display: flex;
         flex-direction: row;
+        align-content: flex-end;
+        
+        
+
+        font-family: 'Kantumruy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+
+        color: #ffff;
     }
 
     .img-cadastrar{
@@ -31,21 +66,64 @@
     .gerenciar{
         display: flex;
         flex-direction: row;
+
+        font-family: 'Kantumruy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+
+        color: #ffff;
     }
 
     .img-gerenciar{
         width: 37px;
-    height: 37px;
+        height: 37px;
     }
 
     .pedidos{
         display: flex;
         flex-direction: row;
+
+        font-family: 'Kantumruy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+
+        color: #ffff;
     }
 
-    .img-pedidos{
+    .img-pedido{
         width: 34px;
     height: 34px;
+    }
+
+    .sair{
+        display: flex;
+        flex-direction: row;
+
+        font-family: 'Kantumruy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+
+        color: #ffff;
+    }
+
+    .img-home{
+        width: 24px;
+        height: 27px;
+    }
+
+    .img-sair{
+        width: 24px;
+    height: 27.43px;
+
     }
     .texto1{
         color: azure;
@@ -75,6 +153,254 @@
     flex-direction: row;
 }
 .segundo_quadrante{
-    background-color: aquamarine;
-    margin-top: 10em ;
+    width: 600px;
+    height: 500px;
+    bottom: 190px;
+
+    background: #95B9CE;
+    border-radius: 10px;
+    margin-top: -60em ;
+    margin-left: 310px;
+}
+
+.bem-vindo{
+    position: absolute;
+    width: 283px;
+    height: 39px;
+    left: 440px;
+    top: 15px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #7C7C7C;
+    
+}
+
+.div_imagem{
+    position: absolute;
+    left: 350px;
+    right: 429px;
+    top: 80px;
+    bottom: 776px;
+    
+    background: #F5F5F5;
+    border-radius: 10px;
+}
+
+.input-nome{
+    position: absolute;
+    left: 350px;
+    right: 489px;
+    top: 150px;
+    bottom: 776px;
+
+    width: 500px;
+    height: 20px;
+
+    border: none;
+    
+    background: #F5F5F5;
+    border-radius: 5px;
+}
+
+.nome{
+    position: absolute;
+    left: 350px;
+    right: 679px;
+    top: 120px;
+    bottom: 808px;
+    
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+}
+
+.autor{
+    position: absolute;
+    left: 350px;
+    right: 679px;
+    top: 180px;
+    bottom: 808px;
+    
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+.input-autor{
+    position: absolute;
+    left: 350px;
+    right: 489px;
+    top: 210px;
+    bottom: 776px;
+
+    border: none;
+
+    width: 500px;
+    height: 20px;
+    
+    background: #F5F5F5;
+    border-radius: 5px;
+}
+
+.genero{
+    position: absolute;
+    left: 350px;
+    right: 679px;
+    top: 240px;
+    bottom: 808px;
+    
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #FFFFFF;  
+}
+
+.input-genero{
+    position: absolute;
+    left: 350px;
+    right: 489px;
+    top: 270px;
+    bottom: 776px;
+
+    width: 350px;
+    height: 20px;
+
+    border: none;
+    
+    background: #F5F5F5;
+    border-radius: 5px;
+}
+
+.preco{
+    position: absolute;
+    left: 350px;
+    right: 679px;
+    top: 300px;
+    bottom: 808px;
+    
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #FFFFFF;  
+}
+
+.input-preco{
+    position: absolute;
+    left: 350px;
+    right: 489px;
+    top: 330px;
+    bottom: 776px;
+
+    border: none;
+
+    width: 500px;
+    height: 20px;
+    
+    background: #F5F5F5;
+    border-radius: 5px;   
+}
+
+.paginas{
+    position: absolute;
+    left: 350px;
+    right: 679px;
+    top: 360px;
+    bottom: 808px;
+    
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #FFFFFF;  
+}
+
+.input-paginas{
+    position: absolute;
+    left: 350px;
+    right: 489px;
+    top: 390px;
+    bottom: 776px;
+
+    border: none;
+
+    width: 500px;
+    height: 20px;
+    
+    background: #F5F5F5;
+    border-radius: 5px;  
+}
+
+.descricao{
+    position: absolute;
+    left: 350px;
+    right: 679px;
+    top: 420px;
+    bottom: 808px;
+    
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+.input-descricao{
+    border: none;
+    position: absolute;
+    left: 350px;
+    right: 489px;
+    top: 450px;
+    bottom: 776px;
+
+    width: 500px;
+    height: 20px;
+    
+    background: #F5F5F5;
+    border-radius: 5px;  
+}
+
+.salvar-botao{
+    position: absolute;
+width: 80px;
+height: 40px;
+left: 800px;
+top: 500px;
+
+background: #3E7797;
+color: #ffff;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius:10px;
+
+border: none;
 }
