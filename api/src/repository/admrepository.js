@@ -61,3 +61,19 @@ export async function removerLivro(id){
     const [resposta] = await con.query(comando, [id]);
     return resposta.affectedRows;
 }
+
+//editar livro
+export async function alterarLivro(id, livro){
+    const comando = 
+        `UPDATE tb_livro
+            SET nm_livro       =?,
+                nm_autor       =?,
+                vl_preco       =?,
+                ds_livro       =?,
+                nr_paginas     =?,
+                img_livro      =?
+          WHERE id_filme       =?` 
+
+    const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.livro, livro.paginas, livro.livro, id]);
+    return resposta.affectedRows;
+ }

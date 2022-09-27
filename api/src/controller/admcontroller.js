@@ -118,3 +118,15 @@ server.delete('/livro/:id', async (req, resp) =>{
         })
     }
 })
+
+//editar livro
+server.put('/livro/:id', async (req, resp) {
+    try{
+        const { id } = req.params;
+        //parei no vídeo 13, em 5min e 44 seg
+    }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
