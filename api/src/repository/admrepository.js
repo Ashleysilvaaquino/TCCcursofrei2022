@@ -53,3 +53,11 @@ export async function listarGenero(nome) {
     const [linha] = await con.query(comando);
     return linha;
     }
+
+    //apagar livro
+export async function removerLivro(id){
+    const comando = `DELETE FROM tb_livro
+                           WHERE id_livro=? `;
+    const [resposta] = await con.query(comando, [id]);
+    return resposta.affectedRows;
+}

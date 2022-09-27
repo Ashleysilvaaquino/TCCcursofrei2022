@@ -1,4 +1,4 @@
-import { inserirImagem, inserirLivro, listarGenero, loginAdm } from "../repository/admrepository.js";
+import { inserirImagem, inserirLivro, listarGenero, loginAdm, removerLivro } from "../repository/admrepository.js";
 import { Router } from "express";
 import multer from 'multer'
 const server = Router();
@@ -102,3 +102,19 @@ server.get('/genero' , async (req , resp) => {
 
 
 export default server;
+
+//apagar livro
+server.delete('/livro/:id', async (req, resp) =>{
+    try{
+        const { id } = req.params;
+
+        const resposta = await removerLivro(id);
+        if(resposta != 1)
+            throw new Error('Livro não pode ser removido :(');
+        resp.status(204).send();
+    }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
