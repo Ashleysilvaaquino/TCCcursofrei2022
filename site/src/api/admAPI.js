@@ -8,11 +8,11 @@ const api = axios.create({
 
 export async function inserirLivro(nome, autor, preco, descricao, paginas) {
     const r = await api.post('/livro', { 
-        nome:nome,
-        autor:autor, 
-        preco:preco, 
-        descricao:descricao, 
-        paginas:paginas
+        nome,
+        autor,
+        preco,
+        descricao,
+        paginas
      });
     return r.data;
 }

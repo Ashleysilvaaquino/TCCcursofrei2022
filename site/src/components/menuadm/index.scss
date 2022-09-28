@@ -13,12 +13,12 @@
 
     
  
-    .menu-items {
+    .items {
         display: flex;
         flex-direction: column;
         padding-top: 100px;
     }
-    .menu-items > div {
+    .items > div {
         display: flex;
         align-items: center;
         
@@ -29,16 +29,16 @@
         transition: .3s;
         cursor: pointer;
     }
-    .menu-items > div:hover {
+    .items > div:hover {
         background-color: #6A9EBB;
     }
 
-    .menu-items > div img {
+    .items > div img {
         width: 20px;
         margin-right: 10px;
     }
 
-    .menu-items2{
+    .items2{
         img{
             width: 20px;
             height: 20px;

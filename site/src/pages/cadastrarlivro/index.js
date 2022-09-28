@@ -13,6 +13,7 @@ export default function CadastrarLivro() {
     const [descricao, setDescricao] = useState('');
     const [paginas, setPaginas] = useState('');
     const [genero, setGenero] = useState([]);
+    const [idgenero, setIdgenero ] = useState();
     
     const [imagem , setImagem] = useState();
     async function salvar() {
@@ -21,8 +22,8 @@ export default function CadastrarLivro() {
             throw new Error('Escolha uma capa para o livro');
       
             const produtoLivro = Number(preco.replace(',', '.'));
-            const r = await inserirLivro(nome, autor, preco,descricao, paginas);
-            await enviarimagemLivro (r.insertedID,imagem);
+            const r = await inserirLivro(nome, autor, produtoLivro,descricao, paginas);
+            await enviarimagemLivro (r.id, imagem);
             toast.dark('📚 Livro cadastrado com sucesso!');
         }
         catch (err) {
@@ -87,7 +88,7 @@ export default function CadastrarLivro() {
             
              <div className='input-box'>
                 <label >Genero</label> 
-                <select value={genero} onChange={e => setGenero(e.target.value)} >
+                <select value={idgenero} onChange={e => setIdgenero(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
 
                             {genero.map(item =>

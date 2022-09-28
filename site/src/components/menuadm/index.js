@@ -11,7 +11,7 @@ export default function Menu(){
    return(
       <nav className="menu-total">
       <div>
-         <div className='menu-items'>
+         <div className='items'>
              <div>
               <img src={Home}  />
               <div>Home</div>
@@ -34,8 +34,8 @@ export default function Menu(){
       </div>
   </div>
   
-  <div className='menu-items'>
-      <div className='menu-items2'>
+  <div className='items'>
+      <div className='items2'>
           <img src={Sair} />
           <div>Sair</div>
       </div>
