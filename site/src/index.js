@@ -25,7 +25,7 @@ root.render(
         <Route path = '/teste' element ={<Teste/>}/>
         <Route path = '/loginusuario' element ={<LoginUsuario/>}/>
         <Route path = '/cadastrarcliente1' element ={<CadastrarCliente1/>}/>
-        <Route path = '/cadastrarcliente2' element ={<CadastrarCliente2/>}
+        <Route path = '/cadastrarcliente2' element ={<CadastrarCliente2/>}/>
       </Routes>
     </BrowserRouter>
    
