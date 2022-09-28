@@ -2,11 +2,9 @@ import './index.scss'
 import { toast } from 'react-toastify';
 import { enviarimagemLivro, listarGenero,inserirLivro } from '../../api/admAPI';
 import { useEffect, useState } from 'react'
-import Home from '../../assets/images/home.png'
-import Cadastrar from '../../assets/images/cadastrar.png'
-import Gerenciar from '../../assets/images/gerenciar.png'
-import Pedidos from '../../assets/images/pedidos.png'
-import Sair from '../../assets/images/sair.png'
+import Menu from '../../components/menuadm/index.js'
+import Imgcadastro from '../../assets/images/imgcadastro.png'
+
 
 export default function CadastrarLivro() {
     const [nome, setNome] = useState('');
@@ -56,38 +54,20 @@ export default function CadastrarLivro() {
 
     return (
       <main className='mae'>
-        <section className='rodape-esquerdo'>
-          <div className='home'> 
-            <p >Home</p>
-            <img src={Home}  className='img-home'/>
+          <Menu/>
+          <div>
+        
+           
+
           </div>
-          <div className='cadastrar'>
-            <p >Cadastrar</p>
-            <img src={Cadastrar} className='img-cadastrar'/>
-          </div>
-          <div className='gerenciar'>
-             <p>Gerenciar</p>
-             <img src={Gerenciar} className='img-cadastrar'/>
-          </div>
-          <div className='pedidos'>
-            <p >Pedidos</p>
-            <img src={Pedidos} className='img-pedido' />
-          </div>
-          <div className='sair'>
-            <p className='img-sair'>Sair</p>
-            <img src={Sair} className='img-sair' />
-          </div>
-        </section>
-            <p className='bem-vindo'>Seja bem-vindo, adm!</p>
-        <section className='segundo_quadrante'>
-          
-  
+           
+        <section className='segundo-quadrante'>
           <div className='quadrado'>
   
-            <div className='div_imagem' onClick={escolherImagem}>
+            <div className='div-imagem' onClick={escolherImagem}>
              
              {!imagem && 
-             <img />}
+             <img src={Imgcadastro}/>}
              {imagem &&
                  <img className='imagemcapa'src={mostrarImagem()} alt='' />
              }
@@ -96,15 +76,18 @@ export default function CadastrarLivro() {
   
             <div className='textos'>
   
-            <label className='nome'>Nome</label>
-              <input type="text" value={nome} onChange={e => setNome(e.target.value)}  className='input-nome'/>
-  
-  
-            <label className='autor'>Autor</label>
-            <input type="text"  value={autor} onChange={e => setAutor(e.target.value)}  className='input-autor'/>
-  
-            <label className='genero'>Genero</label> 
-            <select value={genero} onChange={e => setGenero(e.target.value)} className='input-genero'>
+            <div className='input-box'>
+               <label>Nome</label>
+              <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+            </div>
+            <div className='input-box'>
+              <label >Autor</label>
+              <input type="text"  value={autor} onChange={e => setAutor(e.target.value)} />
+            </div>
+            
+             <div className='input-box'>
+                <label >Genero</label> 
+                <select value={genero} onChange={e => setGenero(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
 
                             {genero.map(item =>
@@ -112,21 +95,27 @@ export default function CadastrarLivro() {
                             )}
                         </select> 
 
-  
-            <label className='preco'>Preço</label>
-            <input type="text"  value={preco} onChange={e => setPreco(e.target.value)} className='input-preco'/>
+             </div>
+             <div className='input-box'>
+                 <label >Preço</label>
+                 <input type="text"  value={preco} onChange={e => setPreco(e.target.value)} />
+             </div>
+             <div className='input-box'>
+                <label>Páginas</label>
+                <input type="text"  value={paginas} onChange={e => setPaginas(e.target.value)} />      
+             </div>
+             <div className='input-box'>
+               <label>Descrição</label>
+               <input type="text" className='descricao' value={descricao} onChange={e => setDescricao(e.target.value)} /> 
+             </div>
+           
+             </div>
 
-            <label className='paginas'>Páginas</label>
-            <input type="text"  value={paginas} onChange={e => setPaginas(e.target.value)} className='input-paginas'/>
- 
-            <label className='descricao'>Descrição</label>
-            <input type="text"  value={descricao} onChange={e => setDescricao(e.target.value)} className='input-descricao'/> 
-            <button className='salvar-botao' onClick={salvar} >Salvar</button>
-
+              <div className='salvar-botao'>
+               <button onClick={salvar} >Salvar</button>
+              </div>
   
-  
-            </div>
-  
+      
           </div>
         </section>
       </main>

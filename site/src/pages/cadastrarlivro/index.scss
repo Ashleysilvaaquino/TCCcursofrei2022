@@ -3,404 +3,106 @@
     margin:0;
 
 }
-.rodape-esquerdo{
-    background-color: #3E7797;
-
+.mae{
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 12.5em;
-    height: 100%;
-    box-sizing: 100vh;
 
-    width: 237px;
-    height: 1024px;
-
-
-    .home{
+    
+    
+     .segundo-quadrante{
+        display: flex;
+       
+     }
+    
+   
+    .div-imagem{
         display: flex;
         flex-direction: row;
-
-        color: #ffff;
-
-        
-
-        font-family: 'Kantumruy';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 36px;
-        text-align: center;
-    }
-
-    .img-home{
-        display: flex;
-        flex-direction: row;
-
-        width: 26px;
-        height: 26.76px;
-    }
-
-    .cadastrar{
-        display: flex;
-        flex-direction: row;
-        align-content: flex-end;
-        
-        
-
-        font-family: 'Kantumruy';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 36px;
-        text-align: center;
-
-        color: #ffff;
-    }
-
-    .img-cadastrar{
-        width: 23px;
-        height: 23px;
-    }
-
-    .gerenciar{
-        display: flex;
-        flex-direction: row;
-
-        font-family: 'Kantumruy';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 36px;
-        text-align: center;
-
-        color: #ffff;
-    }
-
-    .img-gerenciar{
-        width: 37px;
-        height: 37px;
-    }
-
-    .pedidos{
-        display: flex;
-        flex-direction: row;
-
-        font-family: 'Kantumruy';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 36px;
-        text-align: center;
-
-        color: #ffff;
-    }
-
-    .img-pedido{
-        width: 34px;
-    height: 34px;
-    }
-
-    .sair{
-        display: flex;
-        flex-direction: row;
-
-        font-family: 'Kantumruy';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 36px;
-        text-align: center;
-
-        color: #ffff;
-    }
-
-    .img-home{
-        width: 24px;
-        height: 27px;
-    }
-
-    .img-sair{
-        width: 24px;
-    height: 27.43px;
-
-    }
-    .texto1{
-        color: azure;
-        padding: 15px;
-        font-size: 20px;
-        padding-left: 2.2em;
-    }
-    .texto11{
-        color: azure;
-        font-size: 20px;
-        padding-left: 2.2em;
-        padding-top: 23.5em;
-    }
-
-    #capaimagem{
-        visibility: hidden;
         position: absolute;
+        top: 30%;
+        left: 40%;
+
+        
+               
+
+        img{
+            width: 160px;
+            height: 160px;
+         }
+       
+
+    }
+    .textos{
+        position: absolute;
+        left: 65%;
+        top: 13%;
+
+       
+        
+
+    }
+     #capaimagem{
+        visibility: hidden;
+        
+
+
+     }
+     .imagemcapa{
+       
+        width: 160px;
+        height: 160px;
+     }
+
+     .quadrado{
+         margin-top: 50px;
+         margin-left: 110px;
+         width: 900px;
+         height: 550px;
+         background-color: #95B9CE;
+         justify-content: center;
+          border-radius: 20px;
+
     }
 
-    .imagemcapa{
-        //fazer scss do tamanho da div da imagem 
+    .input-box{
         display: flex;
+        flex-direction: column;
+        padding-top: 12px;
+        
+
+        
+           
+    
+
+        input, select {
+            background: #F5F5F5;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            width: 300px;
+           height: 25px;
+           margin-top: 3px ;
+
+        }
     }
-}
-.paginaa{
-    display: flex;
-    flex-direction: row;
-}
-.segundo_quadrante{
-    width: 600px;
-    height: 500px;
-    bottom: 190px;
 
-    background: #95B9CE;
-    border-radius: 10px;
-    margin-top: -60em ;
-    margin-left: 310px;
-}
+    .salvar-botao{
+         button{
+            position: absolute;
+            top: 80%;
+            left: 80%;
+            width: 125px;
+            height: 37px;
+            border: none;
+            background: #3E7797;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            color: #F5F5F5;
 
-.bem-vindo{
-    position: absolute;
-    width: 283px;
-    height: 39px;
-    left: 440px;
-    top: 15px;
-    
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #7C7C7C;
+         }
+         
+    }
+
     
 }
+ 
 
-.div_imagem{
-    position: absolute;
-    left: 350px;
-    right: 429px;
-    top: 80px;
-    bottom: 776px;
-    
-    background: #F5F5F5;
-    border-radius: 10px;
-}
-
-.input-nome{
-    position: absolute;
-    left: 350px;
-    right: 489px;
-    top: 150px;
-    bottom: 776px;
-
-    width: 500px;
-    height: 20px;
-
-    border: none;
-    
-    background: #F5F5F5;
-    border-radius: 5px;
-}
-
-.nome{
-    position: absolute;
-    left: 350px;
-    right: 679px;
-    top: 120px;
-    bottom: 808px;
-    
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #FFFFFF;
-    
-}
-
-.autor{
-    position: absolute;
-    left: 350px;
-    right: 679px;
-    top: 180px;
-    bottom: 808px;
-    
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #FFFFFF;
-}
-
-.input-autor{
-    position: absolute;
-    left: 350px;
-    right: 489px;
-    top: 210px;
-    bottom: 776px;
-
-    border: none;
-
-    width: 500px;
-    height: 20px;
-    
-    background: #F5F5F5;
-    border-radius: 5px;
-}
-
-.genero{
-    position: absolute;
-    left: 350px;
-    right: 679px;
-    top: 240px;
-    bottom: 808px;
-    
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #FFFFFF;  
-}
-
-.input-genero{
-    position: absolute;
-    left: 350px;
-    right: 489px;
-    top: 270px;
-    bottom: 776px;
-
-    width: 350px;
-    height: 20px;
-
-    border: none;
-    
-    background: #F5F5F5;
-    border-radius: 5px;
-}
-
-.preco{
-    position: absolute;
-    left: 350px;
-    right: 679px;
-    top: 300px;
-    bottom: 808px;
-    
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #FFFFFF;  
-}
-
-.input-preco{
-    position: absolute;
-    left: 350px;
-    right: 489px;
-    top: 330px;
-    bottom: 776px;
-
-    border: none;
-
-    width: 500px;
-    height: 20px;
-    
-    background: #F5F5F5;
-    border-radius: 5px;   
-}
-
-.paginas{
-    position: absolute;
-    left: 350px;
-    right: 679px;
-    top: 360px;
-    bottom: 808px;
-    
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #FFFFFF;  
-}
-
-.input-paginas{
-    position: absolute;
-    left: 350px;
-    right: 489px;
-    top: 390px;
-    bottom: 776px;
-
-    border: none;
-
-    width: 500px;
-    height: 20px;
-    
-    background: #F5F5F5;
-    border-radius: 5px;  
-}
-
-.descricao{
-    position: absolute;
-    left: 350px;
-    right: 679px;
-    top: 420px;
-    bottom: 808px;
-    
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
-    
-    color: #FFFFFF;
-}
-
-.input-descricao{
-    border: none;
-    position: absolute;
-    left: 350px;
-    right: 489px;
-    top: 450px;
-    bottom: 776px;
-
-    width: 500px;
-    height: 20px;
-    
-    background: #F5F5F5;
-    border-radius: 5px;  
-}
-
-.salvar-botao{
-    position: absolute;
-width: 80px;
-height: 40px;
-left: 800px;
-top: 500px;
-
-background: #3E7797;
-color: #ffff;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius:10px;
-
-border: none;
-}
