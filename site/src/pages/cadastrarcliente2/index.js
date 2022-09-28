@@ -7,11 +7,10 @@ export default function CadastrarCliente() {
         <main className='nomee'>
             <div className='logo'>
                 <img src={logofrei} alt="" className='loguinho' />
-                
-        <div className='main'>
-
             </div>
 
+
+        <div className='main'>
             <section className='section1'>
 
                 <div className="dados">
