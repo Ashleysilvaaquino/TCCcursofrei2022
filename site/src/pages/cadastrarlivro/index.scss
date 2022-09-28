@@ -5,17 +5,104 @@
 }
 .mae{
     display: flex;
-    flex-direction: row;
-   
 
-    .segundo0quadsrante
-     .quadrado{
+    
+    
+     .segundo-quadrante{
+        display: flex;
        
-         width: 700px;
-         height: 700px;
-         background-color: #95B9CE;
+     }
+    
+   
+    .div-imagem{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 30%;
+        left: 40%;
+
+        
+               
+
+        img{
+            width: 160px;
+            height: 160px;
+         }
+       
 
     }
+    .textos{
+        position: absolute;
+        left: 65%;
+        top: 13%;
+
+       
+        
+
+    }
+     #capaimagem{
+        visibility: hidden;
+        
+
+
+     }
+     .imagemcapa{
+       
+        width: 160px;
+        height: 160px;
+     }
+
+     .quadrado{
+         margin-top: 50px;
+         margin-left: 110px;
+         width: 900px;
+         height: 550px;
+         background-color: #95B9CE;
+         justify-content: center;
+          border-radius: 20px;
+
+    }
+
+    .input-box{
+        display: flex;
+        flex-direction: column;
+        padding-top: 12px;
+        
+
+        
+           
+    
+
+        input, select {
+            background: #F5F5F5;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            width: 300px;
+           height: 25px;
+           margin-top: 3px ;
+
+        }
+    }
+
+    .salvar-botao{
+         button{
+            position: absolute;
+            top: 80%;
+            left: 80%;
+            width: 125px;
+            height: 37px;
+            border: none;
+            background: #3E7797;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            color: #F5F5F5;
+
+         }
+         
+    }
+
+    
 }
  
 

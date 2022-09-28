@@ -57,14 +57,14 @@ export default function CadastrarLivro() {
           <Menu/>
           <div>
         
-             <p className='bem-vindo'>Seja bem-vindo, adm!</p>
+           
 
           </div>
            
         <section className='segundo-quadrante'>
           <div className='quadrado'>
   
-            <div className='div_imagem' onClick={escolherImagem}>
+            <div className='div-imagem' onClick={escolherImagem}>
              
              {!imagem && 
              <img src={Imgcadastro}/>}
@@ -78,16 +78,16 @@ export default function CadastrarLivro() {
   
             <div className='input-box'>
                <label>Nome</label>
-              <input type="text" value={nome} onChange={e => setNome(e.target.value)}  className='input-nome'/>
+              <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
             </div>
             <div className='input-box'>
-              <label className='autor'>Autor</label>
-              <input type="text"  value={autor} onChange={e => setAutor(e.target.value)}  className='input-autor'/>
+              <label >Autor</label>
+              <input type="text"  value={autor} onChange={e => setAutor(e.target.value)} />
             </div>
             
              <div className='input-box'>
-                <label className='genero'>Genero</label> 
-                <select value={genero} onChange={e => setGenero(e.target.value)} className='input-genero'>
+                <label >Genero</label> 
+                <select value={genero} onChange={e => setGenero(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
 
                             {genero.map(item =>
@@ -97,25 +97,25 @@ export default function CadastrarLivro() {
 
              </div>
              <div className='input-box'>
-                 <label className='preco'>Preço</label>
-                 <input type="text"  value={preco} onChange={e => setPreco(e.target.value)} className='input-preco'/>
+                 <label >Preço</label>
+                 <input type="text"  value={preco} onChange={e => setPreco(e.target.value)} />
              </div>
              <div className='input-box'>
-                <label className='paginas'>Páginas</label>
-                <input type="text"  value={paginas} onChange={e => setPaginas(e.target.value)} className='input-paginas'/>      
+                <label>Páginas</label>
+                <input type="text"  value={paginas} onChange={e => setPaginas(e.target.value)} />      
              </div>
              <div className='input-box'>
-               <label className='descricao'>Descrição</label>
-               <input type="text"  value={descricao} onChange={e => setDescricao(e.target.value)} className='input-descricao'/> 
+               <label>Descrição</label>
+               <input type="text" className='descricao' value={descricao} onChange={e => setDescricao(e.target.value)} /> 
              </div>
            
+             </div>
 
-              <div>
-               <button className='salvar-botao' onClick={salvar} >Salvar</button>
+              <div className='salvar-botao'>
+               <button onClick={salvar} >Salvar</button>
               </div>
   
-            </div>
-  
+      
           </div>
         </section>
       </main>

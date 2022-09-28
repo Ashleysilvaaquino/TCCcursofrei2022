@@ -35,7 +35,7 @@ export default function Menu(){
   </div>
   
   <div className='menu-items'>
-      <div>
+      <div className='menu-items2'>
           <img src={Sair} />
           <div>Sair</div>
       </div>
