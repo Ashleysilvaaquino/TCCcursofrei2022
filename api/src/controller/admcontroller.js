@@ -1,4 +1,4 @@
-import { inserirImagem, inserirLivro, listarGenero, loginAdm, removerLivro } from "../repository/admrepository.js";
+import { alterarLivro, inserirImagem, inserirLivro, listarGenero, loginAdm, removerLivro } from "../repository/admrepository.js";
 import { Router } from "express";
 import multer from 'multer'
 const server = Router();
@@ -120,10 +120,31 @@ server.delete('/livro/:id', async (req, resp) =>{
 })
 
 //editar livro
-server.put('/livro/:id', async (req, resp) {
+server.put('/livro/:id', async (req, resp) => {
     try{
         const { id } = req.params;
-        //parei no vídeo 13, em 5min e 44 seg
+        const livro = req.body;
+
+        if (!livro.nome)
+            throw new Error('Nome do livro é obrigatório!');
+
+        if (!livro.autor)
+            throw new Error('O autor do livro é obrigatório!');
+
+        if (livro.preco === undefined || livro < 0)
+            throw new Error('Preço do livro é obrigatório!');
+
+        if (!livro.descricao)
+            throw new Error('A Descrição do livro é obrigatória!');
+
+        if (!livro.paginas)
+            throw new Error('As Páginas do livro são obrigatórias!');
+
+        const resposta = await alterarLivro(id, livro);
+        if(resposta != 1)
+            throw new Error('Filme não foi alterado!');
+        else
+            resp.status(204).send();
     }catch (err) {
         resp.status(400).send({
             erro: err.message
