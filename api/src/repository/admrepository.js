@@ -71,7 +71,7 @@ export async function alterarLivro(id, livro){
                 vl_preco       =?,
                 ds_livro       =?,
                 nr_paginas     =?
-          WHERE id_filme       =?` 
+          WHERE id_livro       =?` 
 
     const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.livro, livro.paginas, id]);
     return resposta.affectedRows;

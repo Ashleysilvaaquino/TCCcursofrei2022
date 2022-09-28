@@ -131,7 +131,7 @@ server.put('/livro/:id', async (req, resp) => {
         if (!livro.autor)
             throw new Error('O autor do livro é obrigatório!');
 
-        if (livro.preco === undefined || livronovo < 0)
+        if (livro.preco === undefined || livro < 0)
             throw new Error('Preço do livro é obrigatório!');
 
         if (!livro.descricao)
