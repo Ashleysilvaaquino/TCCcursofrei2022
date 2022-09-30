@@ -11,4 +11,16 @@ export async function cadastrarcliente(usuario){
      usuario.id = resposta.insertId;
     
         return usuario.data;
-     }
+     }    
+
+
+
+export async function mostrarEstados(nome) {
+   const comando = 
+   `select nm_estado from tb_estado
+   where nm_estado like '%${nome}%'`
+
+   const resposta = await con.query(comando, nome);
+   const linhas = resposta[0]
+   return linhas[0];
+}

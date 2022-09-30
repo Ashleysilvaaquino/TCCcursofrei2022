@@ -68,9 +68,7 @@ server.post('/loginadm', async (req, resp) => {
     const resposta =  await loginAdm( email, senha);
     
     if(!resposta) {
-    
-    throw new Error('Credenciais inválidas')
-    
+    throw new Error('Credenciais inválidas');
     }
     
     resp.send(resposta)
@@ -146,6 +144,22 @@ server.put('/livro/:id', async (req, resp) => {
         else
             resp.status(204).send();
     }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
+//selecionar estado
+
+server.get('/estado', async (req, resp) => {
+    try{
+        const linhas = await mostrarEstados();
+        resp.send(linhas);
+    }
+    catch(err){
         resp.status(400).send({
             erro: err.message
         })
