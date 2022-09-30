@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LandPage from './pages/landpage';
 import Loginadm from './pages/loginadm';
-import CadastrarLivro from './pages/cadastrarlivro'
-import Teste from './pages/teste'
+import CadastrarLivro from './pages/cadastrarlivro';
 import LoginUsuario from './pages/loginusuario';
 import CadastrarCliente1 from './pages/cadastrarcliente1';
 import CardLivro from './components/cardGerenciarLivro';
@@ -24,7 +23,6 @@ root.render(
         <Route path = '/' element ={<LandPage/>}/>
         <Route path = '/loginadm' element ={<Loginadm/>}/>
         <Route path = '/cadastrarlivro' element ={<CadastrarLivro/>}/>
-        <Route path = '/teste' element ={<Teste/>}/>
         <Route path = '/loginusuario' element ={<LoginUsuario/>}/>
         <Route path = '/cadastrarcliente1' element ={<CadastrarCliente1/>}/>
         <Route path = '/cadastrarcliente2' element ={<CadastrarCliente2/>}/>

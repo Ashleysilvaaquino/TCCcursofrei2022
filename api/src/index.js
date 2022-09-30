@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import admcontroller from './controller/admcontroller.js'
+import usuariocontroller from './controller/usuariocontroller.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -15,6 +16,7 @@ server.use('/storage/capalivros', express.static('storage/capalivros'));
 
 // configuração dos endpoints
 server.use(admcontroller);
+server.use(usuariocontroller);
 
 
-server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))
+server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`));
