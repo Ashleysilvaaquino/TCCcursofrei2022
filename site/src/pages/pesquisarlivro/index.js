@@ -16,7 +16,7 @@ function PesquisarLivro(){
 
                 </div>
              
-                <img src={lupa} className='lupa'/>
+                <img src={lupa} className='lupa1'/>
                 <div className='login'>
                     <img src={login} />
                     <p>Login</p>

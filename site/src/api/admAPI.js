@@ -36,3 +36,18 @@ export async function listarGenero() {
     const r = await api.get('/genero');
     return r.data;
 }
+
+export async function listarTodosLivros(){
+    const resposta = await api.get ('/livro');
+    return resposta.data;
+}
+
+export async function buscarLivrosPorNome(nome){
+    const resposta = await api.get (`/livro/busca?nome=${nome}`);
+    return resposta.data;
+}
+
+export async function removerLivro(id){
+    const resposta = api.delete(`/livro/${id}`);
+    return resposta.status; 
+}

@@ -1,5 +1,7 @@
 import './index.scss';
 
+import { Link } from 'react-router-dom';
+
 function CadastrarCliente1(){
     return(
         <div>
@@ -37,7 +39,7 @@ function CadastrarCliente1(){
                 <br></br>
                 <br></br>
                 <br></br>
-                <button className='botao-avancar-cliente'>Avançar</button>
+                <Link to='/cadastrarcliente2' className='botao-avancar-cliente'> Avançar </Link>
             </div>
         </div>
     )

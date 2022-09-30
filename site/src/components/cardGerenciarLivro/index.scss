@@ -1,13 +1,11 @@
 
 .comp-card {
 
-    * {
-        border: green solid 1px;
-    }
+
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     border-radius: 10px;
     background-color: #95B9CE;
@@ -44,7 +42,7 @@
 
         text-indent: 10px;
 
-        height: 38px;
+        height: 30px;
 
     }
     .genero{
@@ -64,17 +62,18 @@
 
         display: flex;
         align-items: center;
+        text-align: justify;
 
         background-color: white;
         border-radius: 10px;
 
         text-indent: 10px;
 
-        height: 38px;
+        height: 30px;
 
     }
 
-    .descricao {
+    .descricao{
 
         display: flex;
         flex-direction: column;
@@ -105,6 +104,50 @@
 
     }
 
+
+
+}
+
+
+.comp-pesquisa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 490px;
+    height: 47px;
+    margin-top: 20px;
+
+    .input-pesquisa {
+    
+        width: 430px;
+        height: 30px;
+
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        outline: none;
+
+        color: #000;
+
+        border-color: #3E7797;
+    }
+    .lupa{
+        margin-top: 5px;
+        width: 28px;
+        height: 28px;
+    }
+    .lupa > img{
+
+            
+            width: 25px;
+            height: 25px;
+            border: green 1px solid;
+      
+      
+        
+    }
+    
+   
 
 
 }

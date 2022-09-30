@@ -1,9 +1,10 @@
 
 import './index.scss';
-//import lupa from '../../assets/images/lupa.png'
-//import login from '../../assets/images/login.png'
-//import carrinho from '../../assets/images/carrinho.png'
-//import setaesquerda from '../../assets/images/setaesquerda.png'
+
+import login from '../../assets/images/login.png'
+import carrinho from '../../assets/images/carrinho.png'
+import BarraPesquisa from '../../components/pesquisa';
+
 
 
 function LandPage() {
@@ -11,15 +12,16 @@ function LandPage() {
         <div className='landpage'>
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
-                <input type="text" placeholder='pesquise aqui...' className='input-pesquisa' />
-
-                <img className='lupa'   />
+                <div>
+                    <BarraPesquisa></BarraPesquisa>
+                </div>
+                
                 <div className='login'>
-                    <img  />
+                    <img src={login} />
                     <p>Login</p>
                 </div>
                 <div className='carrinho'>
-                    <img  />
+                    <img src={carrinho} />
                     <p>Meu carrinho</p>
                 </div>
             </div>

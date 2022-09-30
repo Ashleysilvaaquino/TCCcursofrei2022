@@ -76,3 +76,19 @@ export async function alterarLivro(id, livro){
     const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.livro, livro.paginas, id]);
     return resposta.affectedRows;
  }
+
+
+ //listar livros
+ export async function listarTodosLivros() {
+    const comando =
+        `SELECT id_livro		id,
+                nm_livro		nome,
+                nm_autor	    autor,
+                vl_preco       preco,
+                ds_livro       descricao,
+                nr_paginas     paginas
+           FROM tb_livro`;
+    
+    const [linhas] = await con.query(comando);
+    return linhas;
+}

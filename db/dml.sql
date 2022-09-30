@@ -60,7 +60,7 @@ insert into tb_genero(nm_genero)
 select * from tb_genero;
 
 /*generos para adicionar nos insert : 
-Romance
+Romance  
 Poesia
 Literatura
 Ficção 
