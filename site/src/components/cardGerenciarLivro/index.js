@@ -21,7 +21,7 @@ export default function CardLivro(props) {
                 <p>Collen Hoover</p>
 
                 <label>Gênero</label>
-                <p>Romance</p>
+                <p className="genero">Romance</p>
 
             </div>
 
@@ -35,7 +35,7 @@ export default function CardLivro(props) {
             <div className="descricao">
 
                 <label>Descrição</label>
-                <p>Id ex labore cillum id id amet. Eu reprehenderit voluptate voluptate officia ipsum nostrud. Excepteur ea minim ad voluptate magna duis dolor eiusmod enim. Sit ipsum officia est occaecat qui mollit amet Lorem consectetur veniam magna cupidatat Lorem. Sint veniam quis et veniam qui excepteur dolor id. Esse veniam culpa excepteur voluptate anim ad velit minim. Consectetur consequat nostrud id qui et tempor sit ad ullamco ullamco ipsum.</p>
+                <p>Id ex labore cillum id id amet. Eu reprehenderit voluptate voluptate officia ipsum nostrud. Excepteur ea minim ad voluptate magna duis dolor eiusmod enim. Sit ipsum officia est occaecat qui mollit amet Lorem consectetur veniam magna cupidatat Lorem. </p>
 
             </div>
 
