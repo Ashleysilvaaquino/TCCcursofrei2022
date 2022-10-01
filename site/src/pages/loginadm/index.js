@@ -1,28 +1,46 @@
-import axios from 'axios'
+import {Login} from '../../api/admAPI'
 import { useNavigate } from 'react-router-dom'
+import storage from 'local-storage'
 
-import { useState } from 'react'
+import LoadingBar from 'react-top-loading-bar'
+
+import { useState, useRef, useEffect } from 'react'
 import './index.scss';
 
 
 
-function LoginAdm() {
+export default function LoginAdm() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
+    const [carregando, setCarregando] = useState(false);
 
     const navigate = useNavigate();
+    const ref = useRef();
+
+    useEffect(() => {
+        if (storage('usuario-logado')) {
+            navigate('/cadastrarlivro');
+        }
+    }, [])
 
     async function entrarClick(){
+        ref.current.continuousStart();
+        setCarregando(true);
         try{
-            const r= await axios.post('http://localhost:5000/loginadm', {email:email, senha: senha});
-            if(r.status === 401){
-                setErro(r.data.erro);
-            }else{
-                navigate('/teste')
-            }
-       }catch(err){
-            if(err.response.status === 401){
+            const r= await Login(email, senha);
+            storage('usuario-logado', r);
+
+           
+            setTimeout(() => {
+                navigate('/cadastrarlivro');
+            }, 3000);
+        
+       }
+       catch(err){
+        ref.current.complete();
+        setCarregando(false);
+            if(err.response.status === 404){
                 setErro(err.response.data.erro);
             }
        }
@@ -30,6 +48,7 @@ function LoginAdm() {
 
     return (
         <div className='pag-total-adm'>
+            <LoadingBar color='#3E7797' height={3} ref={ref} />
             <div className='comp-logo'>
                 <h1 className='comp-logo-azul'>LIVRARIA MONTES</h1>
                 <p className='logo-voltar'>Voltar</p>
@@ -47,7 +66,7 @@ function LoginAdm() {
                 
             </div>
             <div>
-                <button className='botao-entrar-adm' onClick={entrarClick}>Entrar</button>
+                <button className='botao-entrar-adm' onClick={entrarClick} disabled={carregando}>Entrar</button>
             </div>
             <div className='credenciais-invalidas'>
                 {erro}
@@ -55,5 +74,3 @@ function LoginAdm() {
         </div>
     )
 }
-
-export default LoginAdm;

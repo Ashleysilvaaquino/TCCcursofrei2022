@@ -31,15 +31,15 @@ export async function loginAdm(email,senha){
     const comando = 
     
         `select  
-                    ds_email            email,
-                    ds_senha           senha
+             ds_email            email,
+            ds_senha           senha
         from tb_adm_login
         where ds_email            = ?
         and ds_senha               =?`
     
-    const[linhas] = await con.query(comando,[email, senha])
-    
-    return linhas[0]; 
+    const resp = await con.query(comando,[email, senha])
+    const linhas = resp[0]; 
+    return linhas[0];
     
     }
 
@@ -92,3 +92,23 @@ export async function alterarLivro(id, livro){
     const [linhas] = await con.query(comando);
     return linhas;
 }
+
+
+// buscar por nome
+export async function buscarporNome(nome){
+    const comando = 
+    `SELECT id_livro		id,
+        nm_livro		nome,
+        nm_autor	    autor,
+        vl_preco       preco,
+        ds_livro       descricao,
+        nr_paginas     paginas
+     FROM tb_livro
+     WHERE nm_livro like ?`;
+
+
+     const [linhas] = await con.query(comando, [`%${nome}$%`]);
+     return linhas;
+}
+
+

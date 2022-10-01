@@ -39,8 +39,8 @@ insert into tb_usuario_endereco(nr_cep , nr_residencia)
    
 select * from tb_usuario_endereco;
    
-insert into tb_conta_usuario(id_conta_usuario , nm_usuario, ds_email, ds_senha, ds_cep, ds_celular, id_estado, id_usuario_endereco)
-   values('2','Ashley da Silva Aquino', 'ashleysilvaaquino2@gmail.com','21918570173','04852285','11 9588612-34', '27', '1');
+insert into tb_conta_usuario(nm_usuario, ds_email, ds_senha, ds_celular)
+   values('Ashley', 'ashleysilvaaquino2@gmail.com','21918570173','11958861234');
 select * from tb_conta_usuario;
    
 select tb_conta_usuario.id_conta_usuario,

@@ -39,8 +39,8 @@ export default function CardLivro() {
 
             {livros.map(item =>
             <>
-                <div className="capa">
-                <img src={Capa} alt="" />
+            <div className="capa">
+                <img src={item.imagem} alt="" />
             </div>
 
             

@@ -1,9 +1,9 @@
 
 import { Router } from "express";
-import { cadastrarcliente } from "../repository/usuariorepository.js";
+import { cadastrarcliente, listarEstados } from "../repository/usuariorepository.js";
 const server = Router();
 
-
+//cadastrar cliente
 server.post('/cadastrarcliente', async (req, resp) => {
     try {
         const usuarionovo = req.body;
@@ -32,5 +32,20 @@ server.post('/cadastrarcliente', async (req, resp) => {
     }
 }
 )
+
+
+//mostrar estados
+server.get('/estado', async (req, resp) => {
+    try{
+        const linhas = await listarEstados();
+        resp.send(linhas);
+    }
+    catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 
 export default server;

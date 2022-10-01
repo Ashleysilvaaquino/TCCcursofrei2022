@@ -14,13 +14,15 @@ export async function cadastrarcliente(usuario){
      }    
 
 
+//mostrar estados
+export async function listarEstados(nome) {
+   const comando = `select id_estado      as id,
+                           nm_estado       as nome
+                    from tb_estado
+                    `
+   
+   const [linha] = await con.query(comando);
+   return linha;
+   }
 
-export async function mostrarEstados(nome) {
-   const comando = 
-   `select nm_estado from tb_estado
-   where nm_estado like '%${nome}%'`
 
-   const resposta = await con.query(comando, nome);
-   const linhas = resposta[0]
-   return linhas[0];
-}

@@ -1,10 +1,22 @@
-import { API_URL } from './config'
+
 import axios from 'axios'
 
+
 const api = axios.create({
-    baseURL: API_URL
+    baseURL:'http://localhost:5000'
 })
 
+
+
+export async function Login(email, senha){
+    const r= await axios.post('/loginadm', 
+    {
+        email:email, 
+        senha: senha
+    });
+
+    return r.data;
+} 
 
 export async function inserirLivro(nome, autor, preco, descricao, paginas) {
     const r = await api.post('/livro', { 
@@ -38,12 +50,12 @@ export async function listarGenero() {
 }
 
 export async function listarTodosLivros(){
-    const resposta = await api.get ('/livro');
+    const resposta = await api.get ('/listarlivros');
     return resposta.data;
 }
 
 export async function buscarLivrosPorNome(nome){
-    const resposta = await api.get (`/livro/busca?nome=${nome}`);
+    const resposta = await api.get(`/livro/busca?nome=${nome}`);
     return resposta.data;
 }
 

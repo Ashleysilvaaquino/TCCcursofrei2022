@@ -18,12 +18,7 @@ ID_CONTA_USUARIO   INT primary key auto_increment,
 NM_USUARIO     VARCHAR(100),
 DS_EMAIL      VARCHAR(100),
 DS_SENHA     VARCHAR(100),
-DS_CEP           VARCHAR(100),
-DS_CELULAR   VARCHAR(100),
-ID_ESTADO       INT,  
-foreign key (id_estado) references tb_estado(id_estado),
-ID_USUARIO_ENDERECO  INT,
-foreign key (id_usuario_endereco) references tb_usuario_endereco(id_usuario_endereco)
+DS_CELULAR   VARCHAR(100)
 );
 
 
@@ -32,7 +27,6 @@ CREATE TABLE `tb_login_usuario`(
 ID_LOGIN_USUARIO INT primary key auto_increment,
 ID_CONTA_USUARIO INT,
 foreign key(ID_CONTA_USUARIO) REFERENCES TB_CONTA_USUARIO(ID_CONTA_USUARIO)
-
 );
 
 
