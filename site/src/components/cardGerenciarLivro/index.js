@@ -76,7 +76,7 @@ export default function CardLivro() {
 
             
 
-            <div className="coluna-txt">
+            <div className="coluna-txt" key={item.id}>
 
                 <label>Nome</label>
                 <p>{item.nome}</p>
