@@ -8,6 +8,10 @@ import Lixo from '../../assets/images/lixo.png'
 
 import { removerLivro, buscarLivrosPorNome, listarTodosLivros } from '../../api/admAPI';
 
+import { confirmAlert } from 'react-confirm-alert'
+
+import { toast } from 'react-toastify';
+
 
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
@@ -28,8 +32,30 @@ export default function CardLivro() {
     }, [])
 
 
-    async function removerLivroClick(id, nome) {
-        const resposta = await removerLivro(id, nome);
+
+    async function removerLivroClick(id, nome){
+        confirmAlert({
+            title: 'Remover Livro',
+            message: `Deseja remover o livro ${nome}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                         const resposta = await removerLivro(id, nome);
+                         if(filtro === '')
+                            carregarTodosLivros();
+                         else
+                            filtrar();
+                         toast.dark('Livro removido');
+                    }
+                }, 
+                {
+                    label: 'Não'
+                }
+            ]
+        })
+
+
     }
 
     return (

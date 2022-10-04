@@ -33,6 +33,23 @@ server.post('/cadastrarcliente', async (req, resp) => {
 }
 )
 
+//login usuario 
+server.post('/cliente/login', async (req, resp) => {
+    try {
+        const {email, senha} = req.body;
+        const resposta = await login(email, senha);
+
+        if(!resposta){
+            throw new Error('Credenciais invalidas')
+        }
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(401).send({
+            err0: err.message
+        })
+    }
+})
+
 
 //mostrar estados
 server.get('/estado', async (req, resp) => {
