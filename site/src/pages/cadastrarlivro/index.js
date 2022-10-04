@@ -22,7 +22,7 @@ export default function CadastrarLivro() {
             throw new Error('Escolha uma capa para o livro');
       
             const produtoLivro = Number(preco.replace(',', '.'));
-            const r = await inserirLivro(nome, autor, produtoLivro,descricao, paginas);
+            const r = await inserirLivro(nome, autor, produtoLivro,descricao, paginas, idgenero);
             await enviarimagemLivro (r.id, imagem);
             toast.dark('📚 Livro cadastrado com sucesso!');
         }

@@ -3,12 +3,13 @@ import { con } from   './connection.js';
 //inserir um ivro
 export async function inserirLivro(livro){
     const comando = 
-           `insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas)
-                values(?, ?, ?, ?, ?) `
+           `insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas, id_genero)
+                values(?, ?, ?, ?, ?, ?) `
 
-    const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.descricao, livro.paginas]);
+    const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.descricao, livro.paginas, livro.genero]);
     
     livro.id = resposta.insertId;
+   
     return livro;
 
 }
@@ -73,7 +74,8 @@ export async function alterarLivro(id, livro){
                 nm_autor       =?,
                 vl_preco       =?,
                 ds_livro       =?,
-                nr_paginas     =?
+                nr_paginas     =?,
+                id_genero      =?
           WHERE id_livro       =?` 
 
     const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.livro, livro.paginas, id]);
@@ -89,7 +91,8 @@ export async function alterarLivro(id, livro){
                 nm_autor	    autor,
                 vl_preco       preco,
                 ds_livro       descricao,
-                nr_paginas     paginas
+                nr_paginas     paginas,
+                id_genero      genero
            FROM tb_livro`;
     
     const [linhas] = await con.query(comando);
@@ -105,7 +108,8 @@ export async function buscarporNome(nome){
         nm_autor	    autor,
         vl_preco       preco,
         ds_livro       descricao,
-        nr_paginas     paginas
+        nr_paginas     paginas,
+        id_genero      genero
      from tb_livro
      where nm_livro like ?`;
 

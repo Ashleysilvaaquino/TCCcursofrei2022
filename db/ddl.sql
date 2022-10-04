@@ -44,6 +44,9 @@ vl_preco		decimal(15,2),
 ds_livro		varchar(700),
 nr_paginas		int,
 img_livro		varchar(800)
+id_genero       int
+foreign key(id_genero) references id_genero(id_genero)
+
 );
 
 create table `tb_livro_favorito`(

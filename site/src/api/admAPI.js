@@ -1,9 +1,10 @@
 
 import axios from 'axios'
+import { API_URL } from './config';
 
 
 const api = axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL: API_URL
 })
 
 
@@ -18,13 +19,14 @@ export async function Login(email, senha){
     return r.data;
 } 
 
-export async function inserirLivro(nome, autor, preco, descricao, paginas) {
+export async function inserirLivro(nome, autor, preco, descricao, paginas, genero) {
     const r = await api.post('/livro', { 
         nome,
         autor,
         preco,
         descricao,
-        paginas
+        paginas,
+        genero
      });
     return r.data;
 }

@@ -1,6 +1,6 @@
 import './index.scss'
 import lupa from '../../assets/images/lupa-pretinha.png';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 
 import Lapis from '../../assets/images/lapis.png'
@@ -13,82 +13,80 @@ export default function CardLivro() {
     const [livros, setLivros] = useState([]);
     const [filtro, setFiltro] = useState('');
 
-    async function filtrar(){
+    async function filtrar() {
         const resp = await buscarLivrosPorNome(filtro);
         setLivros(resp);
-    } 
+    }
 
-    async function carregarTodosLivros(){
+    async function carregarTodosLivros() {
         const resp = await listarTodosLivros();
         setLivros(resp);
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         carregarTodosLivros();
     }, [])
 
 
-    async function removerLivroClick(id, nome){
+    async function removerLivroClick(id, nome) {
         const resposta = await removerLivro(id, nome);
     }
 
     return (
         <main>
-             
-              <div>
-                 <div className='comp-pesquisa'>
-            <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro}  onChange={e => setFiltro(e.target.value)} />
-            <img src={lupa} className='lupa' onClick={filtrar}/>
-                 </div>
-              </div>
-            
-        <div className='comp-card'>
+
+            <div>
+                <div className='comp-pesquisa'>
+                    <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
+                    <img src={lupa} className='lupa' onClick={filtrar} />
+                </div>
+            </div>
+
             {livros.map(item =>
-            <>
-            <div className="capa">
-                <img src={item.imagem} alt="" />
-            </div>
+                <div className='comp-card'>
 
-            
 
-            <div className="coluna-txt">
+                    <div className="capa">
+                        <img src={item.imagem} alt="" />
+                    </div>
 
-                <label>Nome</label>
-                <p>{item.nome}</p>
 
-                <label>Autor</label>
-                <p>{item.autor}</p>
 
-                <label>Gênero</label>
-                <p className="genero">{item.genero}</p>
+                    <div className="coluna-txt">
 
-            </div>
+                        <label>Nome</label>
+                        <p>{item.nome}</p>
 
-            <div className="preco">
+                        <label>Autor</label>
+                        <p>{item.autor}</p>
 
-                <label>Preço</label>
-                <p>{item.preco}</p>
+                        <label>Gênero</label>
+                        <p className="genero">{item.genero}</p>
 
-            </div>
+                    </div>
 
-            <div className="descricao">
+                    <div className="preco">
 
-                <label>Descrição</label>
-                <p>{item.descricao}</p>
+                        <label>Preço</label>
+                        <p>{item.preco}</p>
 
-            </div>
-            </>
+                    </div>
+
+                    <div className="descricao">
+
+                        <label>Descrição</label>
+                        <p>{item.descricao}</p>
+
+                    </div>
+
+
+                    <div className="imgs">
+                        <img src={Lixo} alt="" onClick={(item) => removerLivroClick(item.id, item.nome)} />
+                        <img src={Lapis} alt="" />
+                    </div>
+
+                </div>
             )}
-
-            
-
-            <div className="imgs">
-
-                <img src={Lixo} alt="" onClick={(item) => removerLivroClick(item.id, item.nome)}/>
-                <img src={Lapis} alt="" />
-
-            </div>
-         </div>
         </main>
     );
 }

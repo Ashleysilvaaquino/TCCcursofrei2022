@@ -1,4 +1,4 @@
-import { alterarLivro, inserirImagem, inserirLivro, listarGenero, listarTodosLivros, loginAdm, removerLivro } from "../repository/admrepository.js";
+import { alterarLivro, inserirImagem, inserirLivro, listarGenero, listarTodosLivros, loginAdm, removerLivro, buscarporNome } from "../repository/admrepository.js";
 import { Router } from "express";
 import multer from 'multer'
 const server = Router();
@@ -23,6 +23,9 @@ server.post('/livro', async (req, resp) => {
 
         if (!livronovo.paginas)
             throw new Error('As Páginas do livro são obrigatórias!');
+
+        if(!livronovo.genero)
+              throw new Error('O Genero do livro é obrigatório!');
 
         console.log(livronovo);
         const livroinserido = await inserirLivro(livronovo);
@@ -138,6 +141,9 @@ server.put('/livro/:id', async (req, resp) => {
         if (!livro.paginas)
             throw new Error('As Páginas do livro são obrigatórias!');
 
+        if(!livro.genero)
+           throw new Error('O Genero do livro é obrigatório!');
+
         const resposta = await alterarLivro(id, livro);
         if(resposta != 1)
             throw new Error('Filme não foi alterado!');
@@ -183,7 +189,7 @@ server.get('/livro/busca', async (req,resp) => {
 
     } catch (err) {
         resp.status(400).send({
-            erro:message
+            erro: err.message
         })
         
     }

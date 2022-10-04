@@ -91,7 +91,6 @@ select id_livro     id,
     vl_preco		preco,
     ds_livro		descricao,
     nr_paginas		paginas,
-    id_genero 		genero
 from tb_livro;
 
 select * from tb_livro;
