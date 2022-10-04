@@ -14,6 +14,7 @@ import BarraPesquisa from './components/pesquisa';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
