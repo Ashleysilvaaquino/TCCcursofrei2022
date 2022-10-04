@@ -6,10 +6,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
+    margin-left: 50px;
     border-radius: 10px;
     background-color: #95B9CE;
-
+    margin-top: 40px;
+    flex-wrap: wrap;
     width: 900px;
     height: 170px;
     padding: 15px 0px;
@@ -24,7 +25,7 @@
     }
 
     .coluna-txt {
-
+      
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -116,6 +117,7 @@
     width: 490px;
     height: 47px;
     margin-top: 20px;
+    margin-left: 50px;
 
     .input-pesquisa {
     

@@ -56,8 +56,8 @@ export default function LoginAdm() {
             <div className='cabecalho-login'>
                 <h1 className='text-principal'>SEJA BEM-VINDO (A)<span> A ÁREA ADMINISTRATIVA</span> </h1>
                 
-                    <label className='email-login'>Seu email:</label>
-                <input type="text" placeholder='maria@gmail.com' className='input-email-login-adm'value={email} onChange={e =>setEmail(e.target.value)}/>
+                    <label className='email-login'>Email:</label>
+                <input type="text" placeholder='Exemplo@gmail.com' className='input-email-login-adm'value={email} onChange={e =>setEmail(e.target.value)}/>
                 
                 
                     <label className='email-login'>Senha:</label>

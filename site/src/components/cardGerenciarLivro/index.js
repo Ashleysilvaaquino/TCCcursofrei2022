@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 
 import Lapis from '../../assets/images/lapis.png'
 import Lixo from '../../assets/images/lixo.png'
-import Capa from '../../assets/images/capa.png'
+
 import { removerLivro, buscarLivrosPorNome, listarTodosLivros } from '../../api/admAPI';
 
 
@@ -33,10 +33,16 @@ export default function CardLivro() {
     }
 
     return (
-        <main className="comp-card">
-
-        
-
+        <main>
+             
+              <div>
+                 <div className='comp-pesquisa'>
+            <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro}  onChange={e => setFiltro(e.target.value)} />
+            <img src={lupa} className='lupa' onClick={filtrar}/>
+                 </div>
+              </div>
+            
+        <div className='comp-card'>
             {livros.map(item =>
             <>
             <div className="capa">
@@ -82,7 +88,7 @@ export default function CardLivro() {
                 <img src={Lapis} alt="" />
 
             </div>
-
+         </div>
         </main>
     );
 }

@@ -54,6 +54,9 @@ export async function listarGenero(nome) {
     return linha;
     }
 
+
+
+
     //apagar livro
 export async function removerLivro(id){
     const comando = `DELETE FROM tb_livro
@@ -97,17 +100,17 @@ export async function alterarLivro(id, livro){
 // buscar por nome
 export async function buscarporNome(nome){
     const comando = 
-    `SELECT id_livro		id,
+    `select id_livro		id,
         nm_livro		nome,
         nm_autor	    autor,
         vl_preco       preco,
         ds_livro       descricao,
         nr_paginas     paginas
-     FROM tb_livro
-     WHERE nm_livro like ?`;
+     from tb_livro
+     where nm_livro like ?`;
 
 
-     const [linhas] = await con.query(comando, [`%${nome}$%`]);
+     const [linhas] = await con.query(comando, [`%${nome}%`]);
      return linhas;
 }
 
