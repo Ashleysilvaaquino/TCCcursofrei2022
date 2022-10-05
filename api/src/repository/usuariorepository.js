@@ -23,7 +23,7 @@ export async function loginUsuario(email, senha) {
                      inner join tb_login_usuario
                      on tb_conta_usuario.id_conta_usuario = tb_login_usuario.id_conta_usuario
                      where ds_email = '?'
-                     and ds_senha = '?'`
+                     and ds_senha = '?' `
 
    const resp = await con.query(comando, [email, senha]);
    const linhas = resp[0];

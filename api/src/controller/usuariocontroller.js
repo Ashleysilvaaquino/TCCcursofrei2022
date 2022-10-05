@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import { cadastrarcliente, listarEstados } from "../repository/usuariorepository.js";
+import { cadastrarcliente, listarEstados, loginUsuario } from "../repository/usuariorepository.js";
 const server = Router();
 
 //cadastrar cliente
@@ -37,7 +37,7 @@ server.post('/cadastrarcliente', async (req, resp) => {
 server.post('/cliente/login', async (req, resp) => {
     try {
         const {email, senha} = req.body;
-        const resposta = await login(email, senha);
+        const resposta = await loginUsuario(email, senha);
 
         if(!resposta){
             throw new Error('Credenciais invalidas')
