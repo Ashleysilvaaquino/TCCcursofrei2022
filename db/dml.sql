@@ -54,6 +54,15 @@ inner join tb_login_usuario
   and ds_senha = '21918570173';
 
 
+select 	tb_conta_usuario.id_conta_usuario,
+		tb_conta_usuario.ds_email,
+        tb_conta_usuario.ds_senha
+        
+         from tb_conta_usuario
+   
+        where ds_email = 'ashleysilvaaquino2@gmail.com'
+  and ds_senha = '21918570173';
+
 insert into tb_genero(nm_genero)
    values('Romance');
 
@@ -85,12 +94,13 @@ insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas)
 UPDATE tb_livro
    SET img_livro     = '/storage/filme/asdfasdf.jp'
  WHERE id_filme = 1;
+ 
 select id_livro     id, 
 	nm_livro        nome,
     nm_autor 		autor,
     vl_preco		preco,
     ds_livro		descricao,
-    nr_paginas		paginas,
+    nr_paginas		paginas
 from tb_livro;
 
 select * from tb_livro;

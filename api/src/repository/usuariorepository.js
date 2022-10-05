@@ -15,15 +15,14 @@ export async function cadastrarcliente(usuario){
      
      //login usuario
 export async function loginUsuario(email, senha) {
-   const comando = `select tb_conta_usuario.id_conta_usuario,
+   const comando = `select 	tb_conta_usuario.id_conta_usuario,
    tb_conta_usuario.ds_email,
-    tb_conta_usuario.ds_senha,
-   tb_login_usuario.id_login_usuario
-                     from tb_conta_usuario 
-                     inner join tb_login_usuario
-                     on tb_conta_usuario.id_conta_usuario = tb_login_usuario.id_conta_usuario
-                     where ds_email = '?'
-                     and ds_senha = '?' `
+     tb_conta_usuario.ds_senha
+     
+      from tb_conta_usuario
+
+     where ds_email = ?
+and ds_senha = ?`
 
    const resp = await con.query(comando, [email, senha]);
    const linhas = resp[0];
