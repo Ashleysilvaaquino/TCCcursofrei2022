@@ -1,5 +1,8 @@
-CREATE DATABASE Livrariamontesdb;
+drop database if exists Livrariamontesdb;
+CREATE DATABASE if not exists Livrariamontesdb;
+
 use Livrariamontesdb;
+
 
 create table `tb_estado` (
 ID_ESTADO   int primary key auto_increment,
@@ -20,10 +23,9 @@ DS_EMAIL      VARCHAR(100),
 DS_SENHA     VARCHAR(100),
 DS_CELULAR   VARCHAR(100),
 ID_USUARIO_ENDERECO   INT,
-foreign key(ID_USUARIO_ENDERECO) REFERENCES TB_USUARIO_ENDERECO(ID_USUARIO_ENDERECO),
 ID_ESTADO          INT,
+foreign key(ID_USUARIO_ENDERECO) REFERENCES TB_USUARIO_ENDERECO(ID_USUARIO_ENDERECO),
 foreign key(ID_ESTADO) REFERENCES TB_ESTADO(ID_ESTADO)
-
 );
 
 

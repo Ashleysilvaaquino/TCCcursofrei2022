@@ -13,15 +13,16 @@ export default function CadastrarCliente2() {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [idendereco, setEndereco] = useState('');
+    
+
+   
 
 
-
-
+  
 
     async function salvarClick(){
         try {
-           const r = await InserirCliente(nome, email, senha, celular, idendereco , idestado );
+           const r = await InserirCliente(nome, email, senha, celular, endereco, idestado );
            toast.dark('Você foi cadastrado com sucesso')
         } 
         catch (err) {

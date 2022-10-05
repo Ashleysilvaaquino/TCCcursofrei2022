@@ -11,7 +11,7 @@ export async function InserirCliente(nome, email, senha,celular, endereco, estad
         email,
         senha,
         celular,
-        endereco,
+       endereco, 
         estado
     } )
 
@@ -27,7 +27,7 @@ export async function listarEstado() {
 export async function usuarioendereco(cep, numero){
     const r= await axios.post('/endereco', 
     {
-        cep,cep, 
+        cep:cep, 
         numero:numero
     });
 
