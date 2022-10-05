@@ -1,10 +1,6 @@
 
 import { Router } from "express";
-<<<<<<< HEAD
-import { cadastrarcliente, listarEstados, usuarioendereco } from "../repository/usuariorepository.js";
-=======
-import { cadastrarcliente, listarEstados, loginUsuario } from "../repository/usuariorepository.js";
->>>>>>> adb332b0333f40b273876c1232c597daa882fc87
+import { cadastrarcliente, listarEstados, usuarioendereco, loginUsuario } from "../repository/usuariorepository.js";
 const server = Router();
 
 //cadastrar cliente
