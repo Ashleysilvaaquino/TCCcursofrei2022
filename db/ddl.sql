@@ -18,7 +18,12 @@ ID_CONTA_USUARIO   INT primary key auto_increment,
 NM_USUARIO     VARCHAR(100),
 DS_EMAIL      VARCHAR(100),
 DS_SENHA     VARCHAR(100),
-DS_CELULAR   VARCHAR(100)
+DS_CELULAR   VARCHAR(100),
+ID_USUARIO_ENDERECO   INT,
+foreign key(ID_USUARIO_ENDERECO) REFERENCES TB_USUARIO_ENDERECO(ID_USUARIO_ENDERECO),
+ID_ESTADO          INT,
+foreign key(ID_ESTADO) REFERENCES TB_ESTADO(ID_ESTADO)
+
 );
 
 
@@ -43,9 +48,9 @@ nm_autor		varchar(100),
 vl_preco		decimal(15,2),
 ds_livro		varchar(700),
 nr_paginas		int,
-img_livro		varchar(800)
-id_genero       int
-foreign key(id_genero) references id_genero(id_genero)
+img_livro		varchar(800),
+id_genero       int,
+foreign key(id_genero) references tb_genero(id_genero)
 
 );
 

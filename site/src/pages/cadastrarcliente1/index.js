@@ -2,7 +2,14 @@ import './index.scss';
 
 import { Link } from 'react-router-dom';
 
+
 function CadastrarCliente1(){
+  
+
+
+
+
+
     return(
         <div>
             <div className='comp-logo'>
@@ -34,7 +41,7 @@ function CadastrarCliente1(){
                 <br></br>
                 <div>
                     <p className='senha-cliente'>Senha:</p>
-                    <input type="password" placeholder='********' className='input-senha-cliente'/>
+                    <input type="password" placeholder='********' className='input-senha-cliente' />
                 </div>
                 <br></br>
                 <br></br>

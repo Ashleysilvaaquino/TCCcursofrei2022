@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import { cadastrarcliente, listarEstados } from "../repository/usuariorepository.js";
+import { cadastrarcliente, listarEstados, usuarioendereco } from "../repository/usuariorepository.js";
 const server = Router();
 
 //cadastrar cliente
@@ -19,8 +19,11 @@ server.post('/cadastrarcliente', async (req, resp) => {
 
         if (!usuarionovo.celular)
             throw new Error('O celular do usuário é obrigatório!');
+        if(!usuarionovo.estado)
+            throw new Error('O Estado é Obrigatório!');        
+        
 
-       
+        console.log(usuarionovo);
         const usuarioinserido = await cadastrarcliente(usuarionovo);
         resp.send(usuarioinserido);
 
@@ -45,7 +48,7 @@ server.post('/cliente/login', async (req, resp) => {
         resp.send(resposta)
     } catch (err) {
         resp.status(401).send({
-            err0: err.message
+            erro: err.message
         })
     }
 })
@@ -64,5 +67,25 @@ server.get('/estado', async (req, resp) => {
     }
 })
 
+//cadastrar endereco 
+server.post('/endereco', async (req,resp) => {
+    try {
+        const endereconovo = req.body;
+       
+        if (!endereconovo.cep)
+            throw new Error('O Cep é obrigatório!');
 
+        if (!endereconovo.numero)
+            throw new Error('O Número é obrigatório!');
+        
+        const enderecoinserido = await usuarioendereco(endereconovo);
+        resp.send(enderecoinserido);
+
+    
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 export default server;
