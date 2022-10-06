@@ -19,10 +19,8 @@ server.post('/cadastrarcliente', async (req, resp) => {
 
         if (!usuarionovo.celular)
             throw new Error('O celular do usuário é obrigatório!');
-        if(!usuarionovo.estado)
-            throw new Error('O Estado é Obrigatório!');        
-        
-
+          
+    
         console.log(usuarionovo);
         const usuarioinserido = await cadastrarcliente(usuarionovo);
         resp.send(usuarioinserido);
@@ -77,6 +75,11 @@ server.post('/endereco', async (req,resp) => {
 
         if (!endereconovo.numero)
             throw new Error('O Número é obrigatório!');
+        
+        if (!endereconovo.estado)
+            throw new Error('O Estado é obrigatório!');
+        
+        
         
         const enderecoinserido = await usuarioendereco(endereconovo);
         resp.send(enderecoinserido);

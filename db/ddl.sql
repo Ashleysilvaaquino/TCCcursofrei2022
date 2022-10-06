@@ -12,7 +12,9 @@ nm_estado varchar(100)
 CREATE TABLE `tb_usuario_endereco` (
 ID_USUARIO_ENDERECO     INT primary key auto_increment,
 NR_CEP  				VARCHAR(100),
-NR_RESIDENCIA			int
+NR_RESIDENCIA			int,
+ID_ESTADO 				int,
+foreign key(id_estado) references tb_estado(id_estado)
 );
 
 
@@ -21,11 +23,7 @@ ID_CONTA_USUARIO   INT primary key auto_increment,
 NM_USUARIO     VARCHAR(100),
 DS_EMAIL      VARCHAR(100),
 DS_SENHA     VARCHAR(100),
-DS_CELULAR   VARCHAR(100),
-ID_USUARIO_ENDERECO   INT,
-ID_ESTADO          INT,
-foreign key(ID_USUARIO_ENDERECO) REFERENCES TB_USUARIO_ENDERECO(ID_USUARIO_ENDERECO),
-foreign key(ID_ESTADO) REFERENCES TB_ESTADO(ID_ESTADO)
+DS_CELULAR   VARCHAR(100)
 );
 
 
