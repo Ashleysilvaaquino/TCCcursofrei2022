@@ -146,7 +146,7 @@ server.put('/livro/:id', async (req, resp) => {
 
         const resposta = await alterarLivro(id, livro);
         if(resposta != 1)
-            throw new Error('Filme não foi alterado!');
+            throw new Error('Livro não foi alterado!');
         else
             resp.status(204).send();
     }catch (err) {
