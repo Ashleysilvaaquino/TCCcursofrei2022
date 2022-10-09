@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 import "./index.scss";
 
 function LoginUsuario() {
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState("");
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
 
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ function LoginUsuario() {
       if (r.status === 401) {
         setErro(r.data.erro);
       } else {
-        navigate("/loginusuario");
+        navigate("/cadastrarlivro");
       }
     } catch (err) {
       if (err.response.status === 401) {
@@ -47,7 +47,7 @@ function LoginUsuario() {
           placeholder="maria@gmail.com"
           className="input-email-login-adm"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
         />
 
         <label className="email-login">Senha:</label>
@@ -56,7 +56,7 @@ function LoginUsuario() {
           placeholder="********"
           className="input-senha-login-adm"
           value={senha}
-          onChange={(e) => setSenha(e.target.value)}
+          onChange={e => setSenha(e.target.value)}
         />
       </div>
       <div className="cadastrar-agora">
