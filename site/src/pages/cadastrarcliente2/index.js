@@ -1,8 +1,9 @@
 import './index.scss'
 import logofrei from '../../assets/images/logofrei.png'
 import { InserirCliente, listarEstado } from '../../api/usuarioAPI';
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import { toast } from 'react-toastify';
+import {Link} from 'react-router-dom'
 
 export default function CadastrarCliente2() {
     const [celular, setCelular] = useState('');
@@ -33,6 +34,7 @@ export default function CadastrarCliente2() {
 
             <div className='titulo'>
                 <h1>LIVRARIA MONTES</h1>
+                <Link to="/loginusuario">Voltar</Link>
             </div>
 
 

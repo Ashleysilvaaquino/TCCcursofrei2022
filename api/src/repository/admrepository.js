@@ -66,6 +66,8 @@ export async function removerLivro(id){
     return resposta.affectedRows;
 }
 
+
+
 //editar livro
 export async function alterarLivro(id, livro){
     const comando = 
@@ -92,12 +94,14 @@ export async function alterarLivro(id, livro){
                 vl_preco       preco,
                 ds_livro       descricao,
                 nr_paginas     paginas,
+                img_livro      imagem,
                 id_genero      genero
            FROM tb_livro`;
     
     const [linhas] = await con.query(comando);
     return linhas;
 }
+
 
 
 // buscar por nome

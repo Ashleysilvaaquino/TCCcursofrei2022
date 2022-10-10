@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./index.scss";
+import {Link} from 'react-router-dom'
 
 function LoginUsuario() {
   const [email, setEmail] = useState('');
@@ -32,8 +33,14 @@ function LoginUsuario() {
 
   return (
     <div className="pag-total-adm">
+       <style>
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+       </style>
+       <style>
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+      </style>
       <div className="comp-logo">
-        <h1 className="comp-logo-azul">LIVRARIA MONTES</h1>
+        <h1 >LIVRARIA MONTES</h1>
         <p className="logo-voltar">Voltar</p>
       </div>
       <div className="cabecalho-login">
@@ -41,10 +48,10 @@ function LoginUsuario() {
           ENTRAR COM EMAIL <span> E SENHA</span>{" "}
         </h1>
 
-        <label className="email-login">Seu email:</label>
+        <label className="email-login">Email:</label>
         <input
           type="text"
-          placeholder="maria@gmail.com"
+          placeholder="Insira seu email"
           className="input-email-login-adm"
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -61,9 +68,12 @@ function LoginUsuario() {
       </div>
       <div className="cadastrar-agora">
         <p className="p-1">
-          Não possui conta? <span></span>
+          Não possui conta? 
         </p>
-        <p>Cadastre-se agora</p>
+      <div className="cadastrar">
+      <Link to="/cadastrarcliente2">Cadastre-se agora</Link>
+      </div>
+        
       </div>
       <div>
         <button className="botao-entrar-adm" onClick={entrarClick}>

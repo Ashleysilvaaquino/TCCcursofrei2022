@@ -74,6 +74,7 @@ export default function CadastrarLivro() {
              }
              <input type = 'file' id="capaimagem" onChange={ e => setImagem(e.target.files[0])}/>
             </div>
+            
   
             <div className='textos'>
   

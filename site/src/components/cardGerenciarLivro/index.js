@@ -33,7 +33,7 @@ export default function CardLivro() {
 
 
 
-    async function removerLivroClick(id, nome){
+    async function removerLivroClick(id, nome) {
         confirmAlert({
             title: 'Remover Livro',
             message: `Deseja remover o livro ${nome}?`,
@@ -41,6 +41,7 @@ export default function CardLivro() {
                 {
                     label: 'Sim',
                     onClick: async () => {
+                        console.log();
                          const resposta = await removerLivro(id, nome);
                          if(filtro === '')
                             carregarTodosLivros();
@@ -69,7 +70,7 @@ export default function CardLivro() {
             </div>
 
             {livros.map(item =>
-                <div className='comp-card'>
+                <div className='comp-card' key={item.id}>
 
 
                     <div className="capa">
