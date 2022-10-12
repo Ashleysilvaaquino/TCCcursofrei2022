@@ -16,6 +16,8 @@ import { toast } from 'react-toastify';
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
     const [filtro, setFiltro] = useState('');
+   
+
 
     async function filtrar() {
         const resp = await buscarLivrosPorNome(filtro);
@@ -27,6 +29,7 @@ export default function CardLivro() {
         setLivros(resp);
     }
 
+   
     useEffect(() => {
         carregarTodosLivros();
     }, [])
@@ -74,7 +77,7 @@ export default function CardLivro() {
 
 
                     <div className="capa">
-                        <img src={item.imagem} alt="" />
+                        <img alt={item.imagem}/> 
                     </div>
 
 
