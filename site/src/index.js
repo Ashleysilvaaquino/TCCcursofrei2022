@@ -36,11 +36,9 @@ root.render(
         <Route path = '/pesquisarlivro' element ={<PesquisarLivro/>}/>
         <Route path = '/consultarlivro' element={<ConsultarLivro/>} />
         <Route path = '/comppesquisa' element={<BarraPesquisa/>} />
-<<<<<<< HEAD
         <Route path = '/admhome' element={<HomeAdm/>} />
 
         <Route path = '/carrinho' element={<Carrinho/>} />
->>>>>>> aaab712738102b72ba803c2182b02beb910f47c3
       </Routes>
     </BrowserRouter>
    
