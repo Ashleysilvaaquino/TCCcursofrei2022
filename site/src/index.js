@@ -11,6 +11,7 @@ import CadastrarCliente2 from './pages/cadastrarcliente2';
 import PesquisarLivro from './pages/pesquisarlivro';
 import ConsultarLivro from './pages/consultarlivros';
 import BarraPesquisa from './components/pesquisa';
+import Carrinho from './pages/carrinho';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,7 +34,7 @@ root.render(
         <Route path = '/pesquisarlivro' element ={<PesquisarLivro/>}/>
         <Route path = '/consultarlivro' element={<ConsultarLivro/>} />
         <Route path = '/comppesquisa' element={<BarraPesquisa/>} />
-
+        <Route path = '/carrinho' element={<Carrinho/>} />
       </Routes>
     </BrowserRouter>
    
