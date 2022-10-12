@@ -28,6 +28,11 @@
 
         transition: .3s;
         cursor: pointer;
+
+         a{
+            color: #fff;
+            text-decoration: none;
+        }
     }
     .items > div:hover {
         background-color: #6A9EBB;

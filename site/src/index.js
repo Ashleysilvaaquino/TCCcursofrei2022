@@ -11,6 +11,8 @@ import CadastrarCliente2 from './pages/cadastrarcliente2';
 import PesquisarLivro from './pages/pesquisarlivro';
 import ConsultarLivro from './pages/consultarlivros';
 import BarraPesquisa from './components/pesquisa';
+import HomeAdm from './pages/homeadm';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,6 +35,7 @@ root.render(
         <Route path = '/pesquisarlivro' element ={<PesquisarLivro/>}/>
         <Route path = '/consultarlivro' element={<ConsultarLivro/>} />
         <Route path = '/comppesquisa' element={<BarraPesquisa/>} />
+        <Route path = '/admhome' element={<HomeAdm/>} />
 
       </Routes>
     </BrowserRouter>

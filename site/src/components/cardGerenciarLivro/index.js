@@ -68,7 +68,7 @@ export default function CardLivro() {
             <div>
                 <div className='comp-pesquisa'>
                     <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                    <img src={lupa} className='lupa' onClick={filtrar} />
+                    <img src={lupa}  onClick={filtrar} />
                 </div>
             </div>
 
@@ -112,7 +112,7 @@ export default function CardLivro() {
 
                     <div className="imgs">
                         <img src={Lixo} alt="" onClick={() => removerLivroClick(item.id, item.nome)} />
-                        <img src={Lapis} alt="" />
+                        <img src={Lapis} alt="" className='lapis' />
                     </div>
 
                 </div>

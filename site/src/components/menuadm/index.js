@@ -4,7 +4,7 @@ import Cadastrar from '../../assets/images/cadastrar.png'
 import Gerenciar from '../../assets/images/gerenciar.png'
 import Pedidos from '../../assets/images/pedidos.png'
 import Sair from '../../assets/images/sair.png'
-
+import {Link} from 'react-router-dom'
 
 export default function Menu(){
 
@@ -14,16 +14,16 @@ export default function Menu(){
          <div className='items'>
              <div>
               <img src={Home}  />
-              <div>Home</div>
+              <div><Link to='/admhome'>Home</Link></div>
             </div>
 
             <div>
                <img src={Cadastrar} />
-               <div>Cadastrar</div>
+               <div><Link to='/cadastrarlivro'>Cadastrar</Link></div>
             </div>
             <div>
                <img src={Gerenciar} />
-               <div>Gerenciar</div>
+               <div><Link to='/consultarlivro'>Gerenciar</Link></div>
             </div>
             <div>
                <img src={Pedidos}/>

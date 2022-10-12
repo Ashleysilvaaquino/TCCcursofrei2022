@@ -8,11 +8,11 @@
     justify-content: space-evenly;
     margin-left: 50px;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
+    background-image: linear-gradient(to right, rgba(30, 52, 100, 0.767), #3e7697d5, rgba(108, 186, 218, 0.795));;
     margin-top: 40px;
     flex-wrap: wrap;
     width: 900px;
-    height: 170px;
+    height: 195px;
     padding: 15px 0px;
 
     .capa {
@@ -25,26 +25,31 @@
     }
 
     .coluna-txt {
-      
+        
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        
+        width: 230px;
+        
 
-        width: 253px;
-
+        label{
+            padding-top: 10px;
+            color: #fff;
+        }
     }
 
     .coluna-txt>p {
         display: flex;
         align-items: center;
-
+        margin-top: 6px;
         background-color: white;
         border-radius: 10px;
 
         text-indent: 10px;
 
         height: 30px;
-
+        
     }
     .genero{
 
@@ -55,8 +60,13 @@
     }
 
     .preco {
-
-        width: 132px;
+        
+        width: 85px;
+        margin-top: 8px;
+        label{
+                               
+            color: #fff;
+        }
     }
 
     .preco > p {
@@ -69,7 +79,7 @@
         border-radius: 10px;
 
         text-indent: 10px;
-
+        margin-top: 6px;     
         height: 30px;
 
     }
@@ -78,8 +88,12 @@
 
         display: flex;
         flex-direction: column;
-
+        margin-top: 8px;
         width: 250px;
+        label{
+            margin-bottom: 6px;        
+            color: #fff;
+        }
 
     }
 
@@ -94,6 +108,7 @@
         text-indent: 10px;
 
         height: 150px;
+        width: 120%;
 
     }
 
@@ -102,9 +117,16 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        padding-left: 45px;
+        padding-top: 35px;
+
+        .lapis{
+            padding-bottom: 45px;
+        }
        
 
     }
+
 
 
 
@@ -120,7 +142,7 @@
     margin-top: 20px;
     margin-left: 50px;
 
-    .input-pesquisa {
+    .input-pesquisa{
     
         width: 430px;
         height: 30px;
@@ -129,28 +151,57 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border: none;
         outline: none;
-
+        margin-left: 10px;
         color: #000;
 
         border-color: #3E7797;
     }
-    .lupa{
+
+    input:hover{
+
+       box-shadow: 0 0 15px 5px #243d5e8e;
+     
+        
+    }
+
+
+    img{
         margin-top: 5px;
         width: 28px;
         height: 28px;
     }
-    .lupa > img{
+    img{
 
             
             width: 25px;
             height: 25px;
-            border: green 1px solid;
-      
+            
+        }
+        img:hover{
+            animation-name: botao;
+            animation-duration: 0.5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            
+        }
+    }
+    
+    
+  
+    @keyframes botao {
+        0%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(1.05);
+        }
+    }
       
         
-    }
+    
     
    
 
 
-}
+
