@@ -13,6 +13,7 @@ import ConsultarLivro from './pages/consultarlivros';
 import BarraPesquisa from './components/pesquisa';
 import HomeAdm from './pages/homeadm';
 
+import Carrinho from './pages/carrinho';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,8 +36,11 @@ root.render(
         <Route path = '/pesquisarlivro' element ={<PesquisarLivro/>}/>
         <Route path = '/consultarlivro' element={<ConsultarLivro/>} />
         <Route path = '/comppesquisa' element={<BarraPesquisa/>} />
+<<<<<<< HEAD
         <Route path = '/admhome' element={<HomeAdm/>} />
 
+        <Route path = '/carrinho' element={<Carrinho/>} />
+>>>>>>> aaab712738102b72ba803c2182b02beb910f47c3
       </Routes>
     </BrowserRouter>
    
