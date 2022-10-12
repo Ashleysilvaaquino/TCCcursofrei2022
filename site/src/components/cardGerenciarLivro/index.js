@@ -34,7 +34,7 @@ export default function CardLivro() {
         carregarTodosLivros();
     }, [])
 
-
+   
 
     async function removerLivroClick(id, nome) {
         confirmAlert({
@@ -111,7 +111,7 @@ export default function CardLivro() {
 
 
                     <div className="imgs">
-                        <img src={Lixo} alt="" onClick={(item) => removerLivroClick(item.id, item.nome)} />
+                        <img src={Lixo} alt="" onClick={() => removerLivroClick(item.id, item.nome)} />
                         <img src={Lapis} alt="" />
                     </div>
 
