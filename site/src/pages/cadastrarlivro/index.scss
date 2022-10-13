@@ -28,39 +28,44 @@
         img{
             width: 190px;
             height: 190px;
-         }
-       
-
+        }
+        
+        
     }
     .textos{
         position: absolute;
         left: 60%;
         top: 20%;
-
-       
+        label{
+            font-family: 'Oswald', sans-serif;
+            
+            color: rgb(0, 0, 0);
+        }
         
-
+        
+        
     }
-     #capaimagem{
+    #capaimagem{
         visibility: hidden;
         
-
-
-     }
-     .imagemcapa{
-       
+        
+        
+    }
+    .imagemcapa{
+        
         width: 190px;
         height: 190px;
-     }
-
-     .quadrado{
+    }
+    
+    .quadrado{
          margin-top: 90px;
          margin-left: 50px;
          width: 900px;
          height: 550px;
          background-color: #95B9CE;
+
          justify-content: center;
-          border-radius: 20px;
+         border-radius: 20px;
 
     }
 
@@ -71,18 +76,21 @@
         
 
         
-           
-    
-
+        
+        
+        
         input, select {
             background: #F5F5F5;
             border-radius: 8px;
             border: none;
             outline: none;
             width: 300px;
-           height: 25px;
-           margin-top: 3px ;
-
+            height: 25px;
+            margin-top: 3px ;
+            padding-left: 10px;
+            font-size: 14px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
         }
     }
 
@@ -94,16 +102,40 @@
             width: 125px;
             height: 37px;
             border: none;
-            background: #3E7797;
+            background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             color: #F5F5F5;
-
-         }
-         
-    }
+            font-family: 'Oswald', sans-serif ;
+            font-size: 17px;
+            
+            
+            
+        }
+        
+        button:hover{
+            animation-name: botao;
+            animation-duration: 0.5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
 
     
+    
 }
+
+}
+
+
+@keyframes botao {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+
  
 

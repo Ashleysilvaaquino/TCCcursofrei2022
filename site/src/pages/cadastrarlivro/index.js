@@ -55,6 +55,9 @@ export default function CadastrarLivro() {
 
     return (
       <main className='mae'>
+          <style>
+          @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+         </style>
           <Menu/>
           <div>
         
@@ -80,11 +83,11 @@ export default function CadastrarLivro() {
   
             <div className='input-box'>
                <label>Nome</label>
-              <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+              <input type="text" placeholder='Nome do Livro...'value={nome} onChange={e => setNome(e.target.value)} />
             </div>
             <div className='input-box'>
               <label >Autor</label>
-              <input type="text"  value={autor} onChange={e => setAutor(e.target.value)} />
+              <input type="text" placeholder='Autor do Livro...' value={autor} onChange={e => setAutor(e.target.value)} />
             </div>
             
              <div className='input-box'>
@@ -100,15 +103,15 @@ export default function CadastrarLivro() {
              </div>
              <div className='input-box'>
                  <label >Preço</label>
-                 <input type="text"  value={preco} onChange={e => setPreco(e.target.value)} />
+                 <input type="text" placeholder='Preço do Livro...' value={preco} onChange={e => setPreco(e.target.value)} />
              </div>
              <div className='input-box'>
                 <label>Páginas</label>
-                <input type="text"  value={paginas} onChange={e => setPaginas(e.target.value)} />      
+                <input type="text" placeholder='Páginas do Livro...' value={paginas} onChange={e => setPaginas(e.target.value)} />      
              </div>
              <div className='input-box'>
                <label>Descrição</label>
-               <input type="text" className='descricao' value={descricao} onChange={e => setDescricao(e.target.value)} /> 
+               <input type="text" placeholder='Descrição do Livro...' className='descricao' value={descricao} onChange={e => setDescricao(e.target.value)} /> 
              </div>
            
              </div>

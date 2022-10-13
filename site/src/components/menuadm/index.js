@@ -10,6 +10,12 @@ export default function Menu(){
 
    return(
       <nav className="menu-total">
+          <style>
+          @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+      </style>
+      <style>
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+       </style>
       <div>
          <div className='items'>
              <div>

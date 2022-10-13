@@ -5,24 +5,26 @@ main{
         h1{
         color: #3E7797;
         padding-left: 30px;
-        padding-top: 20px;
+        padding-top: 15px;
         font-family: 'Montserrat', sans-serif;
        }
-       a{
-        font-family: 'Oswald', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 3px;
-        margin-left: 140px;
-        margin-top: 30px;
-    
-        color: #3E7797;
-       }
        
-   
     }
-
+    .voltar{
+        margin-top: 25px;
+        a{
+         font-family: 'Oswald', sans-serif;
+        
+         font-size: 18px;
+         line-height: 3px;
+         margin-left: 140px;
+       
+         text-decoration: none;
+     
+         color: #3E7797;
+        }
+        
+    }
     .nomee{
 
         display: flex;
@@ -68,8 +70,8 @@ main{
            .dado{
             display: flex;
             flex-direction: column;
-            margin-bottom: 6px;
-            margin-top: 23px;
+            
+            margin-top: 18px;
             font-size: 20px;
             outline: none;
             font-family: monospace;
@@ -131,7 +133,7 @@ main{
         .opa{
             display: flex;
             justify-content: center;
-            padding-top: 10px;
+         
             padding-right: 68px;
             
             h1{

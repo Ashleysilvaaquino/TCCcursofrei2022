@@ -4,17 +4,19 @@
         padding-left: 20px;
     }
    .comp-logo-azul{
-    font-family: 'Milonga';
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  
     font-size: 32px;
     line-height: 40px;
     margin-left: 40px;
     color: #3E7797;
+
+    
    }
 
    .logo-voltar{
-    font-family: 'Kantumruy';
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -36,10 +38,10 @@
         .text-principal{
         
 
-        font-family: 'Kantumruy';
-        font-style: normal;
+        font-family: 'Montserrat', sans-serif;
+        font-style: bold;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 25px;
         line-height: 58px;
         text-align: center;
 
@@ -55,7 +57,7 @@
         
 
             .email-login{
-                font-family: 'Kantumruy';
+                font-family: 'Oswald', sans-serif, bold;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 26px;
@@ -74,6 +76,7 @@
                 background: #FFFFFF;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border: none;
+                font-family: 'Oswald', sans-serif, bold;
 
                 align-self: center;  
             }
@@ -110,25 +113,26 @@
 
 
 
-.botao-entrar-adm{
-    font-family: 'Kantumruy';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 4px;
-    text-align: center;
+.adm-botao{
+    button{
 
-    background-color: #3E7797;
-    color: #FFFFFF;
-    position: absolute;
-    left: 85%;
-    top: 90%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: none;
-
-    width: 100px;
-    height: 40px;
+        font-family: 'Oswald', sans-serif ;
+       
+        font-size: 23px;
+        line-height: 4px;
+        text-align: center;
+    
+        background-color: #3E7797;
+        color: #FFFFFF;
+        position: absolute;
+        left: 85%;
+        top: 90%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        border: none;
+        width: 100px;
+        height: 40px;
+    }
 }
 
 .credenciais-invalidas{

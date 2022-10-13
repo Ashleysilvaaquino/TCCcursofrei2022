@@ -8,11 +8,11 @@
     justify-content: space-evenly;
     margin-left: 50px;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgba(30, 52, 100, 0.767), #3e7697d5, rgba(108, 186, 218, 0.795));;
+    background-image: linear-gradient(to right,  #95B9CE, #285d7cd5);;
     margin-top: 40px;
     flex-wrap: wrap;
     width: 900px;
-    height: 195px;
+    height: 215px;
     padding: 15px 0px;
 
     .capa {
@@ -36,6 +36,7 @@
         label{
             padding-top: 10px;
             color: #fff;
+            font-family: 'Oswald', sans-serif;
         }
     }
 
@@ -47,8 +48,9 @@
         border-radius: 10px;
 
         text-indent: 10px;
-
         height: 30px;
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
         
     }
     .genero{
@@ -64,7 +66,7 @@
         width: 85px;
         margin-top: 8px;
         label{
-                               
+            font-family: 'Oswald', sans-serif;                       
             color: #fff;
         }
     }
@@ -74,10 +76,11 @@
         display: flex;
         align-items: center;
         text-align: justify;
-
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
         background-color: white;
         border-radius: 10px;
-
+            
         text-indent: 10px;
         margin-top: 6px;     
         height: 30px;
@@ -93,6 +96,7 @@
         label{
             margin-bottom: 6px;        
             color: #fff;
+            font-family: 'Oswald', sans-serif;
         }
 
     }
@@ -104,7 +108,8 @@
 
         background-color: white;
         border-radius: 10px;
-
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
         text-indent: 10px;
 
         height: 150px;

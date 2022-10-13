@@ -71,7 +71,7 @@ function LoginUsuario() {
           Não possui conta? 
         </p>
       <div className="cadastrar">
-      <Link to="/cadastrarcliente2">Cadastre-se agora</Link>
+      <Link to="/cadastrarcliente">Cadastre-se agora</Link>
       </div>
         
       </div>

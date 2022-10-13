@@ -5,7 +5,7 @@ import {  useState } from 'react'
 import { toast } from 'react-toastify';
 import {Link} from 'react-router-dom'
 
-export default function CadastrarCliente2() {
+export default function CadastrarCliente() {
     const [celular, setCelular] = useState('');
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -34,6 +34,8 @@ export default function CadastrarCliente2() {
 
             <div className='titulo'>
                 <h1>LIVRARIA MONTES</h1>
+            </div>
+            <div className='voltar'>
                 <Link to="/loginusuario">Voltar</Link>
             </div>
 

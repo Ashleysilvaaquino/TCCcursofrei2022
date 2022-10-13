@@ -20,7 +20,7 @@ export default function LoginAdm() {
 
     useEffect(() => {
         if (storage('usuario-logado')) {
-            navigate('/cadastrarlivro');
+            navigate('/admhome');
         }
     }, [])
 
@@ -33,7 +33,7 @@ export default function LoginAdm() {
 
            
             setTimeout(() => {
-                navigate('/cadastrarlivro');
+                navigate('/admhome');
             }, 3000);
         
        }
@@ -48,6 +48,12 @@ export default function LoginAdm() {
 
     return (
         <div className='pag-total-adm'>
+               <style>
+             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+              </style>
+             <style>
+            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+           </style>
             <LoadingBar color='#3E7797' height={3} ref={ref} />
             <div className='comp-logo'>
                 <h1 className='comp-logo-azul'>LIVRARIA MONTES</h1>
@@ -65,7 +71,7 @@ export default function LoginAdm() {
                 
                 
             </div>
-            <div>
+            <div className='adm-botao'>
                 <button className='botao-entrar-adm' onClick={entrarClick} disabled={carregando}>Entrar</button>
             </div>
             <div className='credenciais-invalidas'>

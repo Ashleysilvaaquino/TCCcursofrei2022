@@ -64,6 +64,9 @@ export default function CardLivro() {
 
     return (
         <main>
+              <style>
+          @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+            </style>
 
             <div>
                 <div className='comp-pesquisa'>
@@ -76,10 +79,7 @@ export default function CardLivro() {
                 <div className='comp-card' key={item.id}>
 
 
-                    <div className="capa">
-                        <img alt={item.imagem}/> 
-                    </div>
-
+                 
 
 
                     <div className="coluna-txt">
