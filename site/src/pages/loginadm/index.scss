@@ -133,11 +133,31 @@
         width: 100px;
         height: 40px;
     }
+    button:hover{
+        animation-name: botao;
+        animation-duration: 0.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+
 }
+
+
+@keyframes botao {
+   0%{
+    transform: scale(1);
+   }
+   100%{
+    transform: scale(1.05);
+   }
+}
+
 
 .credenciais-invalidas{
     color: red;
-
+    font-family: 'Oswald', sans-serif, bold;
     font-size: 24px;
     text-align: center;
     

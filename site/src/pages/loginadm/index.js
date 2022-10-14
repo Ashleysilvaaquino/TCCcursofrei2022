@@ -9,6 +9,7 @@ import './index.scss';
 
 
 
+
 export default function LoginAdm() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -19,18 +20,22 @@ export default function LoginAdm() {
     const ref = useRef();
 
     useEffect(() => {
-        if (storage('usuario-logado')) {
+        if (storage('adm-logado')) {
             navigate('/admhome');
         }
-    }, [])
+    }, []);
+
+
+
+
 
     async function entrarClick(){
         ref.current.continuousStart();
         setCarregando(true);
+     
         try{
-            const r= await Login(email, senha);
-            storage('usuario-logado', r);
-
+            const r= await Login(email,senha);
+           storage('adm-logado', r)
            
             setTimeout(() => {
                 navigate('/admhome');
@@ -40,6 +45,7 @@ export default function LoginAdm() {
        catch(err){
         ref.current.complete();
         setCarregando(false);
+     
             if(err.response.status === 404){
                 setErro(err.response.data.erro);
             }

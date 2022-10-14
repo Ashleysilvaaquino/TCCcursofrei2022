@@ -111,8 +111,8 @@ insert into tb_livro_favorito(id_livro_favorito, id_livro, id_conta_usuario)
 select * from tb_livro_favorito;
 
     
-insert into tb_adm_login(id_adm_login, ds_email, ds_senha)
-   values('2','admlivrariamonte@gmail.com', 'senha1234' );
+insert into tb_adm_login(ds_email, ds_senha)
+   values('admlivrariamonte@gmail.com', 'senha1234' );
    
    
 select * from tb_adm_login;

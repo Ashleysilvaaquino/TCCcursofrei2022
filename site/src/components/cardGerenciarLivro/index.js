@@ -79,7 +79,9 @@ export default function CardLivro() {
                 <div className='comp-card' key={item.id}>
 
 
-                 
+                     <div className='capa'>
+                        <img src={item.imagem}/>
+                     </div>                 
 
 
                     <div className="coluna-txt">

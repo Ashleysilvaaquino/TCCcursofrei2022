@@ -4,9 +4,20 @@ import Cadastrar from '../../assets/images/cadastrar.png'
 import Gerenciar from '../../assets/images/gerenciar.png'
 import Pedidos from '../../assets/images/pedidos.png'
 import Sair from '../../assets/images/sair.png'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import storage from 'local-storage'
+
 
 export default function Menu(){
+   
+   const navigate = useNavigate();
+   
+   function sairClick(){
+      storage.remove('adm-logado');
+      navigate('/loginadm');
+
+   }
+   
 
    return(
       <nav className="menu-total">
@@ -37,16 +48,16 @@ export default function Menu(){
             </div>
   
   
-      </div>
-  </div>
+        </div>
+       </div>
   
-  <div className='items'>
-      <div className='items2'>
+     <div className='items'  >
+      <div onClick={sairClick} className='items2' >
           <img src={Sair} />
-          <div>Sair</div>
+          <div >Sair</div>
       </div>
-  </div>
-  </nav>
+      </div>
+    </nav>
    );
    
 }

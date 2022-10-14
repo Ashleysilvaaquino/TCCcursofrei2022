@@ -1,7 +1,11 @@
 import axios from "axios";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import storage from 'local-storage'
+
+import LoadingBar from 'react-top-loading-bar'
+
 
 import "./index.scss";
 import {Link} from 'react-router-dom'
@@ -10,21 +14,42 @@ function LoginUsuario() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(false);
 
   const navigate = useNavigate();
+  const ref = useRef();
+
+  useEffect(() => {
+      if (storage('usuario-logado')) {
+          navigate('/');
+      }
+  }, []);
+
+  
 
   async function entrarClick() {
+    ref.current.continuousStart();
+    setCarregando(true);
     try {
       const r = await axios.post("http://localhost:5000/cliente/login", {
         email: email,
         senha: senha,
       });
+
       if (r.status === 401) {
         setErro(r.data.erro);
       } else {
-        navigate("/cadastrarlivro");
+        navigate("/");
       }
+
+        
+      setTimeout(() => {
+        navigate('/');
+    }, 3000);
+
     } catch (err) {
+      ref.current.complete();
+      setCarregando(false);
       if (err.response.status === 401) {
         setErro(err.response.data.erro);
       }
@@ -39,6 +64,7 @@ function LoginUsuario() {
        <style>
       @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
       </style>
+      <LoadingBar color='#3E7797' height={3} ref={ref} />
       <div className="comp-logo">
         <h1 >LIVRARIA MONTES</h1>
         <p className="logo-voltar">Voltar</p>
@@ -75,8 +101,8 @@ function LoginUsuario() {
       </div>
         
       </div>
-      <div>
-        <button className="botao-entrar-adm" onClick={entrarClick}>
+      <div className="botao">
+        <button onClick={entrarClick} disabled={carregando}>
           Entrar
         </button>
       </div>
