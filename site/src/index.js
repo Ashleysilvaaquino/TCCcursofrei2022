@@ -10,6 +10,8 @@ import CadastrarCliente from './pages/cadastrarcliente';
 import PesquisarLivro from './pages/pesquisarlivro';
 import ConsultarLivro from './pages/consultarlivros';
 import BarraPesquisa from './components/pesquisa';
+import Detalhes  from './pages/detalheslivro';
+import LivroDetalhe from './components/livrodetalhe';
 import HomeAdm from './pages/homeadm';
 
 import Carrinho from './pages/carrinho';
@@ -35,8 +37,9 @@ root.render(
         <Route path = '/consultarlivro' element={<ConsultarLivro/>} />
         <Route path = '/comppesquisa' element={<BarraPesquisa/>} />
         <Route path = '/admhome' element={<HomeAdm/>} />
-
+        <Route path = '/detalhes' element={<Detalhes/>} />
         <Route path = '/carrinho' element={<Carrinho/>} />
+        <Route path = '/livrodetalhe' element={<LivroDetalhe/>} />
       </Routes>
     </BrowserRouter>
    
