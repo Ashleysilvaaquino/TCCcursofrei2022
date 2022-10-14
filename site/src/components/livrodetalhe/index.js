@@ -5,8 +5,24 @@ import Esperto from '../../assets/images/esperto.png';
 import Favorito from '../../assets/images/favorito.png';
 import Close from '../../assets/images/Close.png'; 
 
+import Storage from 'local-storage'
+
 function LivroDetalhe(){
     const [livros, setLivros] = useState([]);
+
+    function adicionarAoCarrinho(){
+        let carrinho = [];
+        if(Storage('carrinho')){
+            carrinho = Storage('carrinho');
+        }
+        if(!carrinho.find(item.id === id)){
+            carrinho.push({
+                id:id,
+                qtd:1
+            })
+         Storage('carrinho, carrinho');    
+        } 
+    }
     
 
     return(
@@ -35,7 +51,7 @@ function LivroDetalhe(){
         </div>
         
         <div className='buttons-pg-detalhe'>
-            <button className='button-add'>ADICIONAR AO CARRINHO</button>
+            <button onClick={adicionarAoCarrinho} className='button-add'>ADICIONAR AO CARRINHO</button>
             <button className='button-comprar'>COMPRAR</button>
         </div>
 
