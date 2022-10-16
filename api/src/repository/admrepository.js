@@ -122,4 +122,46 @@ export async function buscarporNome(nome){
      return linhas;
 }
 
+//ENDPOINTS PARA CONEXÃO ALTERAR
 
+//buscar produto por id
+export async function buscarProdutoPorId(id) {
+    const comando =
+        `SELECT id_livro		id,
+                nm_livro		nome,
+                nm_autor	    autor,
+                vl_preco       preco,
+                ds_livro       descricao,
+                nr_paginas     paginas,
+                img_livro      imagem,
+                id_genero      genero
+           FROM tb_livro
+           where id_livro = ?`;
+
+    
+    const [linhas] = await con.query(comando, [id]);
+    return linhas;
+}
+
+export async function buscarProdutoGenero(id_livro) {
+    const comando = 
+    `select id_genero       as id,
+     nm_genero       as nome
+    from tb_genero
+    where id_livro = ?`
+    
+    const [linha] = await con.query(comando, [id_livro]);
+    return linha.map(livro => livro.id);
+    }
+
+    export async function buscarProdutoImagem(id_livro){
+        const comando = 
+        `select img_livro       as imagem,
+        nm_genero       as nome
+        from tb_livro   
+        where id_livro = ?`
+        const [linha] = await con.query(comando, [id_livro]);
+        return linha.map(livro => livro.imagem);
+    }
+
+         
