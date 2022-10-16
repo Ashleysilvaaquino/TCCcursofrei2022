@@ -18,5 +18,6 @@ server.use('/storage/capalivros', express.static('storage/capalivros'));
 server.use(admcontroller);
 server.use(usuariocontroller);
 
+server.use('/storage/livro', express.static('storage/livro'));
 
 server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`));

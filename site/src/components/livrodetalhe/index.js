@@ -15,9 +15,9 @@ function LivroDetalhe(){
         if(Storage('carrinho')){
             carrinho = Storage('carrinho');
         }
-        if(!carrinho.find(item.id === id)){
+        if(!carrinho.find(livros.id === livros.id)){
             carrinho.push({
-                id:id,
+                id: livros.id,
                 qtd:1
             })
          Storage('carrinho, carrinho');    

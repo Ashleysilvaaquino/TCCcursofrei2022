@@ -31,6 +31,7 @@ root.render(
         <Route path = '/' element ={<LandPage/>}/>
         <Route path = '/loginadm' element ={<Loginadm/>}/>
         <Route path = '/cadastrarlivro' element ={<CadastrarLivro/>}/>
+        <Route path = '/cadastrarlivro/:id' element ={<CadastrarLivro/>}/>
         <Route path = '/loginusuario' element ={<LoginUsuario/>}/>
         <Route path = '/cadastrarcliente' element ={<CadastrarCliente/>}/>
         <Route path = '/cardlivro' element ={<CardLivro/>}/>

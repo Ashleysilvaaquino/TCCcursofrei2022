@@ -65,3 +65,8 @@ export async function removerLivro(id){
     const resposta = api.delete(`/livro/${id}`);
     return resposta.status; 
 }
+
+export async function buscarProdutoPorId(id){
+    const resposta = api.get(`/livro` + id);
+    return resposta.status; 
+}
