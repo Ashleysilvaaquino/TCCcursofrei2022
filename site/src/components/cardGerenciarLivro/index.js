@@ -1,6 +1,8 @@
 import './index.scss'
 import lupa from '../../assets/images/lupa-pretinha.png';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 import Lapis from '../../assets/images/lapis.png'
@@ -16,7 +18,8 @@ import { toast } from 'react-toastify';
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
     const [filtro, setFiltro] = useState('');
-   
+    
+       
 
 
     async function filtrar() {
@@ -62,6 +65,7 @@ export default function CardLivro() {
 
     }
 
+   
     return (
         <main>
               <style>
@@ -114,8 +118,9 @@ export default function CardLivro() {
 
                     <div className="imgs">
                         <img src={Lixo} alt="" onClick={() => removerLivroClick(item.id, item.nome)} />
-                        <img src={Lapis} alt="" className='lapis' />
+                        <img src={Lapis} alt="" className='lapis'/>
                     </div>
+                  
 
                 </div>
             )}

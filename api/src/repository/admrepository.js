@@ -151,7 +151,7 @@ export async function buscarProdutoGenero(id_livro) {
     where id_livro = ?`
     
     const [linha] = await con.query(comando, [id_livro]);
-    return linha.map(livro => livro.id);
+    return linha;
     }
 
     export async function buscarProdutoImagem(id_livro){
@@ -161,7 +161,7 @@ export async function buscarProdutoGenero(id_livro) {
         from tb_livro   
         where id_livro = ?`
         const [linha] = await con.query(comando, [id_livro]);
-        return linha.map(livro => livro.imagem);
+        return linha;
     }
 
          

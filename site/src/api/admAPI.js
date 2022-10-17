@@ -67,6 +67,6 @@ export async function removerLivro(id){
 }
 
 export async function buscarProdutoPorId(id){
-    const resposta = api.get(`/livro` + id);
+    const resposta = api.get(`/livro/${id}`);
     return resposta.status; 
 }
