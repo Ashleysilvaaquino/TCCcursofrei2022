@@ -35,4 +35,12 @@ export async function usuarioendereco(cep, numero, estado){
     return r.data;
 } 
 
+export async function LoginCliente(email, senha){
+    const r= await axios.post('http://localhost:5000/cliente/login ', 
+    {
+        email:email, 
+        senha: senha
+    });
 
+    return r.data;
+} 

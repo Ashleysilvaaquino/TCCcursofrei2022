@@ -12,6 +12,7 @@ import ConsultarLivro from './pages/consultarlivros';
 import BarraPesquisa from './components/pesquisa';
 import Detalhes  from './pages/detalheslivro';
 import LivroDetalhe from './components/livrodetalhe';
+import MenuUsuario from './components/menucliente';
 import HomeAdm from './pages/homeadm';
 import Endereco from './pages/endereco'
 import Carrinho from './pages/carrinho';
@@ -43,6 +44,7 @@ root.render(
         <Route path = '/carrinho' element={<Carrinho/>} />
         <Route path = '/livrodetalhe' element={<LivroDetalhe/>} />
         <Route path = '/endereco' element={<Endereco/>} />
+        <Route path = '/menusuario' element={<MenuUsuario/>} />
 
       </Routes>
     </BrowserRouter>

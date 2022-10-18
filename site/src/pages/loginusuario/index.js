@@ -1,4 +1,5 @@
-import axios from "axios";
+
+import {LoginCliente} from '../../api/usuarioAPI'  
 
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -21,40 +22,34 @@ function LoginUsuario() {
 
   useEffect(() => {
       if (storage('usuario-logado')) {
-          navigate('/');
+          navigate('/menusuario');
       }
   }, []);
 
   
 
-  async function entrarClick() {
+  async function entrarClick(){
     ref.current.continuousStart();
     setCarregando(true);
-    try {
-      const r = await axios.post("http://localhost:5000/cliente/login", {
-        email: email,
-        senha: senha,
-      });
-
-      if (r.status === 401) {
-        setErro(r.data.erro);
-      } else {
-        navigate("/");
-      }
-
-        
-      setTimeout(() => {
-        navigate('/');
-    }, 3000);
-
-    } catch (err) {
-      ref.current.complete();
-      setCarregando(false);
-      if (err.response.status === 401) {
-        setErro(err.response.data.erro);
-      }
-    }
-  }
+ 
+    try{
+        const r = await LoginCliente(email,senha);
+       storage('usuario-logado', r)
+       
+        setTimeout(() => {
+            navigate('/menusuario');
+        }, 3000);
+    
+   }
+   catch(err){
+    ref.current.complete();
+    setCarregando(false);
+ 
+        if(err.response.status === 404){
+            setErro(err.response.data.erro);
+        }
+   }
+}
 
   return (
     <div className="pag-total-adm">
