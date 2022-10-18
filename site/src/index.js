@@ -10,7 +10,7 @@ import CadastrarCliente from './pages/cadastrarcliente';
 import PesquisarLivro from './pages/pesquisarlivro';
 import ConsultarLivro from './pages/consultarlivros';
 import BarraPesquisa from './components/pesquisa';
-import Detalhes  from './pages/detalheslivro';
+import Detalhes from './pages/detalheslivro';
 import LivroDetalhe from './components/livrodetalhe';
 import MenuUsuario from './components/menucliente';
 import HomeAdm from './pages/homeadm';
@@ -45,6 +45,7 @@ root.render(
         <Route path = '/livrodetalhe' element={<LivroDetalhe/>} />
         <Route path = '/endereco' element={<Endereco/>} />
         <Route path = '/menusuario' element={<MenuUsuario/>} />
+        <Route path = '/detalhe/:idParam' element={<Detalhes/>} />
 
       </Routes>
     </BrowserRouter>

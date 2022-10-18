@@ -1,9 +1,7 @@
 import './index.scss'
 import lupa from '../../assets/images/lupa-pretinha.png';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-
+import { Link, Navigate } from 'react-router-dom';
 
 import Lapis from '../../assets/images/lapis.png'
 import Lixo from '../../assets/images/lixo.png'
@@ -65,6 +63,10 @@ export default function CardLivro() {
 
     }
 
+    function abrirDetalhes(id){
+        Navigate(`detalhes/${id}`);
+    }
+
    
     return (
         <main>
@@ -80,7 +82,7 @@ export default function CardLivro() {
             </div>
 
             {livros.map(item =>
-                <div className='comp-card' key={item.id}>
+                <div className='comp-card' key={item.id} onClick={() => abrirDetalhes(item.id)}>
 
 
                      <div className='capa'>
@@ -117,7 +119,10 @@ export default function CardLivro() {
 
 
                     <div className="imgs">
-                        <img src={Lixo} alt="" onClick={() => removerLivroClick(item.id, item.nome)} />
+                        <img src={Lixo} alt="" onClick={e =>{
+                            e.stopPropagation();
+                            removerLivroClick(item.id)
+                        }} />
                         <img src={Lapis} alt="" className='lapis'/>
                     </div>
                   
