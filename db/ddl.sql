@@ -23,7 +23,9 @@ ID_CONTA_USUARIO   INT primary key auto_increment,
 NM_USUARIO     VARCHAR(100),
 DS_EMAIL      VARCHAR(100),
 DS_SENHA     VARCHAR(100),
-DS_CELULAR   VARCHAR(100)
+DS_CELULAR   VARCHAR(100),
+ID_USUARIO_ENDERECO		INT,
+foreign key(id_usuario_endereco) references tb_usuario_endereco(id_usuario_endereco)
 );
 
 
@@ -106,6 +108,8 @@ foreign key(id_pedido) references tb_pedido(id_pedido)
 
 create table `tb_item_pedido`(
 id_item_pedido         int primary key auto_increment,
+qtd_itens              int,
+vl_produto             decimal(15,2),
 id_pedido 			   int,
 foreign key(id_pedido) references tb_pedido(id_pedido),
 id_livro 			   int,
