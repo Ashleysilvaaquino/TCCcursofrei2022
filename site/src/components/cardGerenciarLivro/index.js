@@ -73,6 +73,10 @@ export default function CardLivro() {
 
     }
 
+    function abrirDetalhes(id){
+        Navigate(`detalhes/${id}`);
+    }
+
    
     return (
         <main>
@@ -88,7 +92,7 @@ export default function CardLivro() {
             </div>
 
             {livros.map(item =>
-                <div className='comp-card' key={item.id}>
+                <div className='comp-card' key={item.id} onClick={() => abrirDetalhes(item.id)}>
 
 
                      <div className='capa'>
@@ -125,8 +129,11 @@ export default function CardLivro() {
 
 
                     <div className="imgs">
-                        <img src={Lixo} alt="" onClick={() => removerLivroClick(item.id, item.nome)} />
-                        <img src={Lapis} alt="" className='lapis' />
+                        <img src={Lixo} alt="" onClick={e =>{
+                            e.stopPropagation();
+                            removerLivroClick(item.id)
+                        }} />
+                        <img src={Lapis} alt="" className='lapis'/>
                     </div>
                   
 
