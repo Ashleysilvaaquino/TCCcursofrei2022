@@ -16,6 +16,7 @@ import MenuUsuario from './components/menucliente';
 import HomeAdm from './pages/homeadm';
 import Endereco from './pages/endereco'
 import Carrinho from './pages/carrinho';
+import HomeCliente from './pages/homecliente';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -44,6 +45,7 @@ root.render(
         <Route path = '/carrinho' element={<Carrinho/>} />
         <Route path = '/livrodetalhe' element={<LivroDetalhe/>} />
         <Route path = '/endereco' element={<Endereco/>} />
+        <Route path = '/homecliente' element={<HomeCliente/>} />
         <Route path = '/menusuario' element={<MenuUsuario/>} />
 
       </Routes>

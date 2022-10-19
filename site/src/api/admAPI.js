@@ -51,6 +51,10 @@ export async function listarGenero() {
     return r.data;
 }
 
+export async function listartodasimagens(){
+    const resposta = await api.get('/listarimagens');
+    return resposta.data;
+}
 export async function listarTodosLivros(){
     const resposta = await api.get ('/listarlivros');
     return resposta.data;

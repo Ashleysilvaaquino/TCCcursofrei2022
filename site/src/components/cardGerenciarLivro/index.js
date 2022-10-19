@@ -1,14 +1,14 @@
 import './index.scss'
 import lupa from '../../assets/images/lupa-pretinha.png';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 import Lapis from '../../assets/images/lapis.png'
 import Lixo from '../../assets/images/lixo.png'
 
-import { removerLivro, buscarLivrosPorNome, listarTodosLivros } from '../../api/admAPI';
+import { removerLivro, buscarLivrosPorNome, listarTodosLivros, listartodasimagens } from '../../api/admAPI';
 
 import { confirmAlert } from 'react-confirm-alert'
 
@@ -18,6 +18,7 @@ import { toast } from 'react-toastify';
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
     const [filtro, setFiltro] = useState('');
+    const [imagem , setImagem] = useState([]);
     
        
 
@@ -31,12 +32,19 @@ export default function CardLivro() {
         const resp = await listarTodosLivros();
         setLivros(resp);
     }
-
+    
+    async function carregartodasimagens(){
+        const resp = await listartodasimagens();
+        setLivros(resp);
+    }
    
     useEffect(() => {
         carregarTodosLivros();
+        
+
     }, [])
 
+   
    
 
     async function removerLivroClick(id, nome) {
@@ -53,7 +61,7 @@ export default function CardLivro() {
                             carregarTodosLivros();
                          else
                             filtrar();
-                         toast.dark('Livro removido');
+                         toast.dark('Livro removido ✨');
                     }
                 }, 
                 {
@@ -84,7 +92,7 @@ export default function CardLivro() {
 
 
                      <div className='capa'>
-                        <img src={item.imagem}/>
+                      <img src={item.imagem}/>
                      </div>                 
 
 
@@ -118,7 +126,7 @@ export default function CardLivro() {
 
                     <div className="imgs">
                         <img src={Lixo} alt="" onClick={() => removerLivroClick(item.id, item.nome)} />
-                        <img src={Lapis} alt="" className='lapis'/>
+                        <img src={Lapis} alt="" className='lapis' />
                     </div>
                   
 

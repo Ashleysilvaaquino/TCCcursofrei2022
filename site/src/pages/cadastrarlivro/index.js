@@ -2,6 +2,7 @@ import './index.scss'
 import { toast } from 'react-toastify';
 import { enviarimagemLivro, listarGenero, inserirLivro, buscarProdutoPorId } from '../../api/admAPI';
 import { useEffect, useState} from 'react'
+import storage from 'local-storage'
 import { useNavigate, useParams } from 'react-router-dom';
 import Menu from '../../components/menuadm/index.js'
 import Imgcadastro from '../../assets/images/imgcadastro.png'
@@ -86,10 +87,15 @@ export default function CadastrarLivro() {
     }
 
   }
+  
+ 
 
   useEffect(() => {
     carregarGenero();
     carregarProduto();
+    if(!storage('adm-logado')){
+      navigate('/loginadm');
+   }
   }, [])
 
   const navigate = useNavigate();
@@ -169,7 +175,7 @@ export default function CadastrarLivro() {
 
 
 
-          <div className='alterar-botao'>
+          <div className='salvar-botao2'>
             <button onClick={editar}>Alterar</button>
           </div>
 

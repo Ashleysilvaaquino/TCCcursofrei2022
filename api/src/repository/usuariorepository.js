@@ -22,7 +22,7 @@ export async function loginUsuario(email, senha) {
       from tb_conta_usuario
 
      where ds_email = ?
-and ds_senha = ?`
+     and ds_senha = ?`
 
    const resp = await con.query(comando, [email, senha]);
    const linhas = resp[0];

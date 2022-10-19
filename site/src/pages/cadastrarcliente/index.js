@@ -1,7 +1,10 @@
 import './index.scss'
-import logofrei from '../../assets/images/logofrei.png'
+
+import storage from 'local-storage'
+
+import { useNavigate } from 'react-router-dom';
 import { InserirCliente, listarEstado } from '../../api/usuarioAPI';
-import {  useState } from 'react'
+import {  useState, useEffect } from 'react'
 import { toast } from 'react-toastify';
 import {Link} from 'react-router-dom'
 
@@ -20,6 +23,17 @@ export default function CadastrarCliente() {
             toast.dark(err.message);
         }
        }
+
+
+       const navigate = useNavigate();
+    
+    
+   
+       useEffect(() => {
+            if(!storage('adm-logado')){
+               navigate('/loginadm');
+            }
+       }, [])
 
     return (
 

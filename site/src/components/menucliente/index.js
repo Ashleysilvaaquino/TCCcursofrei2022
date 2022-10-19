@@ -21,7 +21,7 @@ export default function MenuUsuario(){
    
 
    return(
-      <nav className="menu-total">
+      <nav className="menu-total2">
           <style>
           @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
       </style>
@@ -32,16 +32,16 @@ export default function MenuUsuario(){
          <div className='items'>
              <div>
               <img src={Perfil}  />
-              <div><Link to='/admhome'>Meu perfil</Link></div>
+              <div><Link to='/homecliente'>Meu perfil</Link></div>
             </div>
 
             <div>
                <img src={Site} />
-               <div><Link to='/cadastrarlivro'>Visitar Site</Link></div>
+               <div><Link to=''>Visitar Site</Link></div>
             </div>
             <div>
-               <img src={Carrinho} />
-               <div><Link to='/consultarlivro'>Meu carrinho</Link></div>
+               <img src={Carrinho} className='imgcarrinho'/>
+               <div ><Link to=''>Meu carrinho</Link></div>
             </div>
             <div>
                <img src={Favoritos}/>

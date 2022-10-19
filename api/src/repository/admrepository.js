@@ -23,8 +23,37 @@ export async function inserirImagem(imagem , id){
 
      const [resposta] = await con.query(comando, [imagem, id]);
      return resposta.affectedRows;
+     
+    }
+    
+    //listar imagem 
+    export async function listarImagens(){
+        const comando = 
+        `SELECT img_livro   imagem
+        from tb_livro`
 
-}
+        const [linhas] = await con.query(comando);
+        return linhas;
+        
+    }
+    
+    //listar livros
+    export async function listarTodosLivros() {
+       const comando =
+           `SELECT id_livro		id,
+                   nm_livro		nome,
+                   nm_autor	    autor,
+                   vl_preco       preco,
+                   ds_livro       descricao,
+                   nr_paginas     paginas,
+                   img_livro      imagem,
+                   id_genero      genero
+              FROM tb_livro`;
+       
+       const [linhas] = await con.query(comando);
+       return linhas;
+    }
+
 
 //adm logar
 export async function loginAdm(email,senha){
@@ -85,22 +114,7 @@ export async function alterarLivro(id, livro){
  }
 
 
- //listar livros
- export async function listarTodosLivros() {
-    const comando =
-        `SELECT id_livro		id,
-                nm_livro		nome,
-                nm_autor	    autor,
-                vl_preco       preco,
-                ds_livro       descricao,
-                nr_paginas     paginas,
-                img_livro      imagem,
-                id_genero      genero
-           FROM tb_livro`;
     
-    const [linhas] = await con.query(comando);
-    return linhas;
-}
 
 
 

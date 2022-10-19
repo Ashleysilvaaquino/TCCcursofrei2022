@@ -43,7 +43,7 @@ server.post('/cliente/login', async (req, resp) => {
         if(!resposta){
             throw new Error('Credenciais invalidas')
         }
-        resp.send(resposta)
+        resp.send(resposta);
     } catch (err) {
         resp.status(401).send({
             erro: err.message

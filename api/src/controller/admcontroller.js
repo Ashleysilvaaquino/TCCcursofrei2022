@@ -1,4 +1,4 @@
-import { alterarLivro, inserirImagem, inserirLivro, listarGenero, listarTodosLivros, loginAdm, removerLivro, buscarporNome, buscarProdutoPorId, buscarProdutoGenero, buscarProdutoImagem } from "../repository/admrepository.js";
+import { alterarLivro, inserirImagem, inserirLivro, listarGenero, listarTodosLivros, loginAdm, removerLivro, buscarporNome, buscarProdutoPorId, buscarProdutoGenero, buscarProdutoImagem, listarImagens } from "../repository/admrepository.js";
 import { Router } from "express";
 import multer from 'multer'
 const server = Router();
@@ -156,7 +156,17 @@ server.put('/livro/:id', async (req, resp) => {
     }
 })
 
-
+//listar todas as imagens 
+server.get('/listarimagens', async (req,resp) => {
+    try {
+        const resposta = await listarImagens();
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 
