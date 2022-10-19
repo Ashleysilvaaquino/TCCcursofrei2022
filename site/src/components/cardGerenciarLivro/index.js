@@ -37,6 +37,8 @@ export default function CardLivro() {
         const resp = await listartodasimagens();
         setLivros(resp);
     }
+
+    const navigate = useNavigate();
    
     useEffect(() => {
         carregarTodosLivros();
@@ -74,7 +76,7 @@ export default function CardLivro() {
     }
 
     function abrirDetalhes(id){
-        Navigate(`detalhes/${id}`);
+        navigate(`detalhes/${id}`);
     }
 
    
