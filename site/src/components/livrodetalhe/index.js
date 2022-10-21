@@ -1,5 +1,5 @@
 import './index.scss'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Esperto from '../../assets/images/esperto.png';
 import Favorito from '../../assets/images/favorito.png';

@@ -3,6 +3,7 @@ import lupa from '../../assets/images/lupa-pretinha.png';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { API_URL } from '../../api/config'
 
 
 import Lapis from '../../assets/images/lapis.png'
@@ -18,7 +19,7 @@ import { toast } from 'react-toastify';
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
     const [filtro, setFiltro] = useState('');
-    const [imagem , setImagem] = useState([]);
+  
     
        
 
@@ -33,17 +34,11 @@ export default function CardLivro() {
         setLivros(resp);
     }
     
-    async function carregartodasimagens(){
-        const resp = await listartodasimagens();
-        setLivros(resp);
-    }
-
+  
     const navigate = useNavigate();
    
     useEffect(() => {
         carregarTodosLivros();
-        
-
     }, [])
 
    
@@ -98,7 +93,7 @@ export default function CardLivro() {
 
 
                      <div className='capa'>
-                      <img src={item.imagem}/>
+                      <img src={API_URL + '/' + item.imagem}/>
                      </div>                 
 
 
@@ -133,7 +128,7 @@ export default function CardLivro() {
                     <div className="imgs">
                         <img src={Lixo} alt="" onClick={e =>{
                             e.stopPropagation();
-                            removerLivroClick(item.id)
+                            removerLivroClick(item.id, item.nome)
                         }} />
                         <img src={Lapis} alt="" className='lapis'/>
                     </div>

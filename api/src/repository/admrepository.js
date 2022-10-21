@@ -1,3 +1,4 @@
+
 import { con } from   './connection.js';
 
 //inserir um ivro
@@ -51,6 +52,7 @@ export async function inserirImagem(imagem , id){
               FROM tb_livro`;
        
        const [linhas] = await con.query(comando);
+       
        return linhas;
     }
 
@@ -133,6 +135,7 @@ export async function buscarporNome(nome){
 
 
      const [linhas] = await con.query(comando, [`%${nome}%`]);
+
      return linhas;
 }
 
