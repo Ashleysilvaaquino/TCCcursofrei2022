@@ -72,7 +72,7 @@ main{
             display: flex;
             flex-direction: column;
             
-            margin-top: 18px;
+            margin-top: 70px;
             font-size: 20px;
             outline: none;
             font-family: monospace;
@@ -89,8 +89,10 @@ main{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            padding-top: 60px;
-            padding-left: 21em;
+            position: absolute;
+            top: 90%;
+            left: 44%;
+          
 
             button{
                 background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
@@ -135,13 +137,13 @@ main{
             display: flex;
             justify-content: center;
          
-            padding-right: 68px;
+            padding-right: 30px;
             
             h1{
                 font-size: 30px;
                 font-family: 'Oswald', sans-serif;
                 font-weight: normal;
-              
+                font-weight: bold;              
             }
             h1:hover{
                 animation-name: botao;

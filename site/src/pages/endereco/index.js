@@ -16,7 +16,7 @@ export default function Endereco() {
       </style>
 
       <section>
-        <div className="titulo">
+        <div className="titulo2">
           <h1>LIVRARIA MONTES</h1>
         </div>
         <div className="voltar">
@@ -25,6 +25,8 @@ export default function Endereco() {
       </section>
 
       <section className="formulario">
+
+        <h1>CADASTRE SEU <span> ENDEREÇO </span></h1>
         <div className="cep">
           <label>CEP:</label>
           <input type="text" placeholder="Ex: 22222-222" />

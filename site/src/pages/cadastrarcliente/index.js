@@ -83,11 +83,11 @@ export default function CadastrarCliente() {
 
                 </div>
 
-
                 <div className="botaoo">
                     <button onClick={salvarClick}>Cadastrar</button>
                 </div>
             </section>
+
         </div>
         </main>
     )
