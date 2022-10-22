@@ -15,8 +15,10 @@ import LivroDetalhe from './components/livrodetalhe';
 import MenuUsuario from './components/menucliente';
 import HomeAdm from './pages/homeadm';
 import Endereco from './pages/endereco'
-import Carrinho from './pages/carrinho';
+import Carrinhocard from './components//cardcarrinho/index';
 import HomeCliente from './pages/homecliente';
+import Carrinho from './pages/carrinho';
+
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -43,12 +45,14 @@ root.render(
         <Route path = '/comppesquisa' element={<BarraPesquisa/>} />
         <Route path = '/admhome' element={<HomeAdm/>} />
         <Route path = '/detalhes' element={<Detalhes/>} />
-        <Route path = '/carrinho' element={<Carrinho/>} />
+        <Route path = '/carrinhocard' element={<Carrinhocard/>} />
         <Route path = '/livrodetalhe' element={<LivroDetalhe/>} />
         <Route path = '/endereco' element={<Endereco/>} />
         <Route path = '/homecliente' element={<HomeCliente/>} />
         <Route path = '/menusuario' element={<MenuUsuario/>} />
         <Route path = '/detalhe/:idParam' element={<Detalhes/>} />
+        <Route path = 'carrinho' element={<Carrinho/>} />
+      
 
       </Routes>
     </BrowserRouter>

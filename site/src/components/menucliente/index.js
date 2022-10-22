@@ -41,7 +41,7 @@ export default function MenuUsuario(){
             </div>
             <div>
                <img src={Carrinho} className='imgcarrinho'/>
-               <div ><Link to=''>Meu carrinho</Link></div>
+               <div ><Link to='/carrinho'>Meu carrinho</Link></div>
             </div>
             <div>
                <img src={Favoritos}/>

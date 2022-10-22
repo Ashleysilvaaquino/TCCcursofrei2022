@@ -1,0 +1,115 @@
+.comp-card2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 50px;
+        border-radius: 10px;
+        padding: 15px 0px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        width: 715px;
+        height: 215px; 
+        background: #FFFFFF;
+        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    
+
+
+    .botao-comprarcarrinho{
+        
+       position: relative;
+       top: 65%;
+       right: 5%;
+              
+
+         
+        button{
+            background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
+            border: none;
+            width: 100px;
+            height: 35px;
+            border-radius: 10px;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            font-family: 'Oswald', sans-serif ;
+            
+            font-size: 20px; 
+            padding-bottom: 8px;
+
+        }      
+            button:hover{
+                animation-name: botao;
+                animation-duration: 0.5s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+    
+        
+    }
+
+    .coluna-tx{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-family: 'Oswald', sans-serif;
+        padding-bottom: 50px;
+        padding-left: 70px;
+               
+    }
+    .capa img {
+        width: 100px;
+        padding-left: 40px;
+    }
+
+    .capa {
+
+        margin-top: 25px;
+
+        height: 170px;
+        width: 100px;
+
+    }
+    .total{
+        padding-left: 25px;
+        font-family: 'Oswald', sans-serif;
+        margin-top: 8px;
+        label{
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+        }
+    }
+
+    .quantidade{
+        padding-left: 25px;
+        font-family: 'Oswald', sans-serif;
+        margin-top: 8px;
+        label{
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+        }
+    }
+
+    .preco2{
+        padding-left: 50px;
+        font-family: 'Oswald', sans-serif;
+        margin-top: 8px;
+        label{
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+        }
+    }
+}
+
+    
+    
+
+
+@keyframes botao {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
