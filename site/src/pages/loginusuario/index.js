@@ -37,7 +37,7 @@ function LoginUsuario() {
        storage('usuario-logado', r)
        
         setTimeout(() => {
-            navigate('/menusuario');
+            navigate('/homecliente');
         }, 3000);
     
    }

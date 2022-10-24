@@ -93,6 +93,7 @@ export default function CadastrarLivro() {
   useEffect(() => {
     carregarGenero();
     carregarProduto();
+    
     if (!storage('adm-logado')) {
       navigate('/loginadm');
     }

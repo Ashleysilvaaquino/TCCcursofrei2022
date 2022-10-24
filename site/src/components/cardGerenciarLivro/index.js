@@ -37,11 +37,8 @@ export default function CardLivro() {
   
     const navigate = useNavigate();
    
-    useEffect(() => {
-        carregarTodosLivros();
-    }, [])
-
-   
+    
+    
    
 
     async function removerLivroClick(id, nome) {
@@ -55,24 +52,30 @@ export default function CardLivro() {
                         console.log();
                          const resposta = await removerLivro(id, nome);
                          if(filtro === '')
-                            carregarTodosLivros();
+                         carregarTodosLivros();
                          else
-                            filtrar();
+                         filtrar();
                          toast.dark('Livro removido ✨');
+                        }
+                    }, 
+                    {
+                        label: 'Não'
                     }
-                }, 
-                {
-                    label: 'Não'
-                }
-            ]
-        })
+                ]
+            })
+            
+            
+        }
+        
+        function abrirDetalhes(id){
+            navigate(`detalhes/${id}`);
+        }
 
-
-    }
-
-    function abrirDetalhes(id){
-        navigate(`detalhes/${id}`);
-    }
+        useEffect(() => {
+            carregarTodosLivros();
+            buscarLivrosPorNome();
+           
+        }, [])
 
    
     return (

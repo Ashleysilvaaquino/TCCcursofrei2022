@@ -134,8 +134,7 @@ export async function buscarporNome(nome){
      where nm_livro like ?`;
 
 
-     const [linhas] = await con.query(comando, [`%${nome}%`]);
-
+     const [linhas] = await con.query(comando, [`${nome}%`]);
      return linhas;
 }
 
