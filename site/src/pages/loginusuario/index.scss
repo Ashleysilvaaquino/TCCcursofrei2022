@@ -31,7 +31,7 @@
 .cabecalho-login{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 90px;
 
         .text-principal{
         
@@ -41,6 +41,7 @@
         line-height: 58px;
         text-align: center;
         margin-right: 45px;
+        font-weight: bold;
 
         
 
@@ -121,7 +122,7 @@
         color: #FFFFFF;
         position: absolute;
         left: 85%;
-        top: 90%;
+        top: 85%;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         border: none;
@@ -165,12 +166,13 @@
 
 
 .cadastrar-agora{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 20px;
+    position: relative;
+    top: 70%;
+    margin-left: 45px;
+
+    padding-top: 250px;
     
-    padding-top: 100px;
+ 
 
     color: #000000;
     font-family: 'Oswald', sans-serif;
