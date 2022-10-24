@@ -1,13 +1,18 @@
-import { loginUsuario } from "../repository/usuariorepository"; 
+import { loginUsuario } from "../repository/usuariorepository.js"; 
 
 import { Router } from 'express'
+import { listarEndereco, salvarEndereco } from "../repository/enderecoRepository.js";
 const server = Router();
     
 
 server.get('/api/usuario/:id/endereco' , async (req , resp) => {
     try {
         
+        const id = req.params.id;
 
+        const r = await listarEndereco(id);
+
+        resp.send(r);
 
     } catch (err) {
         resp.status(404).send({
@@ -19,6 +24,11 @@ server.get('/api/usuario/:id/endereco' , async (req , resp) => {
 server.post('/api/usuario/:id/endereco' , async (req , resp) => {
     try {
         
+        const id = req.params.id;
+        const endereco = req.body;
+
+        const r =  await salvarEndereco(id , endereco);
+        resp.status(204).send();
 
 
     } catch (err) {
@@ -27,3 +37,5 @@ server.post('/api/usuario/:id/endereco' , async (req , resp) => {
         })
     }
 });
+
+export default server;
