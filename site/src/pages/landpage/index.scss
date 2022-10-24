@@ -62,5 +62,85 @@
     .pt-carrosel{
         background-color: #3E7797;
     }
+    .explore-os-montes{
+        padding-top: 20px;
+        font-family: 'Sansita';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 43px;
+        text-align: center;
+        
+        color: #000000;
+        span{
+            color: #ffffff;
+        }
+    }
+
+    .carrosel-pt1{
+        display: flex;
+        flex-direction: row;
+        color: #ffffff;
+    }
     
+    .img-set-esq{
+        width: 90px;
+        height: 90px;
+        padding-top: 20px;
+    }
+    .img-set-dir{
+        width: 90px;
+        height: 90px;
+        padding-top: 20px;
+    }
+    .img-terror{
+        width: 130px;
+        height: 130px;  
+    }
+    .img-infantil{
+        width: 140px;
+        height: 140px;     
+    }
+    .img-programacao{
+        width: 130px;
+        height: 130px;    
+    }
+    .img-psico{
+        width: 140px;
+        height: 140px; 
+    }
+    .img-romance{
+        width: 140px;
+        height: 140px; 
+    }
+
+    .div-terror{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .div-infantil{
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 60px;
+    }
+
+    .div-programacao{
+        text-align: center;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 60px;
+    }
+
+    .div-psico{
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 60px; 
+    }
+
+    .div-romance{
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 60px; 
+    }
 }
