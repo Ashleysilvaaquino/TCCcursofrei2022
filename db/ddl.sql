@@ -4,6 +4,16 @@ CREATE DATABASE if not exists Livrariamontesdb;
 use Livrariamontesdb;
 
 
+
+
+create table `tb_conta_usuario` (
+ID_CONTA_USUARIO   INT primary key auto_increment,
+NM_USUARIO     VARCHAR(100),
+DS_EMAIL      VARCHAR(100),
+DS_SENHA     VARCHAR(100),
+DS_CELULAR   VARCHAR(100)
+);
+
 CREATE TABLE `tb_usuario_endereco` (
 ID_USUARIO_ENDERECO     INT primary key auto_increment,
 ID_USUARIO				INT,
@@ -14,19 +24,10 @@ DS_CIDADE				varchar(100),
 DS_LOGRADOURO			varchar(300),
 DS_COMPLEMENTO			varchar(100),
 DS_BAIRRO				varchar(100),
-foreign key (ID_USUARIO) references TB_USUARIO (ID_USUARIO)
+id_conta_usuario				int,
+foreign key (ID_CONTA_USUARIO) references TB_CONTA_USUARIO (ID_CONTA_USUARIO)
 );
 
-
-create table `tb_conta_usuario` (
-ID_CONTA_USUARIO   INT primary key auto_increment,
-NM_USUARIO     VARCHAR(100),
-DS_EMAIL      VARCHAR(100),
-DS_SENHA     VARCHAR(100),
-DS_CELULAR   VARCHAR(100),
-ID_USUARIO_ENDERECO		INT,
-foreign key(id_usuario_endereco) references tb_usuario_endereco(id_usuario_endereco)
-);
 
 
 
