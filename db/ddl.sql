@@ -4,17 +4,17 @@ CREATE DATABASE if not exists Livrariamontesdb;
 use Livrariamontesdb;
 
 
-create table `tb_estado` (
-ID_ESTADO   int primary key auto_increment,
-nm_estado varchar(100)
-);
-
 CREATE TABLE `tb_usuario_endereco` (
 ID_USUARIO_ENDERECO     INT primary key auto_increment,
+ID_USUARIO				INT,
 NR_CEP  				VARCHAR(100),
 NR_RESIDENCIA			int,
-ID_ESTADO 				int,
-foreign key(id_estado) references tb_estado(id_estado)
+DS_ESTADO 				int,
+DS_CIDADE				varchar(100),
+DS_LOGRADOURO			varchar(300),
+DS_COMPLEMENTO			varchar(100),
+DS_BAIRRO				varchar(100),
+foreign key (ID_USUARIO) references TB_USUARIO (ID_USUARIO)
 );
 
 
