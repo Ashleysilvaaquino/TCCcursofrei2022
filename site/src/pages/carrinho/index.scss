@@ -1,0 +1,22 @@
+.pg-consultar{
+    display: flex; 
+    flex-direction: row;
+    
+
+    
+  
+    .coluna-dir{
+        display: flex;
+        flex-direction: column;
+       
+        width:100%;   
+    }
+
+    .f-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 10px;
+       
+    }
+}
