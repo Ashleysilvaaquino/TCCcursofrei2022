@@ -61,6 +61,7 @@
     }
     .pt-carrosel{
         background-color: #3E7797;
+        height: 280px;
     }
     .explore-os-montes{
         padding-top: 20px;
@@ -86,16 +87,19 @@
     .img-set-esq{
         width: 90px;
         height: 90px;
-        padding-top: 20px;
+        padding-top: 40px;
+        margin-left: 10PX;
     }
     .img-set-dir{
         width: 90px;
         height: 90px;
-        padding-top: 20px;
+        padding-top: 40px;
+        margin-left: 40PX;
     }
     .img-terror{
         width: 130px;
-        height: 130px;  
+        height: 130px;
+        margin-left: 20PX;  
     }
     .img-infantil{
         width: 140px;
@@ -122,25 +126,318 @@
     .div-infantil{
         text-align: center;
         margin-top: 10px;
-        margin-left: 60px;
+        margin-left: 140px;
     }
 
     .div-programacao{
         text-align: center;
         text-align: center;
         margin-top: 20px;
-        margin-left: 60px;
+        margin-left: 140px;
     }
 
     .div-psico{
         text-align: center;
         margin-top: 10px;
-        margin-left: 60px; 
+        margin-left: 140px; 
     }
 
     .div-romance{
         text-align: center;
         margin-top: 10px;
-        margin-left: 60px; 
+        margin-left: 140px; 
+    }
+
+    .novidades-ladpage{
+        font-family: 'Sansita';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 42px;
+        text-align: center;
+
+        margin-top: 10px;
+    }
+
+
+    .beneficios-landpage{
+        background-image: url(../../assets/images/background.png);
+        width: 1485px;
+        height: 633px;
+
+        .titulo-land{
+            font-family: 'Fascinate Inline';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 47px;
+            text-align: center;
+
+            color: #FFFFFF;
+        }
+
+        .paragrafos-landpage{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .paragrafo1-landpage{
+            display: flex;
+            flex-direction: column;
+
+            color: #ffffff;
+            width: 350px;
+            height: 240px;
+            
+            background: #004064;
+            border-radius: 30px;
+
+            font-family: 'Kantumruy';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 29px;
+
+            margin-left: 80px;
+
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+            
+
+        }
+
+        .menina{
+            width: 417px;
+            height: 358.36px;
+
+            margin-left: 500px;
+            margin-top: -10px;
+            
+        }
+    }
+
+    .agazinho2{
+        width: 460px;
+        height: 19px;
+
+        font-family: 'Sansita';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 40px;
+        text-align: center;
+        
+        margin-left: 110px;
+        margin-top: 90px;
+
+        span{
+            color: 
+            #3E7797;
+        }
+
+        
+    }
+    .div-isabella{
+            display: flex;
+            flex-direction: row;
+
+            margin-top: 20px;
+        }
+
+    .foto-isabella{
+        margin-left: 70px;
+        margin-top: 50px;
+    }
+    .txt-desenvolvedora{
+        margin-left: 20px;
+        margin-top: 70px;
+
+        font-family: 'Kantumruy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 51px;
+        
+    }
+
+    .div-ashley{
+        display: flex;
+        flex-direction: row;
+
+        margin-top: 20px;
+
+        .img-ashley{
+            margin-left: 70px;
+           
+
+            width: 85px;
+            height: 85px;
+        }
+        .txt-desenvolvedora1{
+            margin-left: 20px;
+            margin-top: 20px;
+    
+            font-family: 'Kantumruy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 51px;
+            
+        }
+        
+    }
+
+    .div-ana{
+        display: flex;
+        flex-direction: row;
+
+        margin-top: 20px;
+
+        .foto-ana{
+            margin-left: 70px;
+           
+
+            width: 85px;
+            height: 85px;
+        }
+        .txt-desenvolvedora2{
+            margin-left: 20px;
+            margin-top: 20px;
+    
+            font-family: 'Kantumruy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 51px;
+            
+        }
+    }
+
+    .div-guilherme{
+        display: flex;
+        flex-direction: row;
+
+        margin-top: 20px;
+
+        .foto-guilherme{
+            margin-left: 70px;
+           
+
+            width: 85px;
+            height: 85px;
+        }
+        .txt-desenvolvedora2{
+            margin-left: 20px;
+            margin-top: 20px;
+    
+            font-family: 'Kantumruy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 51px;
+            
+        }
+    }
+
+    .hagazinhooo2{
+        margin-top: -400px;
+        margin-left: 850px;
+
+        font-family: 'Sansita';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 42px;
+        text-align: center;
+
+        span{
+            color: 
+            #3E7797;
+        }
+    }
+
+    .quemsomos-desc{
+        margin-top: 10px;
+        margin-left: 940px;
+        
+        padding: 20px;
+        
+        font-family: 'Sansita';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+
+        color: #FFFFFF;
+        background-color: #3E7797;
+
+        border-radius: 32.6184px;
+
+        width: 400px;
+        height: 200px;
+    }
+
+    .nos{
+        margin-left: 40px;
+    }
+
+    .mulher-ti{
+        width: 270px;
+        height: 270px;
+
+        margin-left: 600px;
+        margin-top: -80px;
+    }
+
+    .rodape-landapage{
+        width: 1480px;
+        height: 150px;
+        
+        background: #CECCCC;
+
+        display: flex;
+        flex-direction: row;
+
+        .p-pagamento{
+            margin-left: 100px;
+            padding-top: 10px;
+            
+
+            font-family: 'Sansita';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 34px;
+            
+
+            color: #000000;
+        }
+
+        .r-redes{
+            margin-left: 300px;
+            padding-top: 10px;
+            
+
+            font-family: 'Sansita';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 34px;
+            
+
+            color: #000000;
+        }
+
+        .div-insta{
+            display: flex;
+            flex-direction: row;
+
+            img{
+                margin-top: -33px;
+                margin-left: 298px;
+            }
+        }
     }
 }
