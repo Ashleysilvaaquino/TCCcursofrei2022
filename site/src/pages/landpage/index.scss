@@ -13,7 +13,7 @@
 
     .logo-branca {
         color: #ffffff;
-        font-family: 'Milonga';
+        font-family: 'oswald';
         font-style: normal;
         font-weight: 400;
         font-size: 28.5778px;
@@ -30,7 +30,7 @@
     .login>img {
         height: 36px;
         width: 36px;
-        margin-top: 40px;
+       
     }
 
     .login>p {
@@ -43,6 +43,7 @@
     .carrinho {
         display: flex;
         flex-direction: column;
+       
     }
 
     .carrinho>img {
@@ -162,7 +163,8 @@
 
     .beneficios-landpage{
         background-image: url(../../assets/images/background.png);
-        width: 1485px;
+        background-repeat: no-repeat;
+        width: 1500px;
         height: 633px;
 
         .titulo-land{
@@ -180,6 +182,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+         
         }
 
         .paragrafo1-landpage{
@@ -213,7 +216,7 @@
             height: 358.36px;
 
             margin-left: 500px;
-            margin-top: -10px;
+            
             
         }
     }

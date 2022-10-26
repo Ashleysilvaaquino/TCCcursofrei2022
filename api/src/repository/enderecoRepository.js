@@ -1,4 +1,4 @@
-import { con } from "./connection";
+import { con } from './connection.js';
 
 //login usuario
 export async function listarEndereco(ID_CONTA_USUARIO) {

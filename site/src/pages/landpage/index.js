@@ -1,6 +1,5 @@
 
 import './index.scss';
-
 import login from '../../assets/images/login.png'
 import carrinho from '../../assets/images/carrinho.png'
 import BarraPesquisa from '../../components/pesquisa';
