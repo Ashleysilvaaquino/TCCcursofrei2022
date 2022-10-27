@@ -20,6 +20,7 @@ import Pagamento from '../../assets/images/pagamento.png'
 import Tiktok from '../../assets/images/TikTok.png'
 import Instagram from '../../assets/images/Instagram.png'
 import Email from '../../assets/images/email.png'
+import LivroUsuario from '../../components/livrousuario';
 
 
 
@@ -48,6 +49,7 @@ function LandPage() {
             <div className='pt-carrosel'>
                 <div>
                     <p className='explore-os-montes'>EXPLORE OS <span>MONTES</span></p>
+                    
                     <div className='carrosel-pt1'>
                         <img src={SetEsq} className='img-set-esq' />
                         <div className='div-terror'>
@@ -77,23 +79,23 @@ function LandPage() {
 
             <div>
                 <h3 className='novidades-ladpage'>Novidades que você precisa conhecer</h3>
-                <div>
+                <div className='livros-landpage'>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                </div>
+                <div className='livros-landpage'>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
+                    <LivroUsuario/>
                 </div>
             </div>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            
 
             <div className='beneficios-landpage'>
                 <h2 className='titulo-land'>Beneficios da leitura</h2>

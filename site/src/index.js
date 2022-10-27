@@ -19,6 +19,7 @@ import Endereco from './pages/endereco'
 import Carrinhocard from './components//cardcarrinho/index';
 import HomeCliente from './pages/homecliente';
 import Carrinho from './pages/carrinho';
+import LivroUsuario from './components/livrousuario';
 
 
 
@@ -53,7 +54,8 @@ root.render(
         <Route path = '/menusuario' element={<MenuUsuario/>} />
         <Route path = '/detalhe/:idParam' element={<Detalhes/>} />
         <Route path = 'carrinho' element={<Carrinho/>} />
-      
+        <Route path = 'livrousuario' element={<LivroUsuario/>} />
+
 
       </Routes>
     </BrowserRouter>
