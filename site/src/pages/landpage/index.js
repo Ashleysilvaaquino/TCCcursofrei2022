@@ -21,6 +21,7 @@ import Tiktok from '../../assets/images/TikTok.png'
 import Instagram from '../../assets/images/Instagram.png'
 import Email from '../../assets/images/email.png'
 import LivroUsuario from '../../components/livrousuario';
+import { Link } from 'react-router-dom';
 
 
 
@@ -35,7 +36,7 @@ function LandPage() {
                 </div>
 
                 <div className='login'>
-                    <img src={login} />
+                     <Link to="/loginusuario" className='login'> <img src={login}/></Link>
                     <p>Login</p>
                 </div>
                 <div className='carrinho'>
