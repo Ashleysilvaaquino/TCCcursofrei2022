@@ -46,6 +46,18 @@ export async function enviarimagemLivro(id,imagem){
       return resposta.status;
 }
 
+export async function alterarLivro(nome, autor, preco, descricao, paginas, genero){
+    const r = await api.put(`/livro/${id}`,{
+        nome,
+        autor,
+        preco,
+        descricao,
+        paginas,
+        genero
+    })
+    return r.data;
+}
+
 export async function listarGenero() {
     const r = await api.get('/genero');
     return r.data;
@@ -74,3 +86,5 @@ export async function buscarProdutoPorId(id){
     const resposta = api.get(`/livro/${id}`);
     return resposta.status; 
 }
+
+

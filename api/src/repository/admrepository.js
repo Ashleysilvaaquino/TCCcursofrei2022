@@ -143,40 +143,40 @@ export async function buscarporNome(nome){
 //buscar produto por id
 export async function buscarProdutoPorId(id) {
     const comando =
-        `SELECT id_livro		id,
-                nm_livro		nome,
-                nm_autor	    autor,
-                vl_preco       preco,
-                ds_livro       descricao,
-                nr_paginas     paginas,
-                img_livro      imagem,
-                id_genero      genero
+        `SELECT id_livro		as id,
+                nm_livro		as nome,
+                nm_autor	    as autor,
+                vl_preco       as preco,
+                ds_livro       as descricao,
+                nr_paginas     as paginas,
+                img_livro      as imagem,
+                id_genero     as genero
            FROM tb_livro
-           where id_livro = ?`;
+           WHERE id_livro = ?`;
 
     
     const [linhas] = await con.query(comando, [id]);
-    return linhas;
+    return linhas[0];
 }
 
-export async function buscarProdutoGenero(id_livro) {
+export async function buscarProdutoGenero(id) {
     const comando = 
     `select id_genero       as id,
      nm_genero       as nome
     from tb_genero
-    where id_livro = ?`
+    where id_genero = ?`
     
-    const [linha] = await con.query(comando, [id_livro]);
+    const [linha] = await con.query(comando, [id]);
     return linha;
     }
 
-    export async function buscarProdutoImagem(id_livro){
+    export async function buscarProdutoImagem(id){
         const comando = 
-        `select img_livro       as imagem,
-        nm_genero       as nome
+        `select img_livro       as imagem
+
         from tb_livro   
         where id_livro = ?`
-        const [linha] = await con.query(comando, [id_livro]);
+        const [linha] = await con.query(comando, [id]);
         return linha;
     }
 

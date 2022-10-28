@@ -1,6 +1,6 @@
 import './index.scss'
 import { toast } from 'react-toastify';
-import { enviarimagemLivro, listarGenero, inserirLivro, buscarProdutoPorId } from '../../api/admAPI';
+import { enviarimagemLivro, listarGenero, inserirLivro, buscarProdutoPorId, alterarLivro } from '../../api/admAPI';
 import { useEffect, useState } from 'react'
 import storage from 'local-storage'
 import { useNavigate, useParams } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { API_URL } from '../../api/config';
 
 export default function CadastrarLivro() {
   const [nome, setNome] = useState('');
-  const [idlivro, setIdLivro] = useState('');
+  const [idlivro, setIdLivro] = useState(0);
   const [autor, setAutor] = useState('');
   const [preco, setPreco] = useState('');
   const [descricao, setDescricao] = useState('');
@@ -31,13 +31,23 @@ export default function CadastrarLivro() {
     try {
       if (!imagem)
         throw new Error('Escolha uma capa para o livro');
+      if(id == 0){
+        const produtoLivro = Number(preco.replace(',', '.'));
+        const r = await inserirLivro(nome, autor, produtoLivro, descricao, paginas, idgenero);
+        await enviarimagemLivro(r.id, imagem);
+        toast.dark('📚 Livro cadastrado com sucesso!');
 
-      const produtoLivro = Number(preco.replace(',', '.'));
-      const r = await inserirLivro(nome, autor, produtoLivro, descricao, paginas, idgenero);
-      await enviarimagemLivro(r.id, imagem);
-      toast.dark('📚 Livro cadastrado com sucesso!');
+      }
+
+      else{
+        await alterarLivro(nome, autor, preco, descricao, paginas, genero);
+        await enviarimagemLivro(id, imagem);
+        toast.dark('📚 Livro alterado com sucesso!');
+        
+      }
     }
     catch (err) {
+  
       if (err.response) {
         toast.error(err.response.data.erro);
       } else {
