@@ -1,7 +1,7 @@
 import './index.scss'
 import lupa from '../../assets/images/lupa-pretinha.png';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,useParams } from 'react-router-dom';
 
 import { API_URL } from '../../api/config'
 
@@ -9,7 +9,7 @@ import { API_URL } from '../../api/config'
 import Lapis from '../../assets/images/lapis.png'
 import Lixo from '../../assets/images/lixo.png'
 
-import { removerLivro, buscarLivrosPorNome, listarTodosLivros, listartodasimagens } from '../../api/admAPI';
+import { removerLivro, buscarLivrosPorNome, listarTodosLivros, listartodasimagens, buscarProdutoPorId, buscarProdutoImagem } from '../../api/admAPI';
 
 import { confirmAlert } from 'react-confirm-alert'
 
@@ -18,10 +18,13 @@ import { toast } from 'react-toastify';
 
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
-    const [filtro, setFiltro] = useState('');
-  
+    const [filtro, setFiltro] = useState('');  
+    const id = useParams();
     
-       
+    async function informacoesLivro(){
+        const resp = await buscarProdutoPorId();
+        setLivros(resp); 
+    }
 
 
     async function filtrar() {
@@ -33,14 +36,14 @@ export default function CardLivro() {
         const resp = await listarTodosLivros();
         setLivros(resp);
     }
-    
+
+    async function editar() {
+        navigate(`/cadastrarlivro/livro/${id}`)
+      }
+     
   
     const navigate = useNavigate();
    
-    
-    
-   
-
     async function removerLivroClick(id, nome) {
         confirmAlert({
             title: 'Remover Livro',
@@ -66,15 +69,15 @@ export default function CardLivro() {
             
             
         }
+
+
         
-        function abrirDetalhes(id){
-            navigate(`detalhes/${id}`);
-        }
+      
 
         useEffect(() => {
             carregarTodosLivros();
             buscarLivrosPorNome();
-           
+
         }, [])
 
    
@@ -92,7 +95,7 @@ export default function CardLivro() {
             </div>
 
             {livros.map(item =>
-                <div className='comp-card' key={item.id} onClick={() => abrirDetalhes(item.id)}>
+                <div className='comp-card' key={item.id}>
 
 
                      <div className='capa'>
@@ -133,7 +136,7 @@ export default function CardLivro() {
                             e.stopPropagation();
                             removerLivroClick(item.id, item.nome)
                         }} />
-                        <img src={Lapis} alt="" className='lapis'/>
+                        <img src={Lapis} onClick={() => editar(item.id)} alt="" className='lapis'/>
                     </div>
                   
 

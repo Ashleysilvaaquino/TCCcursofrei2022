@@ -46,7 +46,7 @@ export async function enviarimagemLivro(id,imagem){
       return resposta.status;
 }
 
-export async function alterarLivro(nome, autor, preco, descricao, paginas, genero){
+export async function alterarLivro(id, nome, autor, preco, descricao, paginas, genero){
     const r = await api.put(`/livro/${id}`,{
         nome,
         autor,
@@ -78,13 +78,17 @@ export async function buscarLivrosPorNome(nome){
 }
 
 export async function removerLivro(id){
-    const resposta = api.delete(`/livro/${id}`);
+    const resposta = await api.delete(`/livro/${id}`);
     return resposta.status; 
 }
 
 export async function buscarProdutoPorId(id){
-    const resposta = api.get(`/livro/${id}`);
-    return resposta.status; 
+    const resposta = await api.get(`/livro/${id}`);
+    return resposta.data; 
 }
 
-
+export async function buscarProdutoImagem(imagem){
+  
+    return `${api.getUri()}/${imagem}`;
+    
+}

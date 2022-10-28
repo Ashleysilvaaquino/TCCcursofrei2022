@@ -214,19 +214,17 @@ server.get('/livro/:id', async (req, resp) => {
         const id = req.params.id;
 
         const produto = await buscarProdutoPorId(id);
-        const categorias = await buscarProdutoGenero(id);
-        const imagem = await buscarProdutoImagem(id);
+    
 
 
         if(!produto){
             throw new Error('Livro não encontrado');
         }
 
-        resp.send({
-           produto,
-           categorias,
-           imagem
-        })
+        resp.send(
+           produto
+         
+        )
 
     } 
     catch (err) {

@@ -11,7 +11,7 @@ import { API_URL } from '../../api/config';
 
 export default function CadastrarLivro() {
   const [nome, setNome] = useState('');
-  const [idlivro, setIdLivro] = useState(0);
+  const [id, setId] = useState(0);
   const [autor, setAutor] = useState('');
   const [preco, setPreco] = useState('');
   const [descricao, setDescricao] = useState('');
@@ -23,9 +23,23 @@ export default function CadastrarLivro() {
 
   const [generoSelecionado, setGeneroSelecionado] = useState([]);
 
-  const { id } = useParams();
+ 
+ 
+  const { idParam } = useParams();
 
 
+  async function carregarLivro(){
+    const resposta = await buscarProdutoPorId(idParam);
+    console.log(resposta);
+    setNome(resposta.nome);
+    setAutor(resposta.autor);
+    setPreco(resposta.preco);
+    setDescricao(resposta.descricao);
+    setPaginas(resposta.paginas);
+    setGeneroSelecionado(resposta.generoSelecionado);
+   setImagem(resposta.imagem);
+    setId(resposta.id);
+  }
 
   async function salvar() {
     try {
@@ -41,7 +55,8 @@ export default function CadastrarLivro() {
 
       else{
         await alterarLivro(nome, autor, preco, descricao, paginas, genero);
-        await enviarimagemLivro(id, imagem);
+        if (typeof(imagem) == 'object')  
+           await enviarimagemLivro(id, imagem);
         toast.dark('📚 Livro alterado com sucesso!');
         
       }
@@ -62,29 +77,11 @@ export default function CadastrarLivro() {
 
   }
 
-  async function carregarProduto() {
-    if (!id) return;
-
-    const r = await buscarProdutoPorId(id);
-
-
-
-    setIdLivro(r.info.id_livro);
-    setNome(r.info.id_livro);
-    setAutor(r.info.autor);
-    setPreco(r.info.preco);
-    setDescricao(r.info.descricao);
-    setPaginas(r.info.paginas);
-    setGenero(r.info.genero);
-    setGeneroSelecionado(r.generoSelecionado)
-
-    if (r.imagem.lenght > 0) {
-      setImagem(r.imagem[0])
-    }
-  }
+ 
   function escolherImagem() {
     document.getElementById('capaimagem').click();
   }
+
   function mostrarImagem() {
     if (imagem == undefined) {
       return '/image.svg'
@@ -102,18 +99,20 @@ export default function CadastrarLivro() {
 
   useEffect(() => {
     carregarGenero();
-    carregarProduto();
+    
+    if(idParam){
+      carregarLivro();
+    }
     
     if (!storage('adm-logado')) {
       navigate('/loginadm');
     }
+ 
   }, [])
 
   const navigate = useNavigate();
 
-  async function editar() {
-    navigate(`/livro/${id}`)
-  }
+ 
 
 
 
@@ -193,7 +192,7 @@ export default function CadastrarLivro() {
 
 
           <div className='salvar-botao2'>
-            <button onClick={editar}>Alterar</button>
+            <button onClick={alterarLivro} >Alterar</button>
           </div>
         </div>
 
