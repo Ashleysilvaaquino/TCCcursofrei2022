@@ -1,6 +1,8 @@
 import Carrinhocard from '../../components/cardcarrinho'
 import BarraPesquisa from '../../components/pesquisa'
 
+import CardEndereco from '../../components/cardEndereco'
+
 
 import './index.scss'
 
@@ -14,9 +16,9 @@ import Boleto from '../../assets/images/imgboleto.png'
 import { Link } from 'react-router-dom';
 
 
-export default function FinalizarCompra(){
-    return(
-        <div>
+export default function FinalizarCompra() {
+    return (
+        <main className='pg-finalizarcompra'>
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
                 <div>
@@ -24,7 +26,7 @@ export default function FinalizarCompra(){
                 </div>
 
                 <div className='login'>
-                     <Link to="/loginusuario" className='login'> <img src={login}/></Link>
+                    <Link to="/loginusuario" className='login'> <img src={login} /></Link>
                     <p>Login</p>
                 </div>
                 <div className='carrinho'>
@@ -32,53 +34,41 @@ export default function FinalizarCompra(){
                     <p>Meu carrinho</p>
                 </div>
             </div>
-            <p className='voltar-pg-finalizar'>Voltar</p>
+            <Link to='/menusuario'><p className='voltar-pg-finalizar'>Voltar</p></Link>
             <div>
                 <h3 className='h3-pag-finalizar'>Finalizar compra</h3>
             </div>
-            <Carrinhocard></Carrinhocard>
-            <div className='cards-2-pag-finalizar'>
-                <p>Selecione a forma de pagamento</p>
-                <div>
-                    <div className='p-pg-finalizar'>
-                        <img src={Boleto} className='img-card2'/> Boleto bancário 
+            <section className='parte-baixo-pg-finalizar'>
+                <div className='livros-pg-finalizar'>
+                    <Carrinhocard></Carrinhocard>
+                </div>
+                <section className='pg-finalizar-f-direita'>
+                    <section className='cards-2-pag-finalizar'>
+                        <p>Selecione a forma de pagamento</p>
+                        <div>
+                            <div className='p-pg-finalizar'>
+                                <img src={Boleto} className='img-card2' /> 
+                                <p> Boleto bancário </p>
+                            </div>
+                            <div className='p-pg-finalizar'>
+                                <img src={Pix} className='img-card2' /> <p> Pix copia e cola </p>
+                            </div>
+                            <div className='p-pg-finalizar'>
+                                <img src={Cartao} className='img-card2' /> <p> Cartão de crédito </p>
+                            </div>
+                        </div>
+                    </section>
+                  <div>
+                    <CardEndereco></CardEndereco>
+                  </div>
+                    <div className='total-pg-finalizar'>
+                        <h3>Total</h3>
+                        <p>R$80,00</p>
+                        <button className='bt-pg-finalizar'>Avançar</button>
                     </div>
-                    <div className='p-pg-finalizar'>
-                        <img src={Pix} className='img-card2'/> Pix copia e cola 
-                    </div>
-                    <div className='p-pg-finalizar'>
-                        <img src={Cartao} className='img-card2'/> Cartão de Crédito 
-                    </div>
-                </div>
-            </div>
-            <p>Seus dados</p>
-            <div>
-                <div>
-                    <h5>Nome</h5>
-                    <input type='text'/>
-                </div>
-                <div>
-                    <h5>E-mail</h5>
-                    <input type='text'/>
-                </div>                
-                <div>
-                    <h5>CEP</h5>
-                    <input type='text'/>
-                </div>             
-                <div>
-                    <h5>Nº</h5>
-                    <input type='text'/>
-                </div>
-                <div>
-                    <h5>Estado</h5>
-                    <input type='text'/>
-                </div>
-            </div>
-            <div>
-                <h3>Total</h3>
-                <p>R$</p>
-            </div>
-            <button>Avançar</button>
-        </div>
+                </section>
+            </section>
+
+        </main>
     )
 }

@@ -21,6 +21,7 @@ import HomeCliente from './pages/homecliente';
 import Carrinho from './pages/carrinho';
 import LivroUsuario from './components/livrousuario';
 import FinalizarCompra from './pages/finalizarcompra';
+import CardEndereco from './components/cardEndereco';
 
 
 
@@ -57,6 +58,7 @@ root.render(
         <Route path = '/carrinho' element={<Carrinho/>} />
         <Route path = '/livrousuario' element={<LivroUsuario/>} />
         <Route path = '/finalizarcompra' element={<FinalizarCompra/>} />
+        <Route path = '/cardendereco' element={<CardEndereco/>} />
       </Routes>
     </BrowserRouter>
    
