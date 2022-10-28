@@ -26,8 +26,10 @@ import { Link } from 'react-router-dom';
 
 
 
+
 function LandPage() {
     return (
+        
         <div className='landpage'>
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>

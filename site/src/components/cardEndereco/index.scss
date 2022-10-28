@@ -1,0 +1,47 @@
+.card-endereco {
+    display: flex;
+    flex-direction: column;
+
+    width: 380px;
+
+    background-color: #ffff;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    label {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    }
+
+    .titulo-comp-endereco {
+        align-self: center;
+    }
+
+    .conteudo-card-endereco {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .f-esquerda-comp-endereco {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        height: 200px;
+
+
+    }
+
+    .f-direita-comp-endereco {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        height: 150px;
+
+
+    }
+    
+}

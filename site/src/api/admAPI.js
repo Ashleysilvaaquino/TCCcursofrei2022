@@ -46,6 +46,7 @@ export async function enviarimagemLivro(id,imagem){
       return resposta.status;
 }
 
+//primeiro parametro supostamente arruma o erro!!!!!!!
 export async function alterarLivro(id, nome, autor, preco, descricao, paginas, genero){
     const r = await api.put(`/livro/${id}`,{
         nome,

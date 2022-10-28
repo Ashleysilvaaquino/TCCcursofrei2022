@@ -21,13 +21,15 @@ import HomeCliente from './pages/homecliente';
 import Carrinho from './pages/carrinho';
 import LivroUsuario from './components/livrousuario';
 import FinalizarCompra from './pages/finalizarcompra';
-
+import CardEndereco from './components/cardEndereco';
+import app from './app';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import App from './app';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -57,6 +59,8 @@ root.render(
         <Route path = '/carrinho' element={<Carrinho/>} />
         <Route path = '/livrousuario' element={<LivroUsuario/>} />
         <Route path = '/finalizarcompra' element={<FinalizarCompra/>} />
+        <Route path = '/cardendereco' element={<CardEndereco/>} />
+        <Route path = '/app' element={<App/>} />
       </Routes>
     </BrowserRouter>
    

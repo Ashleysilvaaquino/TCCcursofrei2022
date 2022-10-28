@@ -68,10 +68,7 @@ export default function Carrinhocard(){
 
                     </div>
 
-                 <div className='botao-comprarcarrinho'>
-                   <button>Comprar</button>
-                   
-                </div>
+                 
                 <div>
                    <img src={CarrinhoTirar} />
                 </div>
