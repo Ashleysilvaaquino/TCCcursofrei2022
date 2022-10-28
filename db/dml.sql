@@ -1,6 +1,6 @@
 use Livrariamontesdb;
 
-insert into tb_estado(id_estado , nm_estado)
+/*insert into tb_estado(id_estado , nm_estado)
    values('27', 'Tocantins');
    
 /* estados para inserir no insert:
@@ -93,7 +93,7 @@ insert into tb_livro(nm_livro, nm_autor,vl_preco,ds_livro,nr_paginas)
 /*inserir uma imagem */
 UPDATE tb_livro
    SET img_livro     = '/storage/filme/asdfasdf.jp'
- WHERE id_filme = 1;
+ WHERE id_livro = 1;
  
 select id_livro     id, 
 	nm_livro        nome,

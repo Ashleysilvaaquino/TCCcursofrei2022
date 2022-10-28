@@ -17,9 +17,10 @@ DS_CELULAR   VARCHAR(100)
 CREATE TABLE `tb_usuario_endereco` (
 ID_USUARIO_ENDERECO     INT primary key auto_increment,
 ID_USUARIO				INT,
+DS_REFERENCIA			varchar(200),
 NR_CEP  				VARCHAR(100),
 NR_RESIDENCIA			int,
-DS_ESTADO 				int,
+DS_ESTADO 				varchar(100),
 DS_CIDADE				varchar(100),
 DS_LOGRADOURO			varchar(300),
 DS_COMPLEMENTO			varchar(100),
