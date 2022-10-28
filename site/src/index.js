@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './common.scss'
 import LandPage from './pages/landpage';
 import Loginadm from './pages/loginadm';
 import CadastrarLivro from './pages/cadastrarlivro'
@@ -18,6 +19,8 @@ import Endereco from './pages/endereco'
 import Carrinhocard from './components//cardcarrinho/index';
 import HomeCliente from './pages/homecliente';
 import Carrinho from './pages/carrinho';
+import LivroUsuario from './components/livrousuario';
+import FinalizarCompra from './pages/finalizarcompra';
 
 
 
@@ -51,9 +54,9 @@ root.render(
         <Route path = '/homecliente' element={<HomeCliente/>} />
         <Route path = '/menusuario' element={<MenuUsuario/>} />
         <Route path = '/detalhe/:idParam' element={<Detalhes/>} />
-        <Route path = 'carrinho' element={<Carrinho/>} />
-      
-
+        <Route path = '/carrinho' element={<Carrinho/>} />
+        <Route path = 'livrousuario' element={<LivroUsuario/>} />
+        <Route path = '/finalizarcompra' element={<FinalizarCompra/>} />
       </Routes>
     </BrowserRouter>
    

@@ -1,0 +1,56 @@
+.livro-usuario-component{
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    width: 160px;
+    height: 270px;
+
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    box-shadow: 0px 3.54148px 3.54148px rgba(0, 0, 0, 0.25);
+
+    .coracao-pg-livro{
+        width: 20px;
+        height: 90px;
+
+        margin-top: -25px;
+        margin-left: 10px;
+    }
+
+    .livro-img-component-usuario{
+        width: 93px;
+        height: 145px;
+        margin-left: 35px;
+        margin-top: -40px;
+    }
+
+    .nome-livro-usuario{
+    font-family: 'Kantumruy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    }
+
+    .preco-livro-usuario{
+        text-align: center;
+    }
+
+    .bt-comprar-livro-component{
+        color: #FFFFFF;
+        background-color: #2C5B92;
+        
+        border-radius: 15px;
+        border: none;
+        
+        width: 100px;
+        height: 30px;
+
+        margin-left: 30px;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+}

@@ -3,6 +3,7 @@ import { listarTodosLivros } from '../../api/admAPI';
 import './index.scss'
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import CarrinhoTirar from '../../assets/images/tirarcarrinho.png'
 
 import { API_URL } from '../../api/config';
 
@@ -51,8 +52,14 @@ export default function Carrinhocard(){
                     <div className="quantidade">
 
                     <label>Quantidade</label>
-                    <p>{item.descricao}</p>
+                    <div className='container'>
+                    <span className="increment">+</span>
+                    <span className="decrement">-</span>
+                    <div id="box">
+                      
 
+                    </div>
+                    </div>
                     </div>
                     <div className="total">
 
@@ -63,7 +70,13 @@ export default function Carrinhocard(){
 
                  <div className='botao-comprarcarrinho'>
                    <button>Comprar</button>
+                   
                 </div>
+                <div>
+                   <img src={CarrinhoTirar} />
+                </div>
+
+              
                 </div> 
                 
             )}
