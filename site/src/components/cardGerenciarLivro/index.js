@@ -18,14 +18,31 @@ import { toast } from 'react-toastify';
 
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
+    const [nome, setNome] = useState('');
+    const [id, setId] = useState(0);
     const [filtro, setFiltro] = useState('');  
-    const id = useParams();
+    const [autor, setAutor] = useState('');
+    const [preco, setPreco] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [paginas, setPaginas] = useState('');
+    const [genero, setGenero] = useState([]);
+    const [imagem, setImagem] = useState();
+  
+    const {idParam} = useParams();
     
-    async function informacoesLivro(){
-        const resp = await buscarProdutoPorId();
-        setLivros(resp); 
+  
+    async function carregarLivro(){
+        const resposta = await buscarProdutoPorId(idParam);
+        console.log(resposta);
+        setNome(resposta.nome);
+        setAutor(resposta.autor);
+        setPreco(resposta.preco);
+        setDescricao(resposta.descricao);
+        setPaginas(resposta.paginas);
+        setGenero(resposta.genero);
+       setImagem(resposta.imagem);
+        setId(resposta.id);
     }
-
 
     async function filtrar() {
         const resp = await buscarLivrosPorNome(filtro);
@@ -38,7 +55,7 @@ export default function CardLivro() {
     }
 
     async function editar() {
-        navigate(`/cadastrarlivro/livro/${id}`)
+        navigate(`/cadastrarlivro/livro/${idParam}`)
       }
      
   
@@ -77,6 +94,10 @@ export default function CardLivro() {
         useEffect(() => {
             carregarTodosLivros();
             buscarLivrosPorNome();
+            if(idParam){
+                carregarLivro();
+              }
+              
 
         }, [])
 
