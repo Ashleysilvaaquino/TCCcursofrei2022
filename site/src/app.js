@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
+ import terror from '../src/assets/images/romance.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,7 +13,7 @@ export default () => {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide><img src={terror} /></SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>

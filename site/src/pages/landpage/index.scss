@@ -69,7 +69,7 @@
         font-family: 'Sansita';
         font-style: normal;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 28px;
         line-height: 43px;
         text-align: center;
         
@@ -82,6 +82,7 @@
     .carrosel-pt1{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         color: #ffffff;
     }
     
@@ -89,18 +90,18 @@
         width: 90px;
         height: 90px;
         padding-top: 40px;
-        margin-left: 10PX;
+        
     }
     .img-set-dir{
         width: 90px;
         height: 90px;
         padding-top: 40px;
-        margin-left: 40PX;
+        
     }
     .img-terror{
         width: 130px;
         height: 130px;
-        margin-left: 20PX;  
+          
     }
     .img-infantil{
         width: 140px;
@@ -127,26 +128,26 @@
     .div-infantil{
         text-align: center;
         margin-top: 10px;
-        margin-left: 140px;
+        
     }
 
     .div-programacao{
         text-align: center;
         text-align: center;
         margin-top: 20px;
-        margin-left: 140px;
+        
     }
 
     .div-psico{
         text-align: center;
         margin-top: 10px;
-        margin-left: 140px; 
+         
     }
 
     .div-romance{
         text-align: center;
         margin-top: 10px;
-        margin-left: 140px; 
+         
     }
 
     .novidades-ladpage{
@@ -164,8 +165,8 @@
     .beneficios-landpage{
         background-image: url(../../assets/images/background.png);
         background-repeat: no-repeat;
-        width: 1500px;
-        height: 633px;
+        width: 1300px;
+        height: 630px;
 
         .titulo-land{
             font-family: 'Fascinate Inline';
@@ -202,8 +203,7 @@
             font-size: 16px;
             line-height: 29px;
 
-            margin-left: 80px;
-
+            
             padding-left: 30px;
             padding-right: 30px;
             padding-top: 30px;
@@ -212,10 +212,12 @@
         }
 
         .menina{
-            width: 417px;
-            height: 358.36px;
-
-            margin-left: 500px;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+            height: 350px;
             
             
         }
@@ -232,7 +234,7 @@
         line-height: 40px;
         text-align: center;
         
-        margin-left: 110px;
+        
         margin-top: 90px;
 
         span{
@@ -250,12 +252,10 @@
         }
 
     .foto-isabella{
-        margin-left: 70px;
-        margin-top: 50px;
+                margin-top: 50px;
     }
     .txt-desenvolvedora{
-        margin-left: 20px;
-        margin-top: 70px;
+                margin-top: 70px;
 
         font-family: 'Kantumruy';
         font-style: normal;
@@ -272,15 +272,13 @@
         margin-top: 20px;
 
         .img-ashley{
-            margin-left: 70px;
-           
+                       
 
             width: 85px;
             height: 85px;
         }
         .txt-desenvolvedora1{
-            margin-left: 20px;
-            margin-top: 20px;
+                        margin-top: 20px;
     
             font-family: 'Kantumruy';
             font-style: normal;
@@ -299,15 +297,13 @@
         margin-top: 20px;
 
         .foto-ana{
-            margin-left: 70px;
-           
+                       
 
             width: 85px;
             height: 85px;
         }
         .txt-desenvolvedora2{
-            margin-left: 20px;
-            margin-top: 20px;
+                        margin-top: 20px;
     
             font-family: 'Kantumruy';
             font-style: normal;
@@ -325,15 +321,13 @@
         margin-top: 20px;
 
         .foto-guilherme{
-            margin-left: 70px;
-           
+                       
 
             width: 85px;
             height: 85px;
         }
         .txt-desenvolvedora2{
-            margin-left: 20px;
-            margin-top: 20px;
+                        margin-top: 20px;
     
             font-family: 'Kantumruy';
             font-style: normal;
@@ -346,7 +340,7 @@
 
     .hagazinhooo2{
         margin-top: -400px;
-        margin-left: 850px;
+        
 
         font-family: 'Sansita';
         font-style: normal;
@@ -363,7 +357,7 @@
 
     .quemsomos-desc{
         margin-top: 10px;
-        margin-left: 940px;
+        
         
         padding: 20px;
         
@@ -382,15 +376,19 @@
         height: 200px;
     }
 
-    .nos{
-        margin-left: 40px;
-    }
+   .quemsomos{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    
+   }
 
     .mulher-ti{
         width: 270px;
         height: 270px;
 
-        margin-left: 600px;
+        
         margin-top: -80px;
     }
 
@@ -404,7 +402,7 @@
         flex-direction: row;
 
         .p-pagamento{
-            margin-left: 100px;
+            
             padding-top: 10px;
             
 
@@ -417,9 +415,15 @@
 
             color: #000000;
         }
+        .nos{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            
+        }
 
         .r-redes{
-            margin-left: 300px;
+            
             padding-top: 10px;
             
 
@@ -439,7 +443,7 @@
 
             img{
                 margin-top: -33px;
-                margin-left: 298px;
+                
             }
         }
     }
