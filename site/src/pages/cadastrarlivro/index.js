@@ -186,13 +186,13 @@ export default function CadastrarLivro() {
 
         <div className='botoes'>
           <div className='salvar-botao'>
-            <button onClick={salvar} >Salvar</button>
+            <button onClick={salvar} >Alterar</button>
           </div>
 
 
 
           <div className='salvar-botao2'>
-            <button onClick={alterarLivro} >Alterar</button>
+            <button onClick={salvar} >Novo</button>
           </div>
         </div>
 
