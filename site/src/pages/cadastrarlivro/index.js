@@ -27,10 +27,11 @@ export default function CadastrarLivro() {
  
   const { idParam } = useParams();
 
+   
+
 
   async function carregarLivro(){
     const resposta = await buscarProdutoPorId(idParam);
-    console.log(resposta);
     setNome(resposta.nome);
     setAutor(resposta.autor);
     setPreco(resposta.preco);
@@ -54,7 +55,7 @@ export default function CadastrarLivro() {
       }
 
       else{
-        await alterarLivro(nome, autor, preco, descricao, paginas, genero);
+        await alterarLivro(nome, autor, preco, descricao, paginas, idgenero);
         if (typeof(imagem) == 'object')  
            await enviarimagemLivro(id, imagem);
         toast.dark('📚 Livro alterado com sucesso!');
@@ -112,7 +113,17 @@ export default function CadastrarLivro() {
 
   const navigate = useNavigate();
 
- 
+  function novoClick(){
+    setId(0);
+    setNome('');
+    setAutor('');
+    setPreco('');
+    setDescricao('');
+    setPaginas('');
+    setIdgenero('');
+   setImagem();
+   
+  }
 
 
 
@@ -192,7 +203,7 @@ export default function CadastrarLivro() {
 
 
           <div className='salvar-botao2'>
-            <button onClick={salvar} >Novo</button>
+            <button onClick={novoClick}  >Novo</button>
           </div>
         </div>
 
