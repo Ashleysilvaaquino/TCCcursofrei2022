@@ -3,8 +3,7 @@ import './index.scss';
 import login from '../../assets/images/login.png'
 import carrinho from '../../assets/images/carrinho.png'
 import BarraPesquisa from '../../components/pesquisa';
-import SetEsq from '../../assets/images/setaesq.png'
-import SetDir from '../../assets/images/setdir.png'
+
 import Terror from '../../assets/images/generoterror.png'
 import InfantilGenero from '../../assets/images/infantil.png'
 import Programacao from '../../assets/images/programacao.png'
@@ -79,9 +78,9 @@ function LandPage() {
 
                         >
                             
-                            <SwiperSlide className='div-terror'><img src={Terror} className='img-terror'/><p >TERROR</p> </SwiperSlide>
-                            <SwiperSlide className='div-infantil'><img src={InfantilGenero} className='img-infantil' /><p>INFANTIL</p></SwiperSlide>
-                            <SwiperSlide className='div-programacao'><img src={Programacao} className='img-programacao' />
+                            <SwiperSlide className='div-terror'> <Link to='/livrosdeterror'><img src={Terror} className='img-terror'/></Link> <p >TERROR</p> </SwiperSlide>
+                            <SwiperSlide className='div-infantil'><Link to='/livrosinfantis'><img src={InfantilGenero} className='img-infantil' /></Link><p>INFANTIL</p></SwiperSlide>
+                            <SwiperSlide className='div-programacao'><Link to='/livrosdeprogramacao'><img src={Programacao} className='img-programacao' /></Link>
                             <p>PROGRAMAÇÃO</p></SwiperSlide>
                             <SwiperSlide className='div-psico'><img src={Psico} className='img-psico' />
                             <p>PSICOLOGIA</p></SwiperSlide>
