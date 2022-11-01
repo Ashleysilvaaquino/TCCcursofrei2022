@@ -114,7 +114,7 @@ export default function CardLivro() {
                         <p>{item.autor}</p>
 
                         <label>Gênero</label>
-                        <p className="genero">{item.genero}</p>
+                        <p className="genero">{item.nomeGenero}</p>
 
                     </div>
 

@@ -41,15 +41,17 @@ export async function inserirImagem(imagem , id){
     //listar livros
     export async function listarTodosLivros() {
        const comando =
-           `SELECT id_livro		id,
-                   nm_livro		nome,
-                   nm_autor	    autor,
-                   vl_preco       preco,
-                   ds_livro       descricao,
-                   nr_paginas     paginas,
-                   img_livro      imagem,
-                   id_genero      genero
-              FROM tb_livro`;
+           `SELECT id_livro		         id,
+                   nm_livro		         nome,
+                   nm_autor	             autor,
+                   vl_preco              preco,
+                   ds_livro              descricao,
+                   nr_paginas            paginas,
+                   img_livro             imagem,
+                   tb_livro.id_genero    genero,
+                   nm_genero             nomeGenero
+              FROM tb_livro
+              JOIN tb_genero on tb_livro.id_genero = tb_genero.id_genero`;
        
        const [linhas] = await con.query(comando);
        
@@ -111,7 +113,7 @@ export async function alterarLivro(id, livro){
                 id_genero      =?
           WHERE id_livro       =?` 
 
-    const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.livro, livro.paginas, livro.genero, id]);
+    const [resposta] = await con.query(comando, [livro.nome, livro.autor, livro.preco, livro.descricao, livro.paginas, livro.genero, id]);
     return resposta.affectedRows;
  }
 
