@@ -34,8 +34,7 @@
     justify-content: space-evenly;
     height: 60vh;
   }
-  input,
-  select {
+  input {
     background: #ffffff;
     box-shadow: 0px 10px 10px rgba(34, 34, 34, 0.267);
     border: none;
@@ -48,43 +47,29 @@
     font-family: "Oswald", sans-serif;
     font-weight: bold;
   }
-  .cep {
+  .pg-endereco-cep,
+  .pg-endereco-numero,
+  .pg-endereco-estado,
+  .pg-endereco-logradouro,
+  .pg-endereco-cidade,
+  .pg-endereco-bairro,
+  .pg-endereco-referencia,
+  .pg-endereco-complemento {
     display: flex;
     flex-direction: column;
 
     font-family: "Oswald";
-    font-size: 1.5em;
+    font-size: 1em;
 
-    width: 650px;
+    width: 550px;
     height: 70px;
   }
 
-  .numero {
-    display: flex;
-    flex-direction: column;
-
-    border: none;
-    box-shadow: 1px;
-
+  label {
     font-family: "Oswald";
-    font-size: 1.5em;
-
-    width: 650px;
-    height: 70px;
+    font-size: 1.3em;
   }
-  .estado {
-    display: flex;
-    flex-direction: column;
 
-    border: none;
-    box-shadow: 1px;
-
-    font-family: "Oswald";
-    font-size: 1.5em;
-
-    width: 650px;
-    height: 70px;
-  }
   .botoes {
     display: flex;
     flex-direction: row;

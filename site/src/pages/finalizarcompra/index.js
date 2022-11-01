@@ -1,11 +1,9 @@
 import Carrinhocard from '../../components/cardcarrinho'
 import BarraPesquisa from '../../components/pesquisa'
-
 import CardEndereco from '../../components/cardEndereco'
 
 
-import './index.scss'
-
+import './index.scss';
 
 import login from '../../assets/images/login.png'
 import carrinho from '../../assets/images/carrinho.png'
@@ -14,9 +12,26 @@ import Cartao from '../../assets/images/cartaocredito.png'
 import Boleto from '../../assets/images/imgboleto.png'
 
 import { Link } from 'react-router-dom';
+import { listar } from  '../../api/enderecoAPI';
+import { useState, useEffect } from 'react';
+import Storage from 'local-storage'
 
 
 export default function FinalizarCompra() {
+
+    const [enderecos, setEnderecos] =  useState([]);
+    
+    async function carregarEndereco() {
+        const id = Storage('usuario-logado').id;
+        const r = await listar(id);
+        setEnderecos(r);
+
+    }
+
+    useEffect(() => {
+        carregarEndereco();
+    }, []);
+
     return (
         <main className='pg-finalizarcompra'>
             <div className='cabecalho-principal'>
@@ -40,7 +55,11 @@ export default function FinalizarCompra() {
             </div>
             <section className='parte-baixo-pg-finalizar'>
                 <div className='livros-pg-finalizar'>
-                    <Carrinhocard></Carrinhocard>
+
+                    {enderecos.map(item =>
+                        <CardEndereco item={item} />
+                    )}
+                    
                 </div>
                 <section className='pg-finalizar-f-direita'>
                     <section className='cards-2-pag-finalizar'>
