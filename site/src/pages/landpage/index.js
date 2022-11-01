@@ -30,7 +30,11 @@ import Musica from '../../assets/images/notas-musicais.png'
 import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import{ Navigation, Pagination} from 'swiper';
+import 'swiper/scss'
+import "swiper/scss/free-mode";
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
 
 
@@ -64,10 +68,15 @@ function LandPage() {
 
                     <div >
                         <Swiper className='carrosel-pt1'
-                            spaceBetween={10}
+                            modules={[Navigation, Pagination]}
+                            spaceBetween={15}
                             slidesPerView={5}
+                            navigation
+                            pagination={{clickable:true}}
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
+                          
+
                         >
                             
                             <SwiperSlide className='div-terror'><img src={Terror} className='img-terror'/><p >TERROR</p> </SwiperSlide>
@@ -138,9 +147,9 @@ function LandPage() {
 
             </div>
 
-            <div>
+            <div className='nos'>
                 <h2 className='agazinho2'>CONHEÇA A ADMINISTRAÇÃO <span>DA LIVRARIA MONTES</span></h2>
-                <div className='nos'>
+                <div >
                     <div className='div-isabella'>
                         <img src={Isabella} className='foto-isabella' />
                         <p className='txt-desenvolvedora'>Desenvolvedora Back-End</p>

@@ -21,8 +21,8 @@ export default function CadastrarLivro() {
 
   const [imagem, setImagem] = useState();
 
-  const [generoSelecionado, setGeneroSelecionado] = useState([]);
 
+  
  
  
   const { idParam } = useParams();
@@ -32,12 +32,14 @@ export default function CadastrarLivro() {
 
   async function carregarLivro(){
     const resposta = await buscarProdutoPorId(idParam);
+    console.log(resposta);
+
     setNome(resposta.nome);
     setAutor(resposta.autor);
     setPreco(resposta.preco);
     setDescricao(resposta.descricao);
     setPaginas(resposta.paginas);
-    setGeneroSelecionado(resposta.generoSelecionado);
+    setIdgenero(resposta.genero);
    setImagem(resposta.imagem);
     setId(resposta.id);
   }
@@ -174,7 +176,7 @@ export default function CadastrarLivro() {
               <select value={idgenero} onChange={e => setIdgenero(e.target.value)} >
 
 
-                <option selected disabled hidden>Selecione</option>
+                <option select >Selecione</option>
                 {genero.map(item =>
                   <option value={item.id}> {item.nome} </option>
 
