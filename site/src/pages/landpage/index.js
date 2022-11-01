@@ -21,7 +21,16 @@ import Tiktok from '../../assets/images/TikTok.png'
 import Instagram from '../../assets/images/Instagram.png'
 import Email from '../../assets/images/email.png'
 import LivroUsuario from '../../components/livrousuario';
+import Biologia from '../../assets/images/biologia.png';
+import Harry from '../../assets/images/harry-potter.png'
+import Poesia from '../../assets/images/poesia.png'
+import Famoso from '../../assets/images/revista.png'
+import Musica from '../../assets/images/notas-musicais.png'
+
 import { Link } from 'react-router-dom';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 
 
@@ -29,7 +38,7 @@ import { Link } from 'react-router-dom';
 
 function LandPage() {
     return (
-        
+
         <div className='landpage'>
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
@@ -38,7 +47,7 @@ function LandPage() {
                 </div>
 
                 <div className='login'>
-                     <Link to="/loginusuario" className='login'> <img src={login}/></Link>
+                    <Link to="/loginusuario" className='login'> <img src={login} /></Link>
                     <p>Login</p>
                 </div>
                 <div className='carrinho'>
@@ -47,35 +56,46 @@ function LandPage() {
                 </div>
             </div>
             <div>
-                <p className='mais-vendidos'>Mais vendidos</p> <hr></hr>
+                <hr></hr>
             </div>
             <div className='pt-carrosel'>
                 <div>
                     <p className='explore-os-montes'>EXPLORE OS <span>MONTES</span></p>
-                    
-                    <div className='carrosel-pt1'>
-                        <img src={SetEsq} className='img-set-esq' />
-                        <div className='div-terror'>
-                            <img src={Terror} className='img-terror' />
-                            <p>TERROR</p>
-                        </div>
-                        <div className='div-infantil'>
-                            <img src={InfantilGenero} className='img-infantil' />
-                            <p>INFANTIL</p>
-                        </div>
-                        <div className='div-programacao'>
-                            <img src={Programacao} className='img-programacao' />
-                            <p>PROGRAMAÇÃO</p>
-                        </div>
-                        <div className='div-psico'>
-                            <img src={Psico} className='img-psico' />
-                            <p>PSICOLOGIA</p>
-                        </div>
-                        <div className='div-romance'>
-                            <img src={Romance} className='img-romance' />
-                            <p>ROMANCE</p>
-                        </div>
-                        <img src={SetDir} className='img-set-dir' />
+
+                    <div >
+                        <Swiper className='carrosel-pt1'
+                            spaceBetween={10}
+                            slidesPerView={5}
+                            onSlideChange={() => console.log('slide change')}
+                            onSwiper={(swiper) => console.log(swiper)}
+                        >
+                            
+                            <SwiperSlide className='div-terror'><img src={Terror} className='img-terror'/><p >TERROR</p> </SwiperSlide>
+                            <SwiperSlide className='div-infantil'><img src={InfantilGenero} className='img-infantil' /><p>INFANTIL</p></SwiperSlide>
+                            <SwiperSlide className='div-programacao'><img src={Programacao} className='img-programacao' />
+                            <p>PROGRAMAÇÃO</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Psico} className='img-psico' />
+                            <p>PSICOLOGIA</p></SwiperSlide>
+                            <SwiperSlide className='div-romance'><img src={Romance} className='img-romance' />
+                            <p>ROMANCE</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Biologia} className='img-romance' />
+                            <p>BIOLOGIA</p></SwiperSlide>
+                            <SwiperSlide className='div-romance'><img src={Harry} className='img-romance' />
+                            <p>FANTASIA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Poesia} className='img-romance' />
+                            <p>POESIA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Famoso} className='img-romance' />
+                            <p>ARTÍSTAS</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Musica} className='img-romance' />
+                            <p>MUSICA</p></SwiperSlide>
+                        </Swiper>
+                        
+                       
+                        
+                        
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -83,22 +103,22 @@ function LandPage() {
             <div>
                 <h3 className='novidades-ladpage'>Novidades que você precisa conhecer</h3>
                 <div className='livros-landpage'>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
+                    <LivroUsuario />
+                    <LivroUsuario />
+                    <LivroUsuario />
+                    <LivroUsuario />
+                    <LivroUsuario />
                 </div>
                 <div className='livros-landpage'>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
-                    <LivroUsuario/>
+                    <LivroUsuario />
+                    <LivroUsuario />
+                    <LivroUsuario />
+                    <LivroUsuario />
+                    <LivroUsuario />
                 </div>
             </div>
             <br></br>
-            
+
 
             <div className='beneficios-landpage'>
                 <h2 className='titulo-land'>Beneficios da leitura</h2>
@@ -112,22 +132,25 @@ function LandPage() {
                         <p>O pensamento crítico nada mais é do que ter a própria visão sobre um conjunto de assuntos, sendo capaz de formular a própria opinião, questionar conceitos e desenvolver os próprios argumentos. A leitura coloca você em contato com novos conteúdos, o que ajuda a estimular essa habilidade.</p>
                     </div>
                 </div>
-                <img src={Menina} className='menina' />
+                <div className='menina'>
+                    <img src={Menina} />
+                </div>
+
             </div>
 
             <div>
                 <h2 className='agazinho2'>CONHEÇA A ADMINISTRAÇÃO <span>DA LIVRARIA MONTES</span></h2>
                 <div className='nos'>
                     <div className='div-isabella'>
-                        <img src={Isabella} className='foto-isabella'/>
+                        <img src={Isabella} className='foto-isabella' />
                         <p className='txt-desenvolvedora'>Desenvolvedora Back-End</p>
                     </div>
                     <div className='div-ashley'>
-                        <img src={Ashley} className='img-ashley'/>
+                        <img src={Ashley} className='img-ashley' />
                         <p className='txt-desenvolvedora1'>Desenvolvedora Back-End</p>
                     </div>
                     <div className='div-ana'>
-                        <img src={Ana} className='foto-ana'/>
+                        <img src={Ana} className='foto-ana' />
                         <p className='txt-desenvolvedora2'>Desenvolvedora Front-End</p>
                     </div>
                     <div className='div-guilherme'>
@@ -135,27 +158,28 @@ function LandPage() {
                         <p className='txt-desenvolvedora2'>Desenvolvedor Front-End</p>
                     </div>
                 </div>
-                <div>
-                    <h2 className='hagazinhooo2'>QUEM <span>SOMOS?</span></h2>
+                <div className='quemsomos'>
+                    <h2 >QUEM <span>SOMOS?</span></h2>
                     <p className='quemsomos-desc'>Somos uma empresa nacional de livros que se deu início em setembro de 2011, e que se teve maior reconhecimento em abril de 2020 graças ao frete mais rápido do Brasil. Entregamos livros para todo o território brasileiro. Rapidez, confiança e segurança.</p>
                 </div>
+
                 <img src={Mulher} className='mulher-ti' />
             </div>
 
             <div className='rodape-landapage'>
                 <div>
                     <p className='p-pagamento'>Formas de pagamento</p>
-                    <img src={Pagamento} className='p-pagamento'/>
+                    <img src={Pagamento} className='p-pagamento' />
                 </div>
 
                 <div>
                     <p className='r-redes'>Redes Sociais</p>
                     <div className='div-insta'>
-                        <img src={Instagram}/>
+                        <img src={Instagram} />
                         <p>@monteslivraria</p>
                     </div>
                     <div className='div-insta'>
-                        <img src={Tiktok}/>
+                        <img src={Tiktok} />
                         <p>@livrariamontes</p>
                     </div>
                 </div>
@@ -163,7 +187,7 @@ function LandPage() {
                 <div>
                     <p className='r-redes'>Entre em contato</p>
                     <div className='div-insta'>
-                        <img src={Email}/>
+                        <img src={Email} />
                         <p>livrariamontes@gmail.com</p>
                     </div>
                 </div>

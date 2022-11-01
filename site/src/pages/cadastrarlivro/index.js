@@ -113,7 +113,9 @@ export default function CadastrarLivro() {
 
   const navigate = useNavigate();
 
-  function novoClick(){
+  
+   
+   function novoClick(){
     setId(0);
     setNome('');
     setAutor('');
@@ -121,9 +123,12 @@ export default function CadastrarLivro() {
     setDescricao('');
     setPaginas('');
     setIdgenero('');
-   setImagem();
+    setImagem();
    
   }
+
+   
+ 
 
 
 
@@ -167,10 +172,13 @@ export default function CadastrarLivro() {
             <div className='input-box'>
               <label >Genero</label>
               <select value={idgenero} onChange={e => setIdgenero(e.target.value)} >
-                <option selected disabled hidden>Selecione</option>
 
+
+                <option selected disabled hidden>Selecione</option>
                 {genero.map(item =>
                   <option value={item.id}> {item.nome} </option>
+
+                
                 )}
               </select>
 
@@ -197,13 +205,14 @@ export default function CadastrarLivro() {
 
         <div className='botoes'>
           <div className='salvar-botao'>
-            <button onClick={salvar} >Alterar</button>
+            <button onClick={salvar}>Alterar</button>
           </div>
 
 
 
           <div className='salvar-botao2'>
-            <button onClick={novoClick}  >Novo</button>
+           
+            <button onClick={novoClick} >Novo</button>
           </div>
         </div>
 
