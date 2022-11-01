@@ -1,4 +1,15 @@
 .landpage {
+
+    .swiper-button-next::after{
+        color: #ffffff; 
+    }
+    .swiper-button-prev::after{
+        color: #ffffff;
+       
+    }
+    .swiper{
+        color: #000000;
+    }
     .cabecalho-principal {
         display: flex;
         flex-direction: row;
@@ -62,7 +73,7 @@
     }
     .pt-carrosel{
         background-color: #3E7797;
-        height: 280px;
+        height: 320px;
     }
     .explore-os-montes{
         padding-top: 20px;
@@ -72,6 +83,7 @@
         font-size: 28px;
         line-height: 43px;
         text-align: center;
+      
         
         color: #000000;
         span{
@@ -80,11 +92,17 @@
     }
 
     .carrosel-pt1{
+        padding-top: 15px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         color: #ffffff;
+        height: 235px;
+        span{
+            background-color: #ffffff;
+        }
     }
+ 
     
     .img-set-esq{
         width: 90px;
