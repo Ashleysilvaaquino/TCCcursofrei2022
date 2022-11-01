@@ -147,9 +147,9 @@ function LandPage() {
 
             </div>
 
-            <div>
+            <div className='nos'>
                 <h2 className='agazinho2'>CONHEÇA A ADMINISTRAÇÃO <span>DA LIVRARIA MONTES</span></h2>
-                <div className='nos'>
+                <div >
                     <div className='div-isabella'>
                         <img src={Isabella} className='foto-isabella' />
                         <p className='txt-desenvolvedora'>Desenvolvedora Back-End</p>
