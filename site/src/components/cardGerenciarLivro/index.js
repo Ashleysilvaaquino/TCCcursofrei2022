@@ -18,31 +18,15 @@ import { toast } from 'react-toastify';
 
 export default function CardLivro() {
     const [livros, setLivros] = useState([]);
-    const [nome, setNome] = useState('');
-    const [id, setId] = useState(0);
-    const [filtro, setFiltro] = useState('');  
-    const [autor, setAutor] = useState('');
-    const [preco, setPreco] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [paginas, setPaginas] = useState('');
-    const [genero, setGenero] = useState([]);
-    const [imagem, setImagem] = useState();
   
-    const {idParam} = useParams();
+    const [filtro, setFiltro] = useState('');  
+ 
+  
     
   
-    async function carregarLivro(){
-        const resposta = await buscarProdutoPorId(idParam);
-        console.log(resposta);
-        setNome(resposta.nome);
-        setAutor(resposta.autor);
-        setPreco(resposta.preco);
-        setDescricao(resposta.descricao);
-        setPaginas(resposta.paginas);
-        setGenero(resposta.genero);
-       setImagem(resposta.imagem);
-        setId(resposta.id);
-    }
+    async function editarLivro(id) {
+        navigate(`/cadastrarlivro/livro/${id}`)
+      }
 
     async function filtrar() {
         const resp = await buscarLivrosPorNome(filtro);
@@ -54,10 +38,7 @@ export default function CardLivro() {
         setLivros(resp);
     }
 
-    async function editar() {
-        navigate(`/cadastrarlivro/livro/${idParam}`)
-      }
-     
+   
   
     const navigate = useNavigate();
    
@@ -94,11 +75,7 @@ export default function CardLivro() {
         useEffect(() => {
             carregarTodosLivros();
             buscarLivrosPorNome();
-            if(idParam){
-                carregarLivro();
-              }
-              
-
+           
         }, [])
 
    
@@ -157,7 +134,7 @@ export default function CardLivro() {
                             e.stopPropagation();
                             removerLivroClick(item.id, item.nome)
                         }} />
-                        <img src={Lapis} onClick={() => editar(item.id)} alt="" className='lapis'/>
+                        <img src={Lapis} onClick={() => editarLivro(item.id)} alt="" className='lapis'/>
                     </div>
                   
 
