@@ -4,13 +4,20 @@ import { useState } from 'react';
 import Esperto from '../../assets/images/esperto.png';
 import Favorito from '../../assets/images/favorito.png';
 import Close from '../../assets/images/Close.png'; 
+import { useNavigate } from 'react-router-dom';
 
 
 
-function LivroDetalhe(){
+function LivroDetalhe(props){
+
+    const navigate = useNavigate();
+
+    function abrirDetalhes(id){
+        navigate('/produto/' + id + '/detalhe')
+    }
     
     return(
-     <div className='pag-detalhe'>
+     <div className='pag-detalhe' onClick={() => abrirDetalhes(props.item.id)}>
         <img src={Favorito} className='img-favorito'/> 
         <imr src={Close} className='img-x'/>
         <div className='nome-autor'>
@@ -18,20 +25,20 @@ function LivroDetalhe(){
             <h3>AUTOR</h3>
         </div>
         <div className='cont-nome-autor'>
-            <p>Mais esperto que o diabo</p>
-            <p>Napoleon Hill</p>
+            <p>{props.item.nome}</p>
+            <p>{props.item.autor}</p>
         </div>
         <div className='genero-paginas'>
             <h3>GENÊRO</h3>
             <h3>PÁGINAS</h3>
         </div>
         <div className='cont-genero-pag'>
-            <p>Autoajuda</p>
-            <p>208</p>
+            <p>{props.item.genero}</p>
+            <p>{props.item.paginas}</p>
         </div>
         <div className='div-desc'>
             <h3>DESCRIÇÃO</h3>
-            <p>O livro Mais Esperto que o Diabo foi escrito como uma sessão de perguntas e respostas entre Napoleon Hill e o próprio Diabo, que afirma influenciar 98% da população. Ele afirma fazer isso através de 6 grandes medos que a maioria das pessoas tem, que são: Medo da pobreza. Medo da crítica.</p>
+            <p>{props.item.descricao}</p>
         </div>
         
         <div className='buttons-pg-detalhe'>
