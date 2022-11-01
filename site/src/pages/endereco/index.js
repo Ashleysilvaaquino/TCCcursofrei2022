@@ -23,7 +23,7 @@ export default function Endereco() {
       const r = await salvar(id, cep, referencia, residencia, estado, cidade, logradouro, complemento, bairro);
       toast.dark('Endereço salvo')
     } catch (err) {
-      toast.dark(err.response.data.erro)
+      toast.error(err.response.data.erro)
     }
 
   }

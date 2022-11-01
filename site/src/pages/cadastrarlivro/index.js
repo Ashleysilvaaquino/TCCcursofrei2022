@@ -44,8 +44,9 @@ export default function CadastrarLivro() {
     setId(resposta.id);
   }
 
+
   async function salvar() {
-    try {
+      try {
       if (!imagem)
         throw new Error('Escolha uma capa para o livro');
       if(id == 0){
