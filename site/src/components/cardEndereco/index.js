@@ -1,31 +1,31 @@
 import './index.scss';
 
-export default function CardEndereco() {
+export default function CardEndereco( { item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, numero }}) {
 
     return (
         <main className="card-endereco">
             <div className="titulo-comp-endereco">
-                <h3>Casa</h3>
+                <h3>{referencia}</h3>
             </div>
             <section className="conteudo-card-endereco">
                 <div className="f-esquerda-comp-endereco">
                     <label>Logradouro</label>
-                    <p>Rua Ave Maria</p>
+                    <p>{logradouro}</p>
                     <label>Bairro</label>
-                    <p>Veleiros</p>
+                    <p>{bairro}</p>
                     <label>Estado</label>
-                    <p>SP</p>
+                    <p>{estado}</p>
                     <label>Cidade</label>
-                    <p>São Paulo</p>
+                    <p>{estado}</p>
 
                 </div>
                 <div className="f-direita-comp-endereco">
                     <label>Complemento</label>
-                    <p>Campainha 3</p>
+                    <p>{complemento}</p>
                     <label>CEP</label>
-                    <p>04467-050</p>
+                    <p>{cep}</p>
                     <label>N°</label>
-                    <p>22-13</p>
+                    <p>{numero}</p>
                 </div>
             </section>
         </main>

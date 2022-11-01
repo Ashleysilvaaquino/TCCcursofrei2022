@@ -5,8 +5,8 @@ const api = axios.create({
     baseURL:API_URL
 })
 
-export async function salvar(idContaUsuario, referencia, residencia, estado, cidade, logradouro, complemento, bairro ){
-    const r = await api.post('/api/endereco' + idContaUsuario + '/endereco' , {referencia, residencia, estado, cidade, logradouro, complemento, bairro});
+export async function salvar(idContaUsuario, cep , numero, referencia, residencia, estado, cidade, logradouro, complemento, bairro ){
+    const r = await api.post('/api/endereco' + idContaUsuario + '/endereco' , {referencia, cep, numero, residencia, estado, cidade, logradouro, complemento, bairro});
     return r.data; 
 }
 

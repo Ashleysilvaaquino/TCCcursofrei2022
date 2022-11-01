@@ -2,8 +2,32 @@ import "./index.scss";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { salvar } from '../../api/enderecoAPI'
+import Storage from "local-storage";
+import { toast } from "react-toastify";
 
 export default function Endereco() {
+  const [referencia, setReferencia] = useState('')
+  const [cep, setCep] = useState('')
+  const [logradouro, setLogradouro] = useState('')
+  const [residencia, setResidencia] = useState('')
+  const [complemento, setComplemento] = useState('')
+  const [bairro, setBairro] = useState('')
+  const [estado, setEstado] = useState('')
+  const [cidade, setCidade] = useState('')
+
+
+  async function salvarEndereco() {
+    try {
+      const id = Storage('usuario-logado').id;
+      const r = await salvar(id, cep, referencia, residencia, estado, cidade, logradouro, complemento, bairro);
+      toast.dark('Endereço salvo')
+    } catch (err) {
+      toast.error(err.response.data.erro)
+    }
+
+  }
+
   return (
     <main className="endereco">
       <style>
@@ -27,31 +51,54 @@ export default function Endereco() {
       <section className="formulario">
 
         <h1>CADASTRE SEU <span> ENDEREÇO </span></h1>
-        <div className="cep">
+
+        <div className="pg-endereco-referencia">
+          <label>Referencia:</label>
+          <input type="text" placeholder="Ex: Casa" value={referencia} onChange={e => setReferencia(e.target.value)} />
+        </div>
+
+        <div className="pg-endereco-cep">
           <label>CEP:</label>
-          <input type="text" placeholder="Ex: 22222-222" />
+          <input type="text" placeholder="Ex: 22222-222" value={cep} onChange={e => setCep(e.target.value)} />
         </div>
 
-        <div className="numero">
+        <div className="pg-endereco-numero">
           <label>Número:</label>
-          <input type="text" placeholder="Ex:13" />
+          <input type="text" placeholder="Ex:13" value={residencia} onChange={e => setResidencia(Number(e.target.value))} />
         </div>
 
-        <div className="estado">
+        <div className="pg-endereco-estado">
           <label>Estado:</label>
-
-          <select>
-            <option value="" key=""></option>
-          </select>
-
-          <section className="botoes">
-            <button>Cadastrar</button>
-
-            <Link to="/carrinho">
-              <button>Avançar</button>
-            </Link>
-          </section>
+          <input type="text" placeholder="Ex:SP" value={estado} onChange={e => setEstado(e.target.value)} />
         </div>
+
+        <div className="pg-endereco-cidade">
+          <label>Cidade:</label>
+          <input type="text" placeholder="Ex:São Paulo" value={cidade} onChange={e => setCidade(e.target.value)} />
+        </div>
+
+        <div className="pg-endereco-logradouro">
+          <label>Logradouro:</label>
+          <input type="text" placeholder="Ex:Rua Um de Algum Lugar" value={logradouro} onChange={e => setLogradouro(e.target.value)} />
+        </div>
+
+        <div className="pg-endereco-bairro">
+          <label>Bairro:</label>
+          <input type="text" placeholder="Ex: jardim Itapura" value={bairro} onChange={e => setBairro(e.target.value)} />
+        </div>
+
+        <div className="pg-endereco-complemento">
+          <label>Complemento:</label>
+          <input type="text" placeholder="Ex: Campainha 3" value={complemento} onChange={e => setComplemento(e.target.value)} />
+        </div>
+
+        <section className="botoes">
+          <button onClick={salvarEndereco}>Cadastrar</button>
+
+          <Link to="/carrinho">
+            <button>Avançar</button>
+          </Link>
+        </section>
       </section>
     </main>
   );
