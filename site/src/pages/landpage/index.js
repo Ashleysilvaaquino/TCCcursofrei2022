@@ -82,20 +82,19 @@ function LandPage() {
                             <SwiperSlide className='div-infantil'><Link to='/livrosinfantis'><img src={InfantilGenero} className='img-infantil' /></Link><p>INFANTIL</p></SwiperSlide>
                             <SwiperSlide className='div-programacao'><Link to='/livrosdeprogramacao'><img src={Programacao} className='img-programacao' /></Link>
                             <p>PROGRAMAÇÃO</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><img src={Psico} className='img-psico' />
-                            <p>PSICOLOGIA</p></SwiperSlide>
-                            <SwiperSlide className='div-romance'><img src={Romance} className='img-romance' />
+                            <SwiperSlide className='div-psico'><Link to='/livrosdepsicologia'><img src={Psico} className='img-psico' /></Link><p>PSICOLOGIA</p></SwiperSlide>
+                            <SwiperSlide className='div-romance'><Link to='/livrosderomance'><img src={Romance} className='img-romance' /></Link>
                             <p>ROMANCE</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><img src={Biologia} className='img-romance' />
+                            <SwiperSlide className='div-psico'><Link to='/livrosdebiologia'><img src={Biologia} className='img-romance' /></Link>
                             <p>BIOLOGIA</p></SwiperSlide>
-                            <SwiperSlide className='div-romance'><img src={Harry} className='img-romance' />
-                            <p>FANTASIA</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><img src={Poesia} className='img-romance' />
-                            <p>POESIA</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><img src={Famoso} className='img-romance' />
+                            <SwiperSlide className='div-romance'><Link to='/livrosdefantasia'><img src={Harry} className='img-romance' />
+</Link>                            <p>FANTASIA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><Link to='/livrosdepoesia'><img src={Poesia} className='img-romance' />
+</Link>                            <p>POESIA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><Link to='/livrosdeartistas'><img src={Famoso} className='img-romance' /></Link>
                             <p>ARTÍSTAS</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><img src={Musica} className='img-romance' />
-                            <p>MUSICA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><Link to='/livrosdemusica'><img src={Musica} className='img-romance' />
+</Link>                            <p>MUSICA</p></SwiperSlide>
                         </Swiper>
                         
                        

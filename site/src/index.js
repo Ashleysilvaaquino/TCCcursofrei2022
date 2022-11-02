@@ -25,6 +25,13 @@ import CardEndereco from './components/cardEndereco';
 import LivrosDeTerror from './pages/livrosterror';
 import LivrosInfantis from './pages/livrosinfantis';
 import LivrosDeProgramacao from './pages/livrosprogramacao';
+import LivrosDePsicologia from './pages/livrosdepsicologia';
+import LivrosDeBiologia from './pages/livrodebiologia';
+import LivrosDeRomance from './pages/livrosderomance';
+import LivrosDeFantasia from './pages/livrosdefantasia';
+import LivrosDePoesia from './pages/livrosdepoesia';
+import LivrosDeArtistas from './pages/livrosdeartistas';
+import LivrosDeMusica from './pages/livrosdemusica';
 
 
 
@@ -66,6 +73,13 @@ root.render(
         <Route path = '/livrosdeprogramacao' element={<LivrosDeProgramacao/>} />
         <Route path = '/livrosdeterror' element={<LivrosDeTerror/>} />
         <Route path = '/livrosinfantis' element={<LivrosInfantis/>} />
+        <Route path = '/livrosdepsicologia' element={<LivrosDePsicologia/>} />
+        <Route path = '/livrosdebiologia' element={<LivrosDeBiologia/>} />
+        <Route path = '/livrosderomance' element={<LivrosDeRomance/>} />
+        <Route path = '/livrosdefantasia' element={<LivrosDeFantasia/>} />
+        <Route path = '/livrosdepoesia' element={<LivrosDePoesia/>} />
+        <Route path = '/livrosdeartistas' element={<LivrosDeArtistas/>} />
+        <Route path = '/livrosdemusica' element={<LivrosDeMusica/>} />
       </Routes>
     </BrowserRouter>
    
