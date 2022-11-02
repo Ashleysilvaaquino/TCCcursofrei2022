@@ -32,6 +32,7 @@ import LivrosDeFantasia from './pages/livrosdefantasia';
 import LivrosDePoesia from './pages/livrosdepoesia';
 import LivrosDeArtistas from './pages/livrosdeartistas';
 import LivrosDeMusica from './pages/livrosdemusica';
+import PagamentoPorPix from './pages/pagamentopix';
 
 
 
@@ -80,6 +81,7 @@ root.render(
         <Route path = '/livrosdepoesia' element={<LivrosDePoesia/>} />
         <Route path = '/livrosdeartistas' element={<LivrosDeArtistas/>} />
         <Route path = '/livrosdemusica' element={<LivrosDeMusica/>} />
+        <Route path = '/pagamentopix' element={<PagamentoPorPix/>} />
       </Routes>
     </BrowserRouter>
    

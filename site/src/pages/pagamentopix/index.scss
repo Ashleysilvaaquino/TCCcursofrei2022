@@ -1,0 +1,51 @@
+.livraria-logo-maneira{
+    margin: 20px;    
+    color: #3E7797;
+}
+
+.conteudo-pag-pix{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .img-pag-pix{
+      width: 485px;
+      height: 460.59px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    span{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+}
+.pt-inferior-pg-pagamento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 100px;
+    
+.pg-pag-pix-link{
+    color: #3E7797;
+    font-size: 16px;
+
+}
+
+.pag-pix-button{
+    background-color: #3E7797;
+    color: #ffff;
+
+    font-size: 16px;
+
+    width: 100px;
+    height: 30px;
+
+    border: none;
+    border-radius: 10px;
+
+    
+}
+
+}
