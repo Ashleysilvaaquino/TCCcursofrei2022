@@ -6,7 +6,7 @@ import FotoCartao from '../../assets/images/cartao.png'
 function PagarCartao() {
     return (
 
-        <main>
+        <main className="pag-cartao">
             <div className='logo'>
             <img src={Logo} alt="" />
             </div>

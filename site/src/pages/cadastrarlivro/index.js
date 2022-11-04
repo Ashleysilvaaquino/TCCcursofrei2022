@@ -58,7 +58,7 @@ export default function CadastrarLivro() {
       }
 
       else{
-        await alterarLivro(nome, autor, preco, descricao, paginas, idgenero);
+        await alterarLivro(id, nome, autor, preco, descricao, paginas, idgenero);
         if (typeof(imagem) == 'object')  
            await enviarimagemLivro(id, imagem);
         toast.dark('📚 Livro alterado com sucesso!');

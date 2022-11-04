@@ -126,6 +126,8 @@ server.put('/livro/:id', async (req, resp) => {
         const { id } = req.params;
         const livro = req.body;
 
+        console.log(livro);
+
         if (!livro.nome)
             throw new Error('Nome do livro é obrigatório!');
 
