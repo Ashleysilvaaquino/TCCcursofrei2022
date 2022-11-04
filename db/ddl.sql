@@ -16,7 +16,6 @@ DS_CELULAR   VARCHAR(100)
 
 CREATE TABLE `tb_usuario_endereco` (
 ID_USUARIO_ENDERECO     INT primary key auto_increment,
-ID_USUARIO				INT,
 DS_REFERENCIA			varchar(200),
 NR_CEP  				VARCHAR(100),
 NR_RESIDENCIA			int,
@@ -25,9 +24,10 @@ DS_CIDADE				varchar(100),
 DS_LOGRADOURO			varchar(300),
 DS_COMPLEMENTO			varchar(100),
 DS_BAIRRO				varchar(100),
-id_conta_usuario				int,
-foreign key (ID_CONTA_USUARIO) references TB_CONTA_USUARIO (ID_CONTA_USUARIO)
+ID_CONTA_USUARIO INT,
+foreign key(ID_CONTA_USUARIO) REFERENCES TB_CONTA_USUARIO(ID_CONTA_USUARIO)
 );
+
 
 
 
@@ -60,6 +60,15 @@ foreign key(id_genero) references tb_genero(id_genero)
 
 create table `tb_livro_favorito`(
 id_livro_favorito		int,
+id_livro int,
+foreign key (id_livro) references tb_livro(id_livro),
+id_conta_usuario				int,
+foreign key(id_conta_usuario) references tb_conta_usuario(id_conta_usuario)
+);
+
+
+create table `tb_carrinho`(
+id_carrinho    int,
 id_livro int,
 foreign key (id_livro) references tb_livro(id_livro),
 id_conta_usuario				int,

@@ -63,7 +63,7 @@ root.render(
         <Route path = '/admhome' element={<HomeAdm/>} />
         <Route path = '/detalhes' element={<Detalhes/>} />
         <Route path = '/carrinhocard' element={<Carrinhocard/>} />
-        <Route path = '/produto/:id/detalhe' element={<LivroDetalhe/>} />
+        <Route path = '/livro/:id/detalhe' element={<LivroDetalhe/>} />
         <Route path = '/endereco' element={<Endereco/>} />
         <Route path = '/homecliente' element={<HomeCliente/>} />
         <Route path = '/menusuario' element={<MenuUsuario/>} />

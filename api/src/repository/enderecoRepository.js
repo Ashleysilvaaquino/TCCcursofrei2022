@@ -21,8 +21,8 @@ where id_usuario = ?`
 
 
  export async function salvarEndereco(idContaUsuario, endereco ) {
-   const comando = `insert into tb_usuario_endereco(id_usuario, ds_referencia, nr_cep, nr_residencia, ds_estado, ds_cidade, ds_logradouro, ds_complemento, ds_bairro)
-                                             values(?,?,?,?,?,?,?,?)`
+   const comando = `insert into tb_usuario_endereco(ds_referencia, nr_cep, nr_residencia, ds_estado, ds_cidade, ds_logradouro, ds_complemento, ds_bairro)
+                                             values(?,?,?,?,?,?,?)`
 
    const [info] = await con.query(comando, [idContaUsuario, endereco.cep, endereco.residencia, endereco.estado, endereco.cidade, endereco.logradouro, endereco.complemento, endereco.bairro ]);
    return info.insertId;

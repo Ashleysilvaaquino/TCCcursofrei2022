@@ -216,6 +216,7 @@ server.get('/livro/:id', async (req, resp) => {
         const id = req.params.id;
 
         const produto = await buscarProdutoPorId(id);
+        
     
 
 

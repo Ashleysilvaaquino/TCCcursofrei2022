@@ -8,18 +8,9 @@ import LivroDetalhe from '../../components/livrodetalhe';
 
   
 export default function Detalhes(){
-    const [livro, setLivro] = useState({});
+    const [livro, setLivro] = useState({ nome : [] , autor: [], preco: [], descricao: [], paginas: [] });
 
-    const { idParam } = useParams();
-
-    useEffect(() =>{
-        carregarLivro();
-    });
-
-    async function carregarLivro(){
-        const resposta = await buscarProdutoPorId(idParam);
-        setLivro(resposta);
-    }
+   
     return(
         <div>
             <LivroDetalhe livro={livro}/>
