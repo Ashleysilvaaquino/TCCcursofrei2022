@@ -1,0 +1,90 @@
+main{
+    display: flex;
+    flex-direction: column;
+
+
+    label{
+        font-size: 22px;
+
+    }
+
+    .flex{
+        padding-top: 10em;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        input, select{
+            background: #FFFFFF;
+            box-shadow: 0px 10px 10px rgba(34, 34, 34, 0.267);
+            border: none;
+            outline: none;
+            font-size: 19px;
+            height: 45px;
+            width: 15em;
+            padding-left: 20px;
+            border-radius: 3px;
+            letter-spacing: 1.5px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: normal;
+
+        }
+
+    }
+    .div1{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+   // .div3{
+      //  display: flex;
+      //  flex-direction: column;
+
+    //}
+
+    .fotoCartao{
+      width: 15em;
+      margin-top: 50px;
+    }
+    .quadrado1{
+        margin-right: 100px;
+    }
+    .vamo{
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 15px;
+        padding-top: 6em;
+    }
+
+    .quadrado2{
+
+        p{
+            margin-left: 30px;
+        }
+    }
+    .botoes{
+        display: flex;
+        justify-content: space-around;
+        margin-top:5em;
+
+         button{
+            background-color: tomato; background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
+            border: none;
+            width: 140px;
+            height: 50px;
+            border-radius: 10px;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            font-family: 'Oswald', sans-serif ;
+
+            font-size: 20px; 
+            }
+
+    }
+}
+.logo{
+    margin-top: 2em;
+    margin-left: 2em;
+}

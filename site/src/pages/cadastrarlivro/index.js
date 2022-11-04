@@ -40,7 +40,7 @@ export default function CadastrarLivro() {
     setDescricao(resposta.descricao);
     setPaginas(resposta.paginas);
     setIdgenero(resposta.genero);
-   setImagem(resposta.imagem);
+    setImagem(resposta.imagem);
     setId(resposta.id);
   }
 
@@ -69,6 +69,7 @@ export default function CadastrarLivro() {
   
       if (err.response) {
         toast.error(err.response.data.erro);
+        console.log(idgenero)
       } else {
         toast.error(err.message);
       }
@@ -81,7 +82,6 @@ export default function CadastrarLivro() {
 
   }
 
- 
   function escolherImagem() {
     document.getElementById('capaimagem').click();
   }
@@ -184,6 +184,9 @@ export default function CadastrarLivro() {
                 
                 )}
               </select>
+
+
+
 
             </div>
             <div className='input-box'>
