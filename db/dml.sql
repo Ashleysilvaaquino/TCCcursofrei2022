@@ -34,10 +34,24 @@ use Livrariamontesdb;
 */
 
    
-insert into tb_usuario_endereco(nr_cep , nr_residencia)
-   values('04752285','30');
+insert into tb_usuario_endereco(id_conta_usuario,ds_referencia,nr_cep,nr_residencia,ds_estado,ds_cidade,ds_logradouro,ds_complemento,ds_bairro)
+						values(1,"casa","04467-050",91,"SP","são paulo","Rua Dom João Batista Neri","Campainha 3","Jd Iatapura");
    
-select * from tb_usuario_endereco;
+   select
+	ds_referencia		referencia,
+	nr_cep				cep,
+    nr_residencia		residencia,
+    ds_estado			estado,
+    ds_cidade			cidade,
+    ds_logradouro		logradouro,
+    ds_complemento		complemento,
+    ds_bairro			bairro
+    
+from tb_usuario_endereco
+where id_conta_usuario = 2;
+
+   
+select * from tb_endereco_usuario;
    
 insert into tb_conta_usuario(nm_usuario, ds_email, ds_senha, ds_celular)
    values('Ashley', 'ashleysilvaaquino2@gmail.com','21918570173','11958861234');
