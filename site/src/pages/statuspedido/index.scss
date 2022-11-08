@@ -1,0 +1,64 @@
+.pg-status-pedido{
+    display: flex;
+    flex-direction: row;
+}
+
+.quadrande-maior-pg-status-pedido{
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 70px;
+    margin-top: 70px;
+
+    border-radius: 15px;
+    
+
+    width: 900px;
+    height: 650px;
+
+    background-color:  #95B9CE;
+
+    .inputs-status-pedido{
+        display: flex;
+        flex-direction: column;
+        
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+
+    .input-text-status-pedido{
+        color: #ffff;
+
+        font-size: 18px;
+        
+        .caixa-input-pg-status{
+            width: 300px;
+            height: 20px;
+
+            border: none;
+            border-radius: 5px;
+        }
+    }
+
+    .quadrante-menor-status-pedido{
+        display: flex;
+        flex-direction: column;
+        
+        width: 400px;
+        height: 200px;
+        background-color: #3E7797;
+    }
+
+    .h3-status-pedido{
+        color: #ffff;
+
+        margin-top: 10px;
+
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .div-status-pedido{
+        
+    }
+}

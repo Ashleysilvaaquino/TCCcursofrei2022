@@ -34,6 +34,7 @@ import LivrosDeArtistas from './pages/livrosdeartistas';
 import LivrosDeMusica from './pages/livrosdemusica';
 import PagamentoPorPix from './pages/pagamentopix';
 import PagarCartao from './pages/pagarcartao';
+import StatusPedido from './pages/statuspedido';
 
 
 
@@ -84,6 +85,7 @@ root.render(
         <Route path = '/livrosdemusica' element={<LivrosDeMusica/>} />
         <Route path = '/pagamentopix' element={<PagamentoPorPix/>} />
         <Route path = '/pagarcartao' element={<PagarCartao/>} />
+        <Route path = '/statuspedido' element={<StatusPedido/>} />
       </Routes>
     </BrowserRouter>
    
