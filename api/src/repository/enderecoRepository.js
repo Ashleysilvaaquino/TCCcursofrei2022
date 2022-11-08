@@ -6,6 +6,7 @@ export async function listarEndereco(idContaUsuario) {
       id_conta_usuario  id,
       ds_referencia		referencia,
       nr_cep				  cep,
+      nr_residencia   residencia,
       ds_estado		   	estado,
       ds_cidade			  cidade,
       ds_logradouro		logradouro,
