@@ -22,7 +22,7 @@ function LoginUsuario() {
 
   useEffect(() => {
       if (storage('usuario-logado')) {
-          navigate('/menusuario');
+          navigate('/homecliente');
       }
   }, []);
 

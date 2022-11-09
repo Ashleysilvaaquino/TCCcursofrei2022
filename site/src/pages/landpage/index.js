@@ -28,18 +28,25 @@ import Musica from '../../assets/images/notas-musicais.png'
 
 import { Link } from 'react-router-dom';
 
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import{ Navigation, Pagination} from 'swiper';
 import 'swiper/scss'
 import "swiper/scss/free-mode";
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+import { listarTodosLivros } from '../../api/admAPI';
 
 
 
 
 
 function LandPage() {
+  
+
+   
+
+
     return (
 
         <div className='landpage'>
@@ -111,20 +118,9 @@ function LandPage() {
                 <h3 className='novidades-ladpage'>Novidades que você precisa conhecer</h3>
                 <div className='livros-landpage'>
                     <LivroUsuario />
-                    <LivroUsuario />
-                    <LivroUsuario />
-                    <LivroUsuario />
-                    <LivroUsuario />
-                </div>
-                <div className='livros-landpage'>
-                    <LivroUsuario />
-                    <LivroUsuario />
-                    <LivroUsuario />
-                    <LivroUsuario />
-                    <LivroUsuario />
                 </div>
             </div>
-            <br></br>
+            
 
 
             <div className='beneficios-landpage'>
