@@ -24,7 +24,7 @@ export default function StatusPedido() {
                         <p>CEP </p>
                         <input type="text" className="caixa-input-pg-status"/>
                     </div>
-                    <div >
+                    <div className="div-pt2-status">
                         <div>
                             <p>Nº </p>
                             <input type="text" />
@@ -40,7 +40,10 @@ export default function StatusPedido() {
                     </div>  
                 </main>
                 <section className="quadrante-menor-status-pedido">
-                    <h3 className="h3-status-pedido">STATUS</h3>
+                    
+                        <h3 className="h3-status-pedido">STATUS</h3>
+                    
+                    
                     <div className="status-fotos">
                         <div className="div-status-pedido">
                             <img src={Caixa} />
@@ -57,7 +60,7 @@ export default function StatusPedido() {
                     </div>
                 </section>
             </div>
-            <button>SELECIONAR</button>
+            <button className="botton-pg-status">SELECIONAR</button>
         </section>
     )
 }

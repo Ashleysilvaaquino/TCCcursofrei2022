@@ -1,11 +1,13 @@
 .pg-status-pedido{
     display: flex;
     flex-direction: row;
+    
 }
 
 .quadrande-maior-pg-status-pedido{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 
     margin-left: 70px;
     margin-top: 70px;
@@ -46,19 +48,49 @@
         
         width: 400px;
         height: 200px;
+
+        margin-top: 50px;
+        
         background-color: #3E7797;
     }
 
     .h3-status-pedido{
         color: #ffff;
 
-        margin-top: 10px;
+        margin-top: 20px;
 
         font-size: 20px;
         text-align: center;
     }
 
-    .div-status-pedido{
+    .status-fotos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        color: #ffff;
+
+        margin-top: 20px;
+
+
+    }
+
+
+    .div-pt2-status{
+        display: flex;
+        flex-direction: row;
+        
         
     }
-}
+
+    
+}.botton-pg-status{
+        background-color: #3E7797;
+        color: #ffff;
+
+        width: 110px;
+        height: 30px;
+
+        border: none;
+        border-radius: 10px;
+    }
