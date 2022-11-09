@@ -30,7 +30,7 @@ import { Link } from 'react-router-dom';
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import{ Navigation, Pagination} from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import 'swiper/scss'
 import "swiper/scss/free-mode";
 import 'swiper/scss/navigation';
@@ -42,9 +42,9 @@ import { listarTodosLivros } from '../../api/admAPI';
 
 
 function LandPage() {
-  
 
-   
+
+
 
 
     return (
@@ -78,38 +78,38 @@ function LandPage() {
                             spaceBetween={15}
                             slidesPerView={5}
                             navigation
-                            pagination={{clickable:true}}
+                            pagination={{ clickable: true }}
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
-                          
+
 
                         >
-                            
-                            <SwiperSlide className='div-terror'> <Link to='/livrosdeterror'><img src={Terror} className='img-terror'/></Link> <p >TERROR</p> </SwiperSlide>
+
+                            <SwiperSlide className='div-terror'> <Link to='/livrosdeterror'><img src={Terror} className='img-terror' /></Link> <p >TERROR</p> </SwiperSlide>
                             <SwiperSlide className='div-infantil'><Link to='/livrosinfantis'><img src={InfantilGenero} className='img-infantil' /></Link><p>INFANTIL</p></SwiperSlide>
                             <SwiperSlide className='div-programacao'><Link to='/livrosdeprogramacao'><img src={Programacao} className='img-programacao' /></Link>
-                            <p>PROGRAMAÇÃO</p></SwiperSlide>
+                                <p>PROGRAMAÇÃO</p></SwiperSlide>
                             <SwiperSlide className='div-psico'><Link to='/livrosdepsicologia'><img src={Psico} className='img-psico' /></Link><p>PSICOLOGIA</p></SwiperSlide>
                             <SwiperSlide className='div-romance'><Link to='/livrosderomance'><img src={Romance} className='img-romance' /></Link>
-                            <p>ROMANCE</p></SwiperSlide>
+                                <p>ROMANCE</p></SwiperSlide>
                             <SwiperSlide className='div-psico'><Link to='/livrosdebiologia'><img src={Biologia} className='img-romance' /></Link>
-                            <p>BIOLOGIA</p></SwiperSlide>
+                                <p>BIOLOGIA</p></SwiperSlide>
                             <SwiperSlide className='div-romance'><Link to='/livrosdefantasia'><img src={Harry} className='img-romance' />
-</Link>                            <p>FANTASIA</p></SwiperSlide>
+                            </Link>                            <p>FANTASIA</p></SwiperSlide>
                             <SwiperSlide className='div-psico'><Link to='/livrosdepoesia'><img src={Poesia} className='img-romance' />
-</Link>                            <p>POESIA</p></SwiperSlide>
+                            </Link>                            <p>POESIA</p></SwiperSlide>
                             <SwiperSlide className='div-psico'><Link to='/livrosdeartistas'><img src={Famoso} className='img-romance' /></Link>
-                            <p>ARTÍSTAS</p></SwiperSlide>
+                                <p>ARTÍSTAS</p></SwiperSlide>
                             <SwiperSlide className='div-psico'><Link to='/livrosdemusica'><img src={Musica} className='img-romance' />
-</Link>                            <p>MUSICA</p></SwiperSlide>
+                            </Link>                            <p>MUSICA</p></SwiperSlide>
                         </Swiper>
-                        
-                       
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@ function LandPage() {
                     <LivroUsuario />
                 </div>
             </div>
-            
+
 
 
             <div className='beneficios-landpage'>
@@ -141,33 +141,37 @@ function LandPage() {
 
             </div>
 
-            <div className='nos'>
+            <section className='nos'>
                 <h2 className='agazinho2'>CONHEÇA A ADMINISTRAÇÃO <span>DA LIVRARIA MONTES</span></h2>
-                <div >
-                    <div className='div-isabella'>
-                        <img src={Isabella} className='foto-isabella' />
-                        <p className='txt-desenvolvedora'>Desenvolvedora Back-End</p>
+                <div className='f-quem-somos'>
+                    <div className='administracao'>
+                        <div className='div-isabella'>
+                            <img src={Isabella} className='foto-isabella' />
+                            <p className='txt-desenvolvedora'>Desenvolvedora Back-End</p>
+                        </div>
+                        <div className='div-ashley'>
+                            <img src={Ashley} className='img-ashley' />
+                            <p className='txt-desenvolvedora1'>Desenvolvedora Back-End</p>
+                        </div>
+                        <div className='div-ana'>
+                            <img src={Ana} className='foto-ana' />
+                            <p className='txt-desenvolvedora2'>Desenvolvedora Front-End</p>
+                        </div>
+                        <div className='div-guilherme'>
+                            <img src={Guilherme} className='foto-guilherme' />
+                            <p className='txt-desenvolvedora2'>Desenvolvedor Front-End</p>
+                        </div>
                     </div>
-                    <div className='div-ashley'>
-                        <img src={Ashley} className='img-ashley' />
-                        <p className='txt-desenvolvedora1'>Desenvolvedora Back-End</p>
+                    <div className='mulher-ti'>
+                        <img src={Mulher} />
                     </div>
-                    <div className='div-ana'>
-                        <img src={Ana} className='foto-ana' />
-                        <p className='txt-desenvolvedora2'>Desenvolvedora Front-End</p>
+                    <div className='quemsomos'>
+                        <h2 >QUEM <span>SOMOS?</span></h2>
+                        <p className='quemsomos-desc'>Somos uma empresa nacional de livros que se deu início em setembro de 2011, e que se teve maior reconhecimento em abril de 2020 graças ao frete mais rápido do Brasil. Entregamos livros para todo o território brasileiro. Rapidez, confiança e segurança.</p>
                     </div>
-                    <div className='div-guilherme'>
-                        <img src={Guilherme} className='foto-guilherme' />
-                        <p className='txt-desenvolvedora2'>Desenvolvedor Front-End</p>
-                    </div>
-                </div>
-                <div className='quemsomos'>
-                    <h2 >QUEM <span>SOMOS?</span></h2>
-                    <p className='quemsomos-desc'>Somos uma empresa nacional de livros que se deu início em setembro de 2011, e que se teve maior reconhecimento em abril de 2020 graças ao frete mais rápido do Brasil. Entregamos livros para todo o território brasileiro. Rapidez, confiança e segurança.</p>
-                </div>
 
-                <img src={Mulher} className='mulher-ti' />
-            </div>
+                </div>
+            </section>
 
             <div className='rodape-landapage'>
                 <div>
