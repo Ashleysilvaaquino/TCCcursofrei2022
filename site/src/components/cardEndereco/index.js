@@ -1,4 +1,6 @@
 import './index.scss';
+import { listar } from '../../api/enderecoAPI';
+import { salvar } from '../../api/enderecoAPI';
 
 export default function CardEndereco( { item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, numero }}) {
 
@@ -16,7 +18,7 @@ export default function CardEndereco( { item : { referencia, bairro, logradouro,
                     <label>Estado</label>
                     <p>{estado}</p>
                     <label>Cidade</label>
-                    <p>{estado}</p>
+                    <p>{cidade}</p>
 
                 </div>
                 <div className="f-direita-comp-endereco">
