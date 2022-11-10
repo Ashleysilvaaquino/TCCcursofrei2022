@@ -47,7 +47,7 @@ export default function StatusPedido() {
                     <div className="status-fotos">
                         <div className="div-status-pedido">
                             <img src={Caixa} />
-                            <p>Encaminhando</p>
+                            <p>Preparando</p>
                         </div>
                         <div className="div-status-pedido">
                             <img src={Caminhao} />
@@ -60,7 +60,10 @@ export default function StatusPedido() {
                     </div>
                 </section>
             </div>
-            <button className="botton-pg-status">SELECIONAR</button>
+            <div className="div-button-pg-status">
+                <button className="botton-pg-status">SELECIONAR</button>
+            </div>
+            
         </section>
     )
 }
