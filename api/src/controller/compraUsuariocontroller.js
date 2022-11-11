@@ -1,15 +1,16 @@
 import { Router } from "express";
 const server = Router();
 import randomString from 'randomstring'
-import { buscarProdutoPorId } from "../repository/admrepository";
-import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, inserirPedido, inserirPedidoItem } from "../repository/compraUsuariorepository";
-import { criarCodigoPedido, criarNovoPedido } from "../services/pedidovalidacao";
+import { buscarProdutoPorId } from "../repository/admrepository.js";
+import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, inserirPedido, inserirPedidoItem } from "../repository/compraUsuariorepository.js";
+import { criarCodigoPedido, criarNovoPedido } from "../services/pedidovalidacao.js";
 
 
 
-server.post('/api/pedido/:idUsuario/', async (req,resp) => {
+server.post('/api/pedido/:idUsuario', async (req,resp) => {
      try{
         const {idUsuario} = req.params;
+
         const info = req.boby;
         const codigo = criarCodigoPedido();
         const novoPedido = criarNovoPedido(idUsuario, tipoPagamento, info);
@@ -33,3 +34,5 @@ server.post('/api/pedido/:idUsuario/', async (req,resp) => {
         })
     }
 })
+
+export default server;

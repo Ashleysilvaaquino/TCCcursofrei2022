@@ -2,6 +2,7 @@ import 'dotenv/config'
 import admcontroller from './controller/admcontroller.js'
 import usuariocontroller from './controller/usuariocontroller.js'
 import enderecocontroller from './controller/enderecocontroller.js'
+import compraUsuariocontroller from './controller/compraUsuariocontroller.js'
 import express from 'express'
 import cors from 'cors'
 
@@ -17,7 +18,8 @@ server.use('/storage/capalivros', express.static('storage/capalivros'));
 // configuração dos endpoints
 server.use(admcontroller);
 server.use(usuariocontroller);
-server.use(enderecocontroller)
+server.use(enderecocontroller);
+server.use(compraUsuariocontroller);
 
 server.use('/storage/livro', express.static('storage/livro'));
 
