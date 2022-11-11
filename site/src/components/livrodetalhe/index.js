@@ -6,6 +6,8 @@ import Favorito from '../../assets/images/favorito.png';
 import Close from '../../assets/images/Close.png'; 
 import { useNavigate,  useParams } from 'react-router-dom';
 import {buscarProdutoPorId} from '../../api/admAPI'
+import {AdicionarAoCarrinho} from '../../pages/detalheslivro/index.js'
+
 
 
 
@@ -57,7 +59,7 @@ function LivroDetalhe(){
         </div>
         
         <div className='buttons-pg-detalhe'>
-            <button className='button-add'>ADICIONAR AO CARRINHO</button>
+            <button onClick={AdicionarAoCarrinho} className='button-add'>ADICIONAR AO CARRINHO</button>
             <button className='button-comprar'>COMPRAR</button>
         </div>
 
