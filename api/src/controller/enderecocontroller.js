@@ -27,11 +27,13 @@ server.post('/api/usuario/:id/endereco' , async (req , resp) => {
         const id = req.params.id;
         const endereco = req.body;
 
+        
         const r =  await salvarEndereco(id , endereco);
         resp.status(204).send();
 
 
     } catch (err) {
+        console.log(err);
         resp.status(404).send({
             error: err.message
         })

@@ -10,7 +10,7 @@ export default function Endereco() {
   const [referencia, setReferencia] = useState('')
   const [cep, setCep] = useState('')
   const [logradouro, setLogradouro] = useState('')
-  const [residencia, setResidencia] = useState('')
+  const [residencia, setResidencia] = useState()
   const [complemento, setComplemento] = useState('')
   const [bairro, setBairro] = useState('')
   const [estado, setEstado] = useState('')
@@ -19,11 +19,13 @@ export default function Endereco() {
 
   async function salvarEndereco() {
     try {
-      const id = Storage('usuario-logado').id;
-      const r = await salvar(id, cep, referencia, residencia, estado, cidade, logradouro, complemento, bairro);
-      toast.dark('Endereço salvo')
+      const id = Storage('usuario-logado').id.ID_CONTA_USUARIO;
+      const r = await salvar(id , referencia, cep, residencia, estado, cidade, logradouro, complemento, bairro);
+      console.log(r);
+      toast.dark('Endereço salvo 🏘️');
+      
     } catch (err) {
-      toast.error(err.response.data.erro)
+      toast.error(err.message);
     }
 
   }

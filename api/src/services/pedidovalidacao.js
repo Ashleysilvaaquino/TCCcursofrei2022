@@ -11,8 +11,8 @@ export function criarNovoPedido(idUsuario, tipoPagamento, info){
     let agora = new Date();
     return{
        idUsuario: idUsuario,
-       data: agora,
-       tipoPagamento: info.tipoPagamento, 
+       data: agora, 
+       tipoPagamento: 'pix', 
        status: 'Aguardando Pagamento',
        quantidade: info.quantidade
 

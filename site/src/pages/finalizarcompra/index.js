@@ -22,7 +22,7 @@ export default function FinalizarCompra() {
     const [enderecos, setEnderecos] =  useState([]);
     
     async function carregarEndereco() {
-        const id = Storage('usuario-logado').id;
+        const id = Storage('usuario-logado').id.ID_CONTA_USUARIO;
         const r = await listar(id);
         setEnderecos(r);
 

@@ -1,13 +1,13 @@
 import './index.scss';
-import { listar } from '../../api/enderecoAPI';
-import { salvar } from '../../api/enderecoAPI';
 
 export default function CardEndereco( { item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, numero }}) {
 
     return (
         <main className="card-endereco">
             <div className="titulo-comp-endereco">
+             
                 <h3>{referencia}</h3>
+
             </div>
             <section className="conteudo-card-endereco">
                 <div className="f-esquerda-comp-endereco">

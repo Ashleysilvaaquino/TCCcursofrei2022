@@ -15,13 +15,19 @@ server.post('/api/pedido/:idUsuario', async (req,resp) => {
         const codigo = criarCodigoPedido();
         const novoPedido = criarNovoPedido(idUsuario, tipoPagamento, info);
         const idPedidoCriado = await inserirPedido(novoPedido);
-        const idPagCartaoCriado = await inserirPagamentoCartao(idPedidoCriado, info.cartao);
-        const idPagBoletoCriado = await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
-        const idPagPixCriado = await inserirPagamentoPix(idPedidoCriado, info.pix);
-
         for(let item of info.produtos ){
             const prod = await buscarProdutoPorId(item.id);
-            const idProdutoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id,  item.qtd, item.preco );
+            await inserirPedidoItem(idPedidoCriado, prod.id,  item.qtd, item.preco );
+        }
+        if(tipoPagamento === cartao){
+            await inserirPagamentoCartao(idPedidoCriado, info.cartao);            
+        }
+        else if(tipoPagamento === boleto){
+           await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
+            
+        }    
+        else if(tipoPagamento === pix){
+           await inserirPagamentoPix(idPedidoCriado, info.pix);
         }
 
         resp.status(204).send();
