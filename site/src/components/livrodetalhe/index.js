@@ -7,10 +7,13 @@ import { API_URL } from '../../api/config'
  
 import { useNavigate,  useParams } from 'react-router-dom';
 import {buscarProdutoPorId} from '../../api/admAPI'
+import BarraPesquisa from '../pesquisa';
+import MenuUsuario from '../menucliente';
 
 
 
 export default function LivroDetalhe(){
+    
 
     const navigate = useNavigate();
 
@@ -40,18 +43,16 @@ export default function LivroDetalhe(){
         if (Storage('carrinho')) {
             carrinho = Storage('carrinho');
         }
-
-
         if (!carrinho.find(livro => livro.id === id)) {
             carrinho.push({
                 id: id,
                 qtd: 1
             })
-
             Storage('carrinho', carrinho);
+            
         }
-
         toast.dark('Produto adicionado ao carrinho!');
+        
     }
 
 
@@ -85,7 +86,7 @@ export default function LivroDetalhe(){
         </div>
         
         <div className='buttons-pg-detalhe'>
-            <button onClick={AdicionarAoCarrinho} className='button-add' >ADICIONAR AO CARRINHO</button>
+            <button  onClick={AdicionarAoCarrinho} className='button-add' >ADICIONAR AO CARRINHO</button>
             <button className='button-comprar'>COMPRAR</button>
         </div>
 

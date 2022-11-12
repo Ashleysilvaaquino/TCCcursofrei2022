@@ -37,15 +37,11 @@ export default function MenuUsuario(){
 
             <div>
                <img src={Site} />
-               <div><Link to=''>Visitar Site</Link></div>
+               <div><Link to='/'>Visitar Site</Link></div>
             </div>
             <div>
                <img src={Carrinho} className='imgcarrinho'/>
                <div ><Link to='/carrinho'>Meu carrinho</Link></div>
-            </div>
-            <div>
-               <img src={Favoritos}/>
-               <div>Favoritos</div>
             </div>
             <div>
                <img src={Pedidos}/>

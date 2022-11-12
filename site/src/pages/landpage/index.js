@@ -24,6 +24,9 @@ import Biologia from '../../assets/images/biologia.png';
 import Harry from '../../assets/images/harry-potter.png'
 import Poesia from '../../assets/images/poesia.png'
 import Famoso from '../../assets/images/revista.png'
+import lupa from '../../assets/images/lupa-pretinha.png';
+import {  buscarLivrosPorNome} from '../../api/admAPI';
+
 import Musica from '../../assets/images/notas-musicais.png'
 
 import { Link } from 'react-router-dom';
@@ -31,6 +34,8 @@ import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
+import { useEffect, useState } from 'react';
+
 import 'swiper/scss'
 import "swiper/scss/free-mode";
 import 'swiper/scss/navigation';
@@ -42,7 +47,15 @@ import { listarTodosLivros } from '../../api/admAPI';
 
 
 function LandPage() {
+    const [livros, setLivros] = useState([]);
+  
+    const [filtro, setFiltro] = useState('');  
+ 
 
+    async function filtrar() {
+        const resp = await buscarLivrosPorNome(filtro);
+        setLivros(resp);
+    }
 
 
 
@@ -53,7 +66,51 @@ function LandPage() {
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
                 <div>
-                    <BarraPesquisa></BarraPesquisa>
+                <div>
+                <div className='comp-pesquisa'>
+                    <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
+                    <img src={lupa}  onClick={filtrar} />
+                </div>
+            </div>
+            
+            {livros.map(item =>
+                <div className='comp-card' key={item.id}>
+
+
+
+
+                    <div className="coluna-txt">
+
+                        <label>Nome</label>
+                        <p>{item.nome}</p>
+
+                        <label>Autor</label>
+                        <p>{item.autor}</p>
+
+                        <label>Gênero</label>
+                        <p className="genero">{item.nomeGenero}</p>
+
+                    </div>
+
+                    <div className="preco">
+
+                        <label>Preço</label>
+                        <p>{item.preco}</p>
+
+                    </div>
+
+                    <div className="descricao">
+
+                        <label>Descrição</label>
+                        <p>{item.descricao}</p>
+
+                    </div>
+
+
+                  
+
+                </div>
+            )}
                 </div>
 
                 <div className='login'>
