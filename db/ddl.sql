@@ -124,5 +124,5 @@ vl_produto             decimal(15,2),
 id_pedido 			   int,
 foreign key(id_pedido) references tb_pedido(id_pedido),
 id_livro 			   int,
-foreign key(id_pedido) references tb_livro(id_livro)
+foreign key(id_livro) references tb_livro(id_livro)
 );

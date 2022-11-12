@@ -7,34 +7,26 @@ import { criarCodigoPedido, criarNovoPedido } from "../services/pedidovalidacao.
 
 
 
-server.post('/api/pedido/:idUsuario', async (req,resp) => {
+server.post('/api/pedido/:idUsuario/', async (req,resp) => {
      try{
         const {idUsuario} = req.params;
+        
 
-        const info = req.boby;
+        const info = req.body;
         const codigo = criarCodigoPedido();
-        const novoPedido = criarNovoPedido(idUsuario, tipoPagamento, info);
-        const idPedidoCriado = await inserirPedido(novoPedido);
+        const pedidoNovo = criarNovoPedido(idUsuario, info.tipoPagamento,info, codigo);
+        const idPedidoCriado = await inserirPedido(pedidoNovo);
         for(let item of info.produtos ){
             const prod = await buscarProdutoPorId(item.id);
-            await inserirPedidoItem(idPedidoCriado, prod.id,  item.qtd, item.preco );
+            const idItemPedidoCriado =  await inserirPedidoItem(idPedidoCriado, prod,  item.qtd, item.preco );
         }
-        if(tipoPagamento === cartao){
-            await inserirPagamentoCartao(idPedidoCriado, info.cartao);            
-        }
-        else if(tipoPagamento === boleto){
-           await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
-            
-        }    
-        else if(tipoPagamento === pix){
-           await inserirPagamentoPix(idPedidoCriado, info.pix);
-        }
-
+    
         resp.status(204).send();
                
             
      }
      catch (err) {
+        console.log(err);
         resp.status(401).send({
             erro: err.message
         })

@@ -5,13 +5,13 @@ import { con } from   './connection.js';
 export async function inserirPedido(pedidoNovo){
     const comando = `
          INSERT INTO tb_pedido(
-             id_usuario, 
+             id_conta_usuario, 
              dt_horario,
              tp_pagamento,
              ds_status,
              qtd_livro
          )
-         values(?,?,?,?,?)
+         values(?,?,?,?,?);
     `
     const [info] = await con.query(comando, [
        pedidoNovo.idUsuario,
@@ -43,7 +43,8 @@ export async function inserirPedido(pedidoNovo){
   pagamentoNovo.cvv,
   pagamentoNovo.vencimento,
   pagamentoNovo.nomeProprietario,
-  pagamentoNovo.numeroCodigo
+  pagamentoNovo.numeroCodigo,
+  pagamentoNovo.tipoPagamento
  ]);
  
  return info.affectedRows;
@@ -61,6 +62,7 @@ export async function inserirPedido(pedidoNovo){
  const [info] = await con.query(comando, [
   idPedido,
   pagamentoNovo.numeroCodigo,
+  pagamentoNovo.tipoPagamento
  
  ]);
  
@@ -80,6 +82,7 @@ export async function inserirPedido(pedidoNovo){
  const [info] = await con.query(comando, [
   idPedido,
   pagamentoNovo.numeroCodigo,
+  pagamentoNovo.tipoPagamento
  
  ]);
  

@@ -15,6 +15,7 @@ export default function Endereco() {
   const [bairro, setBairro] = useState('')
   const [estado, setEstado] = useState('')
   const [cidade, setCidade] = useState('')
+  
 
 
   async function salvarEndereco() {
@@ -25,6 +26,7 @@ export default function Endereco() {
       toast.dark('Endereço salvo 🏘️');
       
     } catch (err) {
+      
       toast.error(err.message);
     }
 
