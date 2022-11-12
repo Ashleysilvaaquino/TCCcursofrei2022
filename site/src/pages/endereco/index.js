@@ -20,7 +20,7 @@ export default function Endereco() {
 
   async function salvarEndereco() {
     try {
-      const id = Storage('usuario-logado').id.ID_CONTA_USUARIO;
+      const id = Storage('usuario-logado').ID_CONTA_USUARIO;
       const r = await salvar(id , referencia, cep, residencia, estado, cidade, logradouro, complemento, bairro);
       console.log(r);
       toast.dark('Endereço salvo 🏘️');

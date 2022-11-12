@@ -7,12 +7,10 @@ const api = axios.create({
 
 export async function salvar(idUsuario, referencia, cep, residencia, estado, cidade, logradouro, complemento, bairro ){
     const r = await api.post('/api/usuario/' + idUsuario + '/endereco' , {idUsuario , referencia, cep,residencia, estado, cidade, logradouro, complemento, bairro});
-
     return r.data; 
 }
 
 export async function listar(idUsuario){
     const r = await api.get('/api/usuario/' + idUsuario + '/endereco');
-    console.log(r);
     return r.data; 
 }

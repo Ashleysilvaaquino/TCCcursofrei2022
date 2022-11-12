@@ -25,7 +25,7 @@ import Harry from '../../assets/images/harry-potter.png'
 import Poesia from '../../assets/images/poesia.png'
 import Famoso from '../../assets/images/revista.png'
 import lupa from '../../assets/images/lupa-pretinha.png';
-import {  buscarLivrosPorNome} from '../../api/admAPI';
+import { buscarLivrosPorNome } from '../../api/admAPI';
 
 import Musica from '../../assets/images/notas-musicais.png'
 
@@ -48,9 +48,9 @@ import { listarTodosLivros } from '../../api/admAPI';
 
 function LandPage() {
     const [livros, setLivros] = useState([]);
-  
-    const [filtro, setFiltro] = useState('');  
- 
+
+    const [filtro, setFiltro] = useState('');
+
 
     async function filtrar() {
         const resp = await buscarLivrosPorNome(filtro);
@@ -66,51 +66,45 @@ function LandPage() {
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
                 <div>
-                <div>
-                <div className='comp-pesquisa'>
-                    <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                    <img src={lupa}  onClick={filtrar} />
-                </div>
-            </div>
-            
-            {livros.map(item =>
-                <div className='comp-card' key={item.id}>
-
-
-
-
-                    <div className="coluna-txt">
-
-                        <label>Nome</label>
-                        <p>{item.nome}</p>
-
-                        <label>Autor</label>
-                        <p>{item.autor}</p>
-
-                        <label>Gênero</label>
-                        <p className="genero">{item.nomeGenero}</p>
-
+                    <div>
+                        <div className='comp-pesquisa'>
+                            <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
+                            <img src={lupa} onClick={filtrar} />
+                        </div>
                     </div>
+                    
+                    {livros.map(item =>
+                        <div className='comp-card' key={item.id}>
 
-                    <div className="preco">
+                            <div className="coluna-txt">
 
-                        <label>Preço</label>
-                        <p>{item.preco}</p>
+                                <label>Nome</label>
+                                <p>{item.nome}</p>
 
-                    </div>
+                                <label>Autor</label>
+                                <p>{item.autor}</p>
 
-                    <div className="descricao">
+                                <label>Gênero</label>
+                                <p className="genero">{item.nomeGenero}</p>
 
-                        <label>Descrição</label>
-                        <p>{item.descricao}</p>
+                            </div>
 
-                    </div>
+                            <div className="preco">
 
+                                <label>Preço</label>
+                                <p>{item.preco}</p>
 
-                  
+                            </div>
 
-                </div>
-            )}
+                            <div className="descricao">
+
+                                <label>Descrição</label>
+                                <p>{item.descricao}</p>
+
+                            </div>
+
+                        </div>
+                    )}
                 </div>
 
                 <div className='login'>
@@ -174,7 +168,7 @@ function LandPage() {
             <div>
                 <h3 className='novidades-ladpage'>Novidades que você precisa conhecer</h3>
                 <div className='livros-landpage'>
-                    <LivroUsuario />
+                    <LivroUsuario className="livros"/>
                 </div>
             </div>
 

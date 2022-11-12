@@ -20,16 +20,16 @@ import Storage from 'local-storage'
 export default function FinalizarCompra() {
 
     const [enderecos, setEnderecos] =  useState([]);
+    const [idEndereco, setIdEndereco] = useState();
     
-    async function carregarEndereco() {
-        const id = Storage('usuario-logado').id.ID_CONTA_USUARIO;
+    async function carregarEnderecos() {
+        const id = Storage('cliente-logado').id;
         const r = await listar(id);
         setEnderecos(r);
-
     }
 
     useEffect(() => {
-        carregarEndereco();
+        carregarEnderecos();
     }, []);
 
     return (
@@ -57,7 +57,7 @@ export default function FinalizarCompra() {
                 <div className='livros-pg-finalizar'>
 
                     {enderecos.map(item =>
-                        <CardEndereco item={item} />
+                        <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco} />
                     )}
                     
                 </div>
