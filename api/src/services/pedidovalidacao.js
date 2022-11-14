@@ -3,24 +3,28 @@ import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, in
 
 
 export function criarNotaFiscal(){
-    return randomString.generate(5);
+    return randomString.generate(8);
 
 }
 
-export async function lervalorPagamento(idUsuario, pagamento, info){
+export async function lervalorPagamento(idUsuario, tipoPagamento, info){
     
-  
-    const pedidoNovo = criarNovoPedido(idUsuario, info.pagamento, info);
+
+    const pedidoNovo = await criarNovoPedido(idUsuario, info);
     const idPedidoCriado = await inserirPedido(pedidoNovo);
-    if(pagamento == "cartao"){
-        return inserirPagamentoCartao(idPedidoCriado, info.cartao);            
+    if(tipoPagamento === "cartao"){
+        const cartao = await inserirPagamentoCartao(idPedidoCriado, info.cartao);            
+        return cartao;
     }
-    else if(pagamento == "boleto"){
-       return inserirPagamentoBoleto(idPedidoCriado, info.boleto);
+    else if(tipoPagamento === "boleto"){
+       const boleto = await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
+       return boleto;
         
     }    
-    else if(pagamento == "pix"){
-       return inserirPagamentoPix(idPedidoCriado, info.pix);
+    else if(tipoPagamento === "pix"){
+       const pix = await inserirPagamentoPix(idPedidoCriado, info.pix);
+       return pix;
+
     }
 
     else{
@@ -32,13 +36,13 @@ export async function lervalorPagamento(idUsuario, pagamento, info){
 export function criarNovoPedido(idUsuario, info){
    
     let agora = new Date();
-    let valorPagamento = lervalorPagamento(info.pagamento);
+    let valorPagamento = lervalorPagamento(info.tipoPagamento);
     const notaFiscal = criarNotaFiscal();
     return{
        idUsuario: idUsuario,
        idEndereco: info.idEndereco,
        data: agora, 
-       tipoPagamento: info.pagamento,
+       tipoPagamento: info.tipoPagamento,
        valorPagamento : valorPagamento,
        status: 'Aguardando Pagamento',
        notaFiscal: notaFiscal

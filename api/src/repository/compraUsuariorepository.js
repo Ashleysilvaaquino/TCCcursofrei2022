@@ -13,14 +13,14 @@ export async function inserirPedido(pedidoNovo){
              ds_status,
              cod_nota_fiscal
          )
-         values(?,?,?,?,?,?,?);
+         values(?,?,?,?,?,?,?)
     `
     const [info] = await con.query(comando, [
        pedidoNovo.idUsuario,
        pedidoNovo.idEndereco,
        pedidoNovo.data,
        pedidoNovo.tipoPagamento,
-       pedidoNovo.valorPagamento,
+       pedidoNovo.valorpagamento,
        pedidoNovo.status,
        pedidoNovo.notaFiscal
     ]);
@@ -62,8 +62,7 @@ export async function inserirPedido(pedidoNovo){
     values(?);
  `
  const [info] = await con.query(comando, [
-  idPedido,
-  pagamentoNovo.numeroCodigo
+  idPedido
  
  ]);
  
@@ -81,10 +80,8 @@ export async function inserirPedido(pedidoNovo){
     values(?);
  `
  const [info] = await con.query(comando, [
-  idPedido,
- 
-  
- 
+  idPedido
+
  ]);
  
  return info.affectedRows;
@@ -95,10 +92,10 @@ export async function inserirPedido(pedidoNovo){
  export async function inserirPedidoItem(idPedido, idLivro, qtd, preco){
     const comando = `
         INSERT INTO tb_item_pedido(
-          id_pedido,
-          id_livro,
-          qtd_itens,
-          vl_produto
+            id_pedido,
+            id_livro,
+            qtd_itens,
+            vl_produto
         )
         values(?,?,?,?);
         

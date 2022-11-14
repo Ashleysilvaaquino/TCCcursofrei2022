@@ -10,13 +10,14 @@ import {  criarNovoPedido } from "../services/pedidovalidacao.js";
 server.post('/api/pedido/:idUsuario/', async (req,resp) => {
      try{
         const {idUsuario} = req.params;
+      
         
         const info = req.body;
         const pedidoNovo = criarNovoPedido(idUsuario, info);
         const idPedidoCriado = await inserirPedido(pedidoNovo);
         for(let item of info.produtos ){
             const prod = await buscarProdutoPorId(item.id);
-            const idItemPedidoCriado =  await inserirPedidoItem(idPedidoCriado, prod,  item.qtd, item.preco );
+            const idItemPedidoCriado =  await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
         }
     
         resp.status(204).send();

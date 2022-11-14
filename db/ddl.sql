@@ -83,14 +83,14 @@ ds_senha           varchar(100)
 
 create table `tb_pedido`(
 id_pedido 	int primary key auto_increment,
+id_conta_usuario        int,
+id_usuario_endereco     int,
 dt_horario				datetime,
 tp_pagamento            varchar(100),
 vl_pagamento            varchar(100),
 ds_status   			varchar(100),
 cod_nota_fiscal         varchar(200),
-id_conta_usuario        int,
 foreign key(id_conta_usuario) references tb_conta_usuario(id_conta_usuario),
-id_usuario_endereco     int,
 foreign key(id_usuario_endereco) references tb_usuario_endereco(id_usuario_endereco)
 
 );
