@@ -20,14 +20,14 @@ export default function LivroUsuario(){
     
     }, []);
     return(
-        <div className='livro-usuario-component'>
+        <div className='livro-div'>
             {livros.map(item =>
-            <div className='livro-usuario-component' key={item.id}>
-            <Link to='/detalhes'><img src={Coracaozinho} className='coracao-pg-livro'/></Link>
+            <div key={item.id}>
+            <Link to='/detalhes'></Link>
             <img src={API_URL + '/' + item.imagem} className='livro-img-component-usuario'/>
             <p className='nome-livro-usuario'>{item.nome}</p>
             <p className='preco-livro-usuario'>{item.preco}</p>
-            <Link to='/finalizarcompra'><button className='bt-comprar-livro-component'>COMPRAR</button></Link>
+            <Link to='/finalizarcompra'><button >COMPRAR</button></Link>
             </div>
             )}
         </div>

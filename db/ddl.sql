@@ -85,10 +85,14 @@ create table `tb_pedido`(
 id_pedido 	int primary key auto_increment,
 dt_horario				datetime,
 tp_pagamento            varchar(100),
+vl_pagamento            varchar(100),
 ds_status   			varchar(100),
-qtd_livro  			    int,
+cod_nota_fiscal         varchar(200),
 id_conta_usuario        int,
-foreign key(id_conta_usuario) references tb_conta_usuario(id_conta_usuario)
+foreign key(id_conta_usuario) references tb_conta_usuario(id_conta_usuario),
+id_usuario_endereco     int,
+foreign key(id_usuario_endereco) references tb_usuario_endereco(id_usuario_endereco)
+
 );
 
 
@@ -98,21 +102,18 @@ nr_cartao  				int,
 nr_cvv					int,
 dt_vencimento   		date,
 nm_proprietario 		varchar(100),
-nr_codigo				int,
 id_pedido  				int,
 foreign key(id_pedido) references tb_pedido(id_pedido)
 );
 
 create table `tb_pedido_pag_boleto`(
 id_pedido_pag_boleto	int primary key auto_increment,
-nr_codigo				int,
 id_pedido				int,
 foreign key(id_pedido) references tb_pedido(id_pedido)
 );
 
 create table `tb_pedido_pag_pix`(
 id_pedido_pag_pix	int primary key auto_increment,
-nr_codigo           int,
 id_pedido			int,
 foreign key(id_pedido) references tb_pedido(id_pedido)	
 );

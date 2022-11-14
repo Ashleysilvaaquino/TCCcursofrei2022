@@ -6,19 +6,23 @@ export async function inserirPedido(pedidoNovo){
     const comando = `
          INSERT INTO tb_pedido(
              id_conta_usuario, 
+             id_usuario_endereco,
              dt_horario,
              tp_pagamento,
+             vl_pagamento,
              ds_status,
-             qtd_livro
+             cod_nota_fiscal
          )
-         values(?,?,?,?,?);
+         values(?,?,?,?,?,?,?);
     `
     const [info] = await con.query(comando, [
        pedidoNovo.idUsuario,
+       pedidoNovo.idEndereco,
        pedidoNovo.data,
        pedidoNovo.tipoPagamento,
+       pedidoNovo.valorPagamento,
        pedidoNovo.status,
-       pedidoNovo.quantidade
+       pedidoNovo.notaFiscal
     ]);
  
     return info.insertId;
@@ -32,37 +36,34 @@ export async function inserirPedido(pedidoNovo){
         nr_cartao,
         nr_cvv,
         dt_vencimento,
-        nm_proprietario,
-        nr_codigo
+        nm_proprietario
+      
     )
-    values(?,?,?,?,?,?)
+    values(?,?,?,?,?);
  `
  const [info] = await con.query(comando, [
   idPedido,
   pagamentoNovo.numero,
   pagamentoNovo.cvv,
   pagamentoNovo.vencimento,
-  pagamentoNovo.nomeProprietario,
-  pagamentoNovo.numeroCodigo,
-  pagamentoNovo.tipoPagamento
+  pagamentoNovo.nomeProprietario
+ 
  ]);
  
  return info.affectedRows;
  
  }
  
- export async function inserirPagamentoBoleto(idPedido, pagamentoNovo){
+ export async function inserirPagamentoBoleto(idPedido){
     const comando = `
     INSERT INTO tb_pedido_pag_boleto(
-        id_pedido,
-        nr_codigo
+        id_pedido
     )
-    values(?,?)
+    values(?);
  `
  const [info] = await con.query(comando, [
   idPedido,
-  pagamentoNovo.numeroCodigo,
-  pagamentoNovo.tipoPagamento
+  pagamentoNovo.numeroCodigo
  
  ]);
  
@@ -71,18 +72,18 @@ export async function inserirPedido(pedidoNovo){
  }
  
  
- export async function inserirPagamentoPix( idPedido, pagamentoNovo){
+ export async function inserirPagamentoPix( idPedido){
     const comando = `
     INSERT INTO tb_pedido_pag_pix(
-        id_pedido,
-        nr_codigo
+        id_pedido
+       
     )
-    values(?,?)
+    values(?);
  `
  const [info] = await con.query(comando, [
   idPedido,
-  pagamentoNovo.numeroCodigo,
-  pagamentoNovo.tipoPagamento
+ 
+  
  
  ]);
  
@@ -99,7 +100,7 @@ export async function inserirPedido(pedidoNovo){
           qtd_itens,
           vl_produto
         )
-        values(?,?,?,?)
+        values(?,?,?,?);
         
     `
  

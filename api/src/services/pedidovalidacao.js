@@ -2,25 +2,25 @@ import randomString from 'randomstring'
 import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, inserirPedido } from '../repository/compraUsuariorepository.js';
 
 
-export function criarCodigoPedido(){
-    return randomString.generate(11);
+export function criarNotaFiscal(){
+    return randomString.generate(5);
 
 }
 
-export async function lervalorPagamento(idUsuario,tipoPagamento, info){
+export async function lervalorPagamento(idUsuario, pagamento, info){
     
-   
-    const pedidoNovo = criarNovoPedido(idUsuario, info.tipoPagamento, info);
+  
+    const pedidoNovo = criarNovoPedido(idUsuario, info.pagamento, info);
     const idPedidoCriado = await inserirPedido(pedidoNovo);
-    if(tipoPagamento == "cartao"){
-        return await inserirPagamentoCartao(idPedidoCriado, info.cartao);            
+    if(pagamento == "cartao"){
+        return inserirPagamentoCartao(idPedidoCriado, info.cartao);            
     }
-    else if(tipoPagamento == "boleto"){
-       return await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
+    else if(pagamento == "boleto"){
+       return inserirPagamentoBoleto(idPedidoCriado, info.boleto);
         
     }    
-    else if(tipoPagamento == "pix"){
-       return await inserirPagamentoPix(idPedidoCriado, info.pix);
+    else if(pagamento == "pix"){
+       return inserirPagamentoPix(idPedidoCriado, info.pix);
     }
 
     else{
@@ -29,17 +29,18 @@ export async function lervalorPagamento(idUsuario,tipoPagamento, info){
 
 }
 
-export function criarNovoPedido(idUsuario, tipoPagamento, info){
+export function criarNovoPedido(idUsuario, info){
    
     let agora = new Date();
-    let valorPagamento = lervalorPagamento(info.tipoPagamento);
+    let valorPagamento = lervalorPagamento(info.pagamento);
+    const notaFiscal = criarNotaFiscal();
     return{
        idUsuario: idUsuario,
+       idEndereco: info.idEndereco,
        data: agora, 
-       tipoPagamento: info.tipoPagamento,
+       tipoPagamento: info.pagamento,
        valorPagamento : valorPagamento,
        status: 'Aguardando Pagamento',
-       quantidade: info.quantidade
-
+       notaFiscal: notaFiscal
     }
 }

@@ -1,56 +1,87 @@
-.livro-usuario-component{
+.livro-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+div{
     display: flex;
     flex-direction: column;
-
+     margin-left: 45px;
     box-sizing: border-box;
+ 
 
     width: 140px;
-    height: 210px;
-
+    height: 230px;
+    
     background: #FFFFFF;
     border: 1px solid #EDEDED;
     box-shadow: 0px 3.54148px 3.54148px rgba(0, 0, 0, 0.25);
-
-    .coracao-pg-livro{
-        width: 20px;
-        height: 90px;
-
-        margin-top: -30px;
-        margin-left: 7px;
+    
+    div:hover{
+        animation-name: botao;
+        animation-duration: 0.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
     }
-
+    
+    
     .livro-img-component-usuario{
         width: 80px;
         height: 112px;
-        margin-left: 30px;
-        margin-top: -40px;
+        margin-left: 25px;
+        margin-top: 15px;
+      
     }
 
     .nome-livro-usuario{
     font-family: 'Kantumruy';
     font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
+    margin-top: 10px;
+    font-size: 18px;
     line-height: 22px;
     text-align: center;
     }
-
+    
     .preco-livro-usuario{
         text-align: center;
-    }
-
-    .bt-comprar-livro-component{
-        color: #FFFFFF;
-        background-color: #2C5B92;
-        
-        border-radius: 15px;
-        border: none;
-        
-        width: 80px;
-        height: 20px;
-
-        margin-left: 30px;
+        font-size: 18px;
         margin-top: 5px;
-        margin-bottom: 8px;
     }
+    
+   
+        button{
+            
+            margin-left: 30px;
+            margin-top: 10px;
+            color: #FFFFFF;
+            background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
+            font-size: 11px;
+            border-radius: 15px;
+            border: none;
+            
+            width: 80px;
+            height: 20px;
+        }
+        button:hover{
+            animation-name: botao;
+            animation-duration: 0.5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        
+      
+
+        }
+        @keyframes botao {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.05);
+            }
+        }
+       
 }

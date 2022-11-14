@@ -3,7 +3,7 @@ const server = Router();
 import randomString from 'randomstring'
 import { buscarProdutoPorId } from "../repository/admrepository.js";
 import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, inserirPedido, inserirPedidoItem } from "../repository/compraUsuariorepository.js";
-import { criarCodigoPedido, criarNovoPedido } from "../services/pedidovalidacao.js";
+import {  criarNovoPedido } from "../services/pedidovalidacao.js";
 
 
 
@@ -11,10 +11,8 @@ server.post('/api/pedido/:idUsuario/', async (req,resp) => {
      try{
         const {idUsuario} = req.params;
         
-
         const info = req.body;
-        const codigo = criarCodigoPedido();
-        const pedidoNovo = criarNovoPedido(idUsuario, info.tipoPagamento,info, codigo);
+        const pedidoNovo = criarNovoPedido(idUsuario, info);
         const idPedidoCriado = await inserirPedido(pedidoNovo);
         for(let item of info.produtos ){
             const prod = await buscarProdutoPorId(item.id);
