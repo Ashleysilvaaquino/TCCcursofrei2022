@@ -34,12 +34,31 @@ export default function LoginAdm() {
         setCarregando(true);
      
         try{
-            const r= await Login(email,senha);
-           storage('adm-logado', r)
-           
+            
             setTimeout(() => {
                 navigate('/admhome');
             }, 3000);
+        
+       }
+       catch(err){
+        ref.current.complete();
+        setCarregando(false);
+     
+            if(err.response.status === 404){
+                setErro(err.response.data.erro);
+            }
+       }
+    }
+
+    async function voltarClick(){
+        ref.current.continuousStart();
+        setCarregando(true);
+     
+        try{
+            
+            setTimeout(() => {
+                navigate('/');
+            }, 1500);
         
        }
        catch(err){
@@ -60,10 +79,10 @@ export default function LoginAdm() {
              <style>
             @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
            </style>
-            <LoadingBar color='#3E7797' height={3} ref={ref} />
+            <LoadingBar color='#3E7797' height={2} ref={ref} />
             <div className='comp-logo'>
                 <h1 className='comp-logo-azul'>LIVRARIA MONTES</h1>
-                <p className='logo-voltar'>Voltar</p>
+                <p className='logo-voltar'onClick={voltarClick} disabled={carregando}>Voltar</p>
             </div>
             <div className='cabecalho-login'>
                 <h1 className='text-principal'>SEJA BEM-VINDO (A)<span> A ÁREA ADMINISTRATIVA</span> </h1>
