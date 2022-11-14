@@ -51,18 +51,41 @@ function LoginUsuario() {
    }
 }
 
+ async function voltarClick(){
+        ref.current.continuousStart();
+        setCarregando(true);
+     
+        try{
+            
+            setTimeout(() => {
+                navigate('/');
+            }, 1500);
+        
+       }
+       catch(err){
+        ref.current.complete();
+        setCarregando(false);
+     
+            if(err.response.status === 404){
+                setErro(err.response.data.erro);
+            }
+       }
+    }
+
+
+
   return (
-    <div className="pag-total-adm">
+    <div className="pag-total-usuario">
        <style>
        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
        </style>
        <style>
       @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
       </style>
-      <LoadingBar color='#3E7797' height={3} ref={ref} />
+      <LoadingBar color='#3E7797' height={2} ref={ref} />
       <div className="comp-logo">
         <h1 >LIVRARIA MONTES</h1>
-        <p className="logo-voltar">Voltar</p>
+       <p className='logo-voltar'onClick={voltarClick} disabled={carregando}>Voltar</p>
       </div>
       <div className="cabecalho-login">
         <h1 className="text-principal">
@@ -73,7 +96,7 @@ function LoginUsuario() {
         <input
           type="text"
           placeholder="Insira seu email"
-          className="input-email-login-adm"
+          className="input-email-login-usuario"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
@@ -82,7 +105,7 @@ function LoginUsuario() {
         <input
           type="password"
           placeholder="********"
-          className="input-senha-login-adm"
+          className="input-senha-login-usuario"
           value={senha}
           onChange={e => setSenha(e.target.value)}
         />
@@ -92,7 +115,7 @@ function LoginUsuario() {
           Não possui conta? 
         </p>
       <div className="cadastrar">
-      <Link to="/cadastrarcliente">Cadastre-se agora</Link>
+      <Link to="/CadastrarCliente">Cadastre-se agora</Link>
       </div>
         
       </div>

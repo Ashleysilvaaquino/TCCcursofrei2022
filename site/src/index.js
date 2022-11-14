@@ -56,7 +56,7 @@ root.render(
         <Route path = '/cadastrarlivro' element ={<CadastrarLivro/>}/>
         <Route path = '/cadastrarlivro/livro/:idParam' element ={<CadastrarLivro/>}/>
         <Route path = '/loginusuario' element ={<LoginUsuario/>}/>
-        <Route path = '/cadastrarcliente' element ={<CadastrarCliente/>}/>
+        <Route path = 'cadastrarcliente' element={<CadastrarCliente/>}/>
         <Route path = '/cardlivro' element ={<CardLivro/>}/>
         <Route path = '/pesquisarlivro' element ={<PesquisarLivro/>}/>
         <Route path = '/consultarlivro' element={<ConsultarLivro/>} />
