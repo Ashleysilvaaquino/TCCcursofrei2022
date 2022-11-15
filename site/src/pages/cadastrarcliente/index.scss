@@ -35,6 +35,7 @@ main{
         .section1{
         display: flex;
         flex-direction: column;
+
         
        
     
@@ -88,14 +89,12 @@ main{
         .botaoo{
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
-            position: absolute;
-            top: 90%;
-            left: 44%;
-          
+            align-self: center;
+            justify-content: center;
 
-            button{
-                background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
+            margin-top: 30px;
+
+            background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
                 border: none;
                 width: 140px;
                 height: 40px;
@@ -108,27 +107,28 @@ main{
                 font-size: 20px; 
                 padding-bottom: 8px;
 
-            }      
-                button:hover{
-                    animation-name: botao;
+                animation-name: botao;
                     animation-duration: 0.5s;
                     animation-direction: alternate;
                     animation-iteration-count: infinite;
                     animation-timing-function: ease-in-out;
-                }
-        
+
+                    @keyframes botao {
             
+                        0%{
+                            transform: scale(1);
+                        }
+                        100%{
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    
+
         }
         }
 
-        @keyframes botao {
-            0%{
-                transform: scale(1);
-            }
-            100%{
-                transform: scale(1.05);
-            }
-        }
+        
        
         .loguinho{
             margin: 50px;

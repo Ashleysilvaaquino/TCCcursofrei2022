@@ -1,7 +1,6 @@
 
 import './index.scss';
 import login from '../../assets/images/login.png'
-import carrinho from '../../assets/images/carrinho.png'
 import BarraPesquisa from '../../components/pesquisa';
 
 import Terror from '../../assets/images/generoterror.png'
@@ -110,10 +109,6 @@ function LandPage() {
                 <div className='login'>
                     <Link to="/loginusuario" className='login'> <img src={login} /></Link>
                     <p>Login</p>
-                </div>
-                <div className='carrinho'>
-                    <img src={carrinho} />
-                    <p>Meu carrinho</p>
                 </div>
             </div>
             <div>

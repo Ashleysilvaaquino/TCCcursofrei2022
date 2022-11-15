@@ -79,13 +79,11 @@ export default function CadastrarCliente() {
                   
 
                     <label className="dado">Celular:</label>
-                    <input placeholder='11 9999-1010'  value={celular} onChange={e => setCelular(e.target.value)}/>
-
+                    <input placeholder='11 9999-1010'  value={celular} onChange={e => setCelular(e.target.value)}/> 
+                    <button className='botaoo' onClick={salvarClick} >Cadastrar</button>
+                    
                 </div>
 
-                <div className="botaoo">
-                    <button onClick={salvarClick}>Cadastrar</button>
-                </div>
             </section>
 
         </div>
