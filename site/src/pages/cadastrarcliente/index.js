@@ -38,14 +38,6 @@ export default function CadastrarCliente() {
     return (
 
         <main>
-        <style>
-       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-       </style>
-       <style>
-      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-      </style>
-
-
             <div className='titulo'>
                 <h1>LIVRARIA MONTES</h1>
             </div>

@@ -6,7 +6,7 @@ import './index.scss';
 import Icone from '../../assets/images/usuariohome.gif';
 
 export default function HomeCliente() {
-
+  
     const navigate = useNavigate();
     
     
@@ -14,14 +14,13 @@ export default function HomeCliente() {
     useEffect(() => {
          if(!storage('usuario-logado')){
             navigate('/loginusuario');
-         }
+         } 
+        
     }, [])
     
     return (
         <div className='pg-usuario'>
-             <style>
-             @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-             </style>
+           
             <Menu></Menu>
             <div className='boas-vindas'>
                 <h3>Seja Bem-vindo Cliente💙</h3>

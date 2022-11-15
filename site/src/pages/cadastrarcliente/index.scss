@@ -8,14 +8,16 @@ main{
         padding-top: 15px;
         font-family: 'Montserrat', sans-serif;
         
+        
        }
        
     }
     .voltar{
         margin-top: 25px;
         a{
-         font-family: 'Oswald', sans-serif;
-        
+         font-family: 'Oswald';
+
+          font-weight: bold;
          font-size: 18px;
          line-height: 3px;
          margin-left: 140px;
@@ -46,7 +48,7 @@ main{
             width: 100%;
             max-width: 550px;
             margin-left: 23em;
-            margin-top: 20px; 
+            margin-top: 5px; 
 
            
            
@@ -64,7 +66,7 @@ main{
                 padding-left: 20px;
                 border-radius: 10px;
                 letter-spacing: 1.5px;
-                font-family: 'Oswald', sans-serif;
+                font-family: 'Mulish', sans-serif;
                 font-weight: bold;
     
             }
@@ -78,7 +80,8 @@ main{
             outline: none;
             font-family: monospace;
             cursor: default;
-            font-family: 'Oswald', sans-serif, bold;
+            font-family: 'Mulish';
+            font-weight: bold;
             
       
            }
@@ -92,7 +95,7 @@ main{
             align-self: center;
             justify-content: center;
 
-            margin-top: 30px;
+            margin-top: 70px;
 
             background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
                 border: none;
@@ -102,10 +105,11 @@ main{
                 color: white;
                 font-size: 17px;
                 cursor: pointer;
-                font-family: 'Oswald', sans-serif ;
+                font-family: 'Oswald';
                 
-                font-size: 20px; 
-                padding-bottom: 8px;
+               
+                font-size: 23px; 
+                margin-bottom:20px;
 
                 animation-name: botao;
                     animation-duration: 0.5s;
@@ -141,9 +145,11 @@ main{
             
             h1{
                 font-size: 30px;
-                font-family: 'Oswald', sans-serif;
-                font-weight: normal;
-                font-weight: bold;              
+                font-family: 'Mulish'
+                ;
+                font-weight: bold;
+                
+                              
             }
             h1:hover{
                 animation-name: botao;

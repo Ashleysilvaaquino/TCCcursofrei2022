@@ -52,14 +52,9 @@ export default function Carrinhocard(){
                     <div className="quantidade">
 
                     <label>Quantidade</label>
-                    <div className='container'>
-                    <span className="increment">+</span>
-                    <span className="decrement">-</span>
-                    <div id="box">
-                      
+                    <input type='Number'  className='qtd' ></input>
 
-                    </div>
-                    </div>
+                
                     </div>
                     <div className="total">
 
@@ -77,6 +72,8 @@ export default function Carrinhocard(){
                 </div> 
                 
             )}
+
+          
 
          </div>
     )

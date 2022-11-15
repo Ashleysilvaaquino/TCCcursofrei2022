@@ -73,12 +73,8 @@ export default function LoginAdm() {
 
     return (
         <div className='pag-total-adm'>
-               <style>
-             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-              </style>
-             <style>
-            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-           </style>
+          
+           
             <LoadingBar color='#3E7797' height={2} ref={ref} />
             <div className='comp-logo'>
                 <h1 className='comp-logo-azul'>LIVRARIA MONTES</h1>
@@ -87,11 +83,11 @@ export default function LoginAdm() {
             <div className='cabecalho-login'>
                 <h1 className='text-principal'>SEJA BEM-VINDO (A)<span> A ÁREA ADMINISTRATIVA</span> </h1>
                 
-                    <label className='email-login'>Email:</label>
+                    <label className='email-login2'>Email:</label>
                 <input type="text" placeholder='Exemplo@gmail.com' className='input-email-login-adm'value={email} onChange={e =>setEmail(e.target.value)}/>
                 
                 
-                    <label className='email-login'>Senha:</label>
+                    <label className='email-login2'>Senha:</label>
                     <input type="password" placeholder='********' className='input-senha-login-adm' value={senha} onChange={e =>setSenha(e.target.value)}/>
                 
                 

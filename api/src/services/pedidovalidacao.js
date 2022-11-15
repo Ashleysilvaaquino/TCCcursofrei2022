@@ -10,13 +10,14 @@ export function criarNotaFiscal(){
 export async function lervalorPagamento(idUsuario, tipoPagamento, info){
     
 
-    const pedidoNovo = await criarNovoPedido(idUsuario, info);
+    const pedidoNovo = await criarNovoPedido(idUsuario, tipoPagamento, info);
     const idPedidoCriado = await inserirPedido(pedidoNovo);
     if(tipoPagamento === "cartao"){
         const cartao = await inserirPagamentoCartao(idPedidoCriado, info.cartao);            
         return cartao;
     }
-    else if(tipoPagamento === "boleto"){
+    else if(tipoPagamento === "boleto")
+    {
        const boleto = await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
        return boleto;
         
@@ -33,10 +34,10 @@ export async function lervalorPagamento(idUsuario, tipoPagamento, info){
 
 }
 
-export function criarNovoPedido(idUsuario, info){
+export function criarNovoPedido(idUsuario, tipoPagamento, info){
    
     let agora = new Date();
-    let valorPagamento = lervalorPagamento(info.tipoPagamento);
+    let valorPagamento = lervalorPagamento(tipoPagamento);
     const notaFiscal = criarNotaFiscal();
     return{
        idUsuario: idUsuario,

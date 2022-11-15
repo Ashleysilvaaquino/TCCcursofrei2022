@@ -13,7 +13,7 @@ server.post('/api/pedido/:idUsuario/', async (req,resp) => {
       
         
         const info = req.body;
-        const pedidoNovo = criarNovoPedido(idUsuario, info);
+        const pedidoNovo = criarNovoPedido(idUsuario, info.tipoPagamento, info);
         const idPedidoCriado = await inserirPedido(pedidoNovo);
         for(let item of info.produtos ){
             const prod = await buscarProdutoPorId(item.id);

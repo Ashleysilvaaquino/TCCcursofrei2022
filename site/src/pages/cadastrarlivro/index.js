@@ -137,9 +137,7 @@ export default function CadastrarLivro() {
 
   return (
     <main className='mae'>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-      </style>
+     
       <Menu />
       <div>
 

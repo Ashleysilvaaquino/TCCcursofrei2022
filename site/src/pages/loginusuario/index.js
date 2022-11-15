@@ -12,6 +12,7 @@ import "./index.scss";
 import {Link} from 'react-router-dom'
 
 function LoginUsuario() {
+
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
@@ -76,12 +77,7 @@ function LoginUsuario() {
 
   return (
     <div className="pag-total-usuario">
-       <style>
-       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-       </style>
-       <style>
-      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-      </style>
+      
       <LoadingBar color='#3E7797' height={2} ref={ref} />
       <div className="comp-logo">
         <h1 >LIVRARIA MONTES</h1>
