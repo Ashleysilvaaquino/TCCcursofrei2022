@@ -15,7 +15,7 @@ export default function HomeAdm() {
          if(!storage('adm-logado')){
             navigate('/loginadm');
          }
-    }, [])
+    }, []);
     
     return (
         <div className='pg-adm'>

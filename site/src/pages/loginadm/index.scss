@@ -3,22 +3,29 @@
     input{
         padding-left: 20px;
     }
-   .comp-logo-azul{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-  
-    font-size: 32px;
-    line-height: 40px;
-    margin-left: 40px;
-    color: #3E7797;
+   .comp-logo4{
+    h1{
+        font-family: 'Mulish';
+       
+
+        
+     
+        line-height: 40px;
+        padding-top: 30px;
+        font-size: 32px;
+      
+        margin-left: 40px;
+        color: #3E7797;
+
+    }
 
     
    }
 
    .logo-voltar{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 18px;
     line-height: 3px;
     margin-left: 140px;
@@ -41,7 +48,7 @@
 
         font-family: 'Montserrat', sans-serif;
         font-style: bold;
-        font-weight: 400;
+         padding-top: 25px;
         font-size: 25px;
         line-height: 58px;
         text-align: center;
@@ -58,12 +65,12 @@
         
 
             .email-login2{
-                font-family: 'Oswald', sans-serif, bold;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 26px;
+                font-family: 'Mulish';
+                
+                font-weight: bold;
+                font-size: 20px;
                 line-height: 10px;
-                margin-left: 16em;
+                margin-left: 20em;
                 margin-top: 70px;
                 
                 color: #000000;
@@ -77,7 +84,7 @@
                 background: #FFFFFF;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border: none;
-                font-family: 'Oswald', sans-serif, bold;
+                font-family: 'Mulish';
 
                 align-self: center;  
             }
@@ -124,8 +131,8 @@
         text-align: center;
         color: #FFFFFF;
         position: absolute;
-        left: 85%;
-        top: 90%;
+        left: 80%;
+        top: 85%;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         border: none;

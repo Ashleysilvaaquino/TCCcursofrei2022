@@ -34,7 +34,8 @@ export default function LoginAdm() {
         setCarregando(true);
      
         try{
-            
+            const r = await Login(email,senha);
+            storage('adm-logado', r);
             setTimeout(() => {
                 navigate('/admhome');
             }, 3000);
@@ -76,8 +77,8 @@ export default function LoginAdm() {
           
            
             <LoadingBar color='#3E7797' height={2} ref={ref} />
-            <div className='comp-logo'>
-                <h1 className='comp-logo-azul'>LIVRARIA MONTES</h1>
+            <div className='comp-logo4'>
+                <h1>LIVRARIA MONTES</h1>
                 <p className='logo-voltar'onClick={voltarClick} disabled={carregando}>Voltar</p>
             </div>
             <div className='cabecalho-login'>

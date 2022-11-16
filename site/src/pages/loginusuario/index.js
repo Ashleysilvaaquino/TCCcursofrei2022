@@ -35,7 +35,7 @@ function LoginUsuario() {
  
     try{
         const r = await LoginCliente(email,senha);
-       storage('usuario-logado', r)
+       storage('usuario-logado', r);
        
         setTimeout(() => {
             navigate('/homecliente');
@@ -79,7 +79,7 @@ function LoginUsuario() {
     <div className="pag-total-usuario">
       
       <LoadingBar color='#3E7797' height={2} ref={ref} />
-      <div className="comp-logo">
+      <div className="comp-logo2">
         <h1 >LIVRARIA MONTES</h1>
        <p className='logo-voltar'onClick={voltarClick} disabled={carregando}>Voltar</p>
       </div>
