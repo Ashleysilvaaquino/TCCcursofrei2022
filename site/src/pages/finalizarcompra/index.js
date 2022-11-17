@@ -23,14 +23,20 @@ export default function FinalizarCompra() {
     const [idEndereco, setIdEndereco] = useState();
     
     async function carregarEnderecos() {
-        const id = Storage('cliente-logado').id;
-        const r = await listar(id);
-        setEnderecos(r);
+        try {
+            const id = Storage('cliente-logado').ID_CONTA_USUARIO;
+            const r = await listar(id);
+            setEnderecos(r);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     useEffect(() => {
         carregarEnderecos();
     }, []);
+
+    console.log(enderecos);
 
     return (
         <main className='pg-finalizarcompra'>
@@ -78,7 +84,6 @@ export default function FinalizarCompra() {
                         </div>
                     </section>
                   <div>
-                    <CardEndereco></CardEndereco>
                   </div>
                     <div className='total-pg-finalizar'>
                         <h3>Total</h3>

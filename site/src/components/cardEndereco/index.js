@@ -2,10 +2,10 @@ import './index.scss';
 
 
 
-export default function CardEndereco( { item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, numero }}) {
+export default function CardEndereco({ item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, numero }}) {
     
     
-    
+
     return (
         <main className="card-endereco">
             <div className="titulo-comp-endereco">
