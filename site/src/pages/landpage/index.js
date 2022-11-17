@@ -66,7 +66,7 @@ function LandPage() {
                 <p className='logo-branca'>Livraria Montes</p>
                 <div>
                     <div>
-                        <div className='comp-pesquisa'>
+                        <div className='comp-pesquisa2'>
                             <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
                             <img src={lupa} onClick={filtrar} />
                         </div>

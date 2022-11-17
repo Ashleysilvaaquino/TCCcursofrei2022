@@ -60,10 +60,7 @@ export default function StatusPedido() {
                     </div>
                 </section>
             </div>
-            <div className="div-button-pg-status">
-                <button className="botton-pg-status">SELECIONAR</button>
-            </div>
-            
+          
         </section>
     )
 }

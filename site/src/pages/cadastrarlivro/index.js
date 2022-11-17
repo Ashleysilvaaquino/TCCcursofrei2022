@@ -209,7 +209,7 @@ export default function CadastrarLivro() {
 
         <div className='botoes'>
           <div className='salvar-botao'>
-            <button onClick={salvar}>Alterar</button>
+            <button onClick={salvar}>Salvar</button>
           </div>
 
 

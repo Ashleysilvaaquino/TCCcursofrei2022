@@ -77,7 +77,7 @@ export default function LivroDetalhe(){
             <h3>PÁGINAS</h3>
         </div>
         <div className='cont-genero-pag'>
-            <p>{livro.nomeGenero}</p>
+            <p>{livro.genero}</p>
             <p>{livro.paginas}</p>
         </div>
         <div className='div-desc'>

@@ -18,9 +18,10 @@ export default function Carrinhocard(){
       
     useEffect(() => {
         carregarTodosLivros();
-    }, [])
+    }, []);
+
     function abrirDetalhes(id){
-        navigate(`detalhes/${id}`);
+        navigate(`/finalizarcompra`);
     }
     const navigate = useNavigate();
     
@@ -31,7 +32,10 @@ export default function Carrinhocard(){
           
         
             {livros.map(item =>
-                <div className='comp-card2' key={item.id} onClick={() => abrirDetalhes(item.id)}>
+                <div className='comp-card2' key={item.id} >
+                    <div>
+                    <img src={CarrinhoTirar}/>
+                        </div>
                     <div className='capa'>
                       <img src={API_URL + '/' + item.imagem}/>
                      </div>                 
@@ -64,15 +68,18 @@ export default function Carrinhocard(){
                     </div>
 
                  
-                <div>
-                   <img src={CarrinhoTirar} />
-                </div>
-
               
+              
+              <div className='botao-comprarcarrinho'>
+              <button onClick={() => abrirDetalhes(item.id)}>
+                    Comprar
+                </button>
+              </div>
+                    
                 </div> 
-                
             )}
-
+         
+ 
           
 
          </div>

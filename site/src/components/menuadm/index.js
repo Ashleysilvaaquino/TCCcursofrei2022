@@ -44,7 +44,7 @@ export default function Menu(){
             </div>
             <div>
                <img src={Pedidos}/>
-               <div>Pedidos</div>
+               <div><Link to='/statuspedido'>Pedidos</Link></div>
             </div>
   
   

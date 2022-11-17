@@ -2,16 +2,59 @@
     margin: 0;
 }
 .landpage {
+    
+.comp-pesquisa2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 490px;
+    height: 47px;
+    margin-top: 20px;
+    margin-right: 50px;
+
+    .input-pesquisa {
+    
+        width: 430px;
+        height: 30px;
+        font-family: 'Mulish';
+        font-weight: bold;
+          
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        outline: none;
+
+        color: #000;
+
+        border-color: #3E7797;
+    }
+   
+    img{ 
+            padding-top: 3px;  
+            width: 30px;
+            height: 30px;
+          
+      
+        
+    }
+    
+   
+
+
+}
+
 
     .swiper-button-next::after{
         color: #ffffff; 
     }
     .swiper-button-prev::after{
         color: #ffffff;
+
        
     }
     .swiper{
         color: #000000;
+
     }
     .cabecalho-principal {
         display: flex;
@@ -82,12 +125,13 @@
     }
     .explore-os-montes{
         padding-top: 20px;
-        font-family: 'Sansita';
+        font-family: 'Mulish';
         font-style: normal;
         font-weight: 400;
         font-size: 28px;
         line-height: 43px;
         text-align: center;
+        margin-right: 30px;
       
         
         color: #000000;
@@ -146,11 +190,15 @@
     .div-terror{
         text-align: center;
         margin-top: 10px;
+        font-family: 'Oswald';
+        font-size: 20px;
     }
 
     .div-infantil{
         text-align: center;
         margin-top: 10px;
+        font-family: 'Oswald';
+        font-size: 20px;
         
     }
 
@@ -158,25 +206,29 @@
         text-align: center;
         text-align: center;
         margin-top: 20px;
-        
+        font-family: 'Oswald';
+        font-size: 20px;
     }
 
     .div-psico{
         text-align: center;
         margin-top: 10px;
+        font-family: 'Oswald';
+        font-size: 20px;
          
     }
 
     .div-romance{
         text-align: center;
         margin-top: 10px;
+        font-family: 'Oswald';
+        font-size: 20px;
          
     }
 
     .novidades-ladpage{
-        font-family: 'Sansita';
-        font-style: normal;
-        font-weight: 400;
+        font-family: 'Mulish';
+        
         font-size: 30px;
         line-height: 42px;
         text-align: center;

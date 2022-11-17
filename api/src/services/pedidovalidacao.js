@@ -13,17 +13,17 @@ export async function lervalorPagamento(idUsuario, tipoPagamento, info){
     const pedidoNovo = await criarNovoPedido(idUsuario, tipoPagamento, info);
     const idPedidoCriado = await inserirPedido(pedidoNovo);
     if(tipoPagamento === "cartao"){
-        const cartao = await inserirPagamentoCartao(idPedidoCriado, info.cartao);            
+        const cartao = await inserirPagamentoCartao(idPedidoCriado, cartao);            
         return cartao;
     }
     else if(tipoPagamento === "boleto")
     {
-       const boleto = await inserirPagamentoBoleto(idPedidoCriado, info.boleto);
+       const boleto = await inserirPagamentoBoleto(idPedidoCriado, boleto);
        return boleto;
         
     }    
     else if(tipoPagamento === "pix"){
-       const pix = await inserirPagamentoPix(idPedidoCriado, info.pix);
+       const pix = await inserirPagamentoPix(idPedidoCriado, pix);
        return pix;
 
     }
