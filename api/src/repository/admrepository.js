@@ -139,7 +139,23 @@ export async function buscarporNome(nome){
      const [linhas] = await con.query(comando, [`${nome}%`]);
      return linhas;
 }
+///buscar por genero 
+export async function buscarporGenero(genero){
+    const comando = 
+    `select id_livro		id,
+        nm_livro		nome,
+        nm_autor	    autor,
+        vl_preco       preco,
+        ds_livro       descricao,
+        nr_paginas     paginas,
+        id_genero      genero
+     from tb_livro
+     where id_genero = ?`;
 
+
+     const [linhas] = await con.query(comando, [`${genero}%`]);
+     return linhas;
+}
 //ENDPOINTS PARA CONEXÃO ALTERAR
 
 //buscar produto por id

@@ -78,6 +78,10 @@ export async function buscarLivrosPorNome(nome){
     return resposta.data;
 }
 
+export async function buscarLivrosPorGenero(id){
+    const resposta = await api.get(`/livro/buscagenero?genero=${id}`);
+    return resposta.data;
+}
 export async function removerLivro(id){
     const resposta = await api.delete(`/livro/${id}`);
     return resposta.status; 

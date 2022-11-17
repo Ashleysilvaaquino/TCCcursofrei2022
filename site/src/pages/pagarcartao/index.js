@@ -1,16 +1,20 @@
 import './index.scss';
 
-import Logo from '../../assets/images/logo.png'
+
+import {Link} from 'react-router-dom';
+
 import FotoCartao from '../../assets/images/cartao.png'
 
 function PagarCartao() {
     return (
 
         <main className="pag-cartao">
-            <div className='logo'>
-            <img src={Logo} alt="" />
+            <div className='titulo'>
+                <h1>LIVRARIA MONTES</h1>
             </div>
-
+            <div className='voltar'>
+                <Link to="/loginusuario">Voltar</Link>
+            </div>
             <div className='flex'>
 
                 <div className='quadrado1'>
@@ -53,16 +57,11 @@ function PagarCartao() {
                     </div>
 
                     <p className='vamo'> O código do produto é:</p>
-                    <p> 054854120521</p>
+                    <p className='codigo'> 054854120521</p>
                 </div>
 
                 </div>
                 <div className='botoes'>
-
-                    <div>
-                        <p>Voltar</p>
-                    </div>
-
                     <div className='botao2'>
                         <button>Pagar</button>
                     </div>

@@ -1,5 +1,6 @@
 import './index.scss'
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import {Link} from 'react-router-dom'
 
 import { toast } from 'react-toastify'
 
@@ -62,7 +63,11 @@ export default function LivroDetalhe(){
 
     
     return(
+    <div className='voltar'>
+        <Link to="/">Voltar</Link>
+    
      <div className='pag-detalhe' onClick={() => abrirDetalhes(livro.id)}>
+
         
         <div className='nome-autor'>
             <h3>NOME</h3>
@@ -93,6 +98,7 @@ export default function LivroDetalhe(){
         <div>
             <img src={exibirImagemProduto(livro.imagem)} className='img-livro-detalhe'/>
         </div>
+     </div>
      </div>
     )
 }

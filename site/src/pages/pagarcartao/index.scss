@@ -5,6 +5,8 @@
 
     label{
         font-size: 22px;
+        font-family: 'Mulish';
+        font-weight: bold;
 
     }
 
@@ -26,8 +28,8 @@
             padding-left: 20px;
             border-radius: 3px;
             letter-spacing: 1.5px;
-            font-family: 'Oswald', sans-serif;
-            font-weight: normal;
+            font-family: 'Mulish';
+            
 
         }
 
@@ -51,10 +53,16 @@
         margin-right: 100px;
     }
     .vamo{
+        font-family: 'Mulish';
         font-weight: bold;
         font-size: 20px;
         margin-left: 15px;
         padding-top: 6em;
+    }
+    .codigo{
+        font-family: 'Mulish';
+        margin-top: 10px; 
+        font-weight: bold;
     }
 
     .quadrado2{
@@ -72,14 +80,15 @@
             background-color: tomato; background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
             border: none;
             width: 140px;
-            height: 50px;
+            margin-bottom: 30px;
+            height: 40px;
             border-radius: 10px;
             color: white;
             font-size: 17px;
             cursor: pointer;
             font-family: 'Oswald', sans-serif ;
 
-            font-size: 20px; 
+             
             }
 
     }

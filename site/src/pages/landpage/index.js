@@ -1,6 +1,6 @@
 
 import './index.scss';
-import login from '../../assets/images/login.png'
+import login from '../../assets/images/login2.png';
 import BarraPesquisa from '../../components/pesquisa';
 
 import Terror from '../../assets/images/generoterror.png'

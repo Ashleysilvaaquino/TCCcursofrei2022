@@ -1,7 +1,16 @@
-.livros-de-terror-h2{
-    text-align: center;
-    padding-top: 20px;
-    span{
-        color: #3E7797;
+.cabecalho-principal{
+    .logo-branca{
+        font-family: 'Oswald';
+
     }
+}
+.livros-de-terror-h2{
+ text-align: center;
+ padding-top: 15px;
+ font-family: 'Mulish';
+ font-weight: bold;
+
+ span{
+     color: #3E7797;
+ }
 }
