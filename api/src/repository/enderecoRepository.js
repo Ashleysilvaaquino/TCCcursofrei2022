@@ -16,7 +16,7 @@ export async function listarEndereco(idUsuario) {
   from tb_usuario_endereco
   where id_conta_usuario = ?;`
 
-  const registro = await con.query(comando, [idUsuario]);
+  const [registro] = await con.query(comando, [idUsuario]);
   return registro;
 }
 

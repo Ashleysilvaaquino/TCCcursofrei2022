@@ -12,26 +12,32 @@ import Cartao from '../../assets/images/cartaocredito.png'
 import Boleto from '../../assets/images/imgboleto.png'
 
 import { Link } from 'react-router-dom';
-import { listar } from  '../../api/enderecoAPI';
+import { listar } from '../../api/enderecoAPI';
 import { useState, useEffect } from 'react';
 import Storage from 'local-storage'
 
 
 export default function FinalizarCompra() {
 
-    const [enderecos, setEnderecos] =  useState([]);
+    const [enderecos, setEnderecos] = useState([]);
     const [idEndereco, setIdEndereco] = useState();
-    
+
     async function carregarEnderecos() {
-        const id = Storage('cliente-logado').id;
-        const r = await listar(id);
-        setEnderecos(r);
+        try {
+            const id = Storage('usuario-logado').ID_CONTA_USUARIO;
+            console.log(id);
+            const r = await listar(id);
+            setEnderecos(r);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     useEffect(() => {
         carregarEnderecos();
     }, []);
 
+    console.log(enderecos);
     return (
         <main className='pg-finalizarcompra'>
             <div className='cabecalho-principal'>
@@ -56,30 +62,34 @@ export default function FinalizarCompra() {
             <section className='parte-baixo-pg-finalizar'>
                 <div className='livros-pg-finalizar'>
 
-                    {enderecos.map(item =>
-                        <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco} />
-                    )}
-                    
+
+
                 </div>
                 <section className='pg-finalizar-f-direita'>
                     <section className='cards-2-pag-finalizar'>
                         <p>Selecione a forma de pagamento</p>
                         <div>
-                            <div className='p-pg-finalizar'>
-                                <img src={Boleto} className='img-card2' /> 
+                            <div className='p-pg-finalizar' >
+                                
+                                <Link to= '/pagamentopix'><img src={Boleto} className='img-card2' /></Link> 
                                 <p> Boleto bancário </p>
                             </div>
                             <div className='p-pg-finalizar'>
-                                <img src={Pix} className='img-card2' /> <p> Pix copia e cola </p>
+                            <Link to='/pagamentopix'><img src={Pix} className='img-card2' /></Link><p> Pix copia e cola </p> 
                             </div>
                             <div className='p-pg-finalizar'>
-                                <img src={Cartao} className='img-card2' /> <p> Cartão de crédito </p>
+                            
+                            <Link to= '/pagarcartao'><img src={Cartao} className='img-card2' /></Link> <p> Cartão de crédito </p>
                             </div>
                         </div>
                     </section>
-                  <div>
-                    <CardEndereco></CardEndereco>
-                  </div>
+
+                    <div className='enderecos'>
+                        {enderecos.map(item =>
+                            <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco} />
+                        )}
+                    </div>
+
                     <div className='total-pg-finalizar'>
                         <h3>Total</h3>
                         <p>R$80,00</p>

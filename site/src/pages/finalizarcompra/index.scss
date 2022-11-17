@@ -55,6 +55,12 @@
     
         
     }
+    .enderecos{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
     .bt-pg-finalizar{
         font-family: "Oswald", sans-serif;
 

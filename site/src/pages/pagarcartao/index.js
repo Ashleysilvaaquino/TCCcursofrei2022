@@ -1,11 +1,26 @@
 import './index.scss';
 
+<<<<<<< HEAD
 
 import {Link} from 'react-router-dom';
 
+=======
+import { toast } from "react-toastify";
+
+import Logo from '../../assets/images/logo.png'
+>>>>>>> aa9abb07716a896fde0af2afc7ca8caaa9ccba79
 import FotoCartao from '../../assets/images/cartao.png'
+import { Link } from 'react-router-dom';
 
 function PagarCartao() {
+
+    function SalvarClick(){
+        try{
+            toast('Pagamento Aprovado')
+        }catch{
+            console.log('Erro!')
+        }
+    }
     return (
 
         <main className="pag-cartao">
@@ -62,8 +77,16 @@ function PagarCartao() {
 
                 </div>
                 <div className='botoes'>
+<<<<<<< HEAD
+=======
+
+                    <div>
+                        <Link to='/'><p>Voltar</p></Link>
+                    </div>
+
+>>>>>>> aa9abb07716a896fde0af2afc7ca8caaa9ccba79
                     <div className='botao2'>
-                        <button>Pagar</button>
+                        <button onClick={SalvarClick}>Pagar</button>
                     </div>
             </div>
         </main>

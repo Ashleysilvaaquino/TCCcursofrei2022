@@ -2,10 +2,10 @@ import './index.scss';
 
 
 
-export default function CardEndereco( { item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, numero }}) {
+export default function CardEndereco({ item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, residencia }}) {
     
     
-    
+    console.log(referencia);
     return (
         <main className="card-endereco">
             <div className="titulo-comp-endereco">
@@ -31,7 +31,7 @@ export default function CardEndereco( { item : { referencia, bairro, logradouro,
                     <label>CEP</label>
                     <p>{cep}</p>
                     <label>N°</label>
-                    <p>{numero}</p>
+                    <p>{residencia}</p>
                 </div>
             </section>
         </main>

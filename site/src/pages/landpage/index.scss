@@ -576,12 +576,13 @@
     
     .livros-landpage{
         display: flex;
-        flex-wrap: wrap;
+        
 
         margin: 50px;
 
         .livros{
             display: flex;
+            
             flex-direction: row;
             justify-content: space-evenly;
         }
