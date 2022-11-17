@@ -9,6 +9,7 @@ import { useNavigate,  useParams } from 'react-router-dom';
 import {buscarProdutoPorId} from '../../api/admAPI'
 import BarraPesquisa from '../pesquisa';
 import MenuUsuario from '../menucliente';
+import Storage from 'local-storage';
 
 
 

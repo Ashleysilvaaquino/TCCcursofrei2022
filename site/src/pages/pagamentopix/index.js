@@ -2,9 +2,20 @@ import './index.scss'
 
 import QRCode from '../../assets/images/pagpix.png'
 import { Link } from 'react-router-dom'
+import { toast } from "react-toastify";
 
 export default function PagamentoPorPix(){
+
+    function SalvarClick(){
+        try{
+            toast('Pagamento Aprovado')
+        }catch{
+            console.log('Erro!')
+        }
+    }
     return(
+        
+
         <main>
             <div className='livraria-logo-maneira'>
              <h2 >LIVRARIA MONTES</h2>   
@@ -16,7 +27,7 @@ export default function PagamentoPorPix(){
             </div>
             <main className='pt-inferior-pg-pagamento'>
                 <Link to='/finalizarcompra' className='pg-pag-pix-link'>Voltar</Link>
-                <button className='pag-pix-button'>PAGAR</button>
+                <button className='pag-pix-button'onClick={SalvarClick}> PAGAR</button>
             </main>
         </main>
     )
