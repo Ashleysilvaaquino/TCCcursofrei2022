@@ -1,5 +1,5 @@
 import randomString from 'randomstring'
-import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, inserirPedido } from '../repository/compraUsuariorepository.js';
+
 
 
 export function criarNotaFiscal(){

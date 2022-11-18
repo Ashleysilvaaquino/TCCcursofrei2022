@@ -52,40 +52,6 @@ export async function inserirPedido(pedidoNovo){
  
  }
  
- export async function inserirPagamentoBoleto(idPedido){
-    const comando = `
-    INSERT INTO tb_pedido_pag_boleto(
-        id_pedido
-    )
-    values(?);
- `
- const [info] = await con.query(comando, [
-  idPedido
- 
- ]);
- 
- return info.affectedRows;
-    
- }
- 
- 
- export async function inserirPagamentoPix( idPedido){
-    const comando = `
-    INSERT INTO tb_pedido_pag_pix(
-        id_pedido
-       
-    )
-    values(?);
- `
- const [info] = await con.query(comando, [
-  idPedido
-
- ]);
- 
- return info.affectedRows;
-    
- }
- 
  
  export async function inserirPedidoItem(idPedido, idLivro, qtd, preco){
     const comando = `

@@ -99,23 +99,13 @@ create table `tb_pedido_pag_cartao`(
 id_pedido_pag_cartao    int primary key auto_increment,
 nr_cartao  				int,
 nr_cvv					int,
-dt_vencimento   		date,
+dt_vencimento   		varchar(200),
 nm_proprietario 		varchar(100),
 id_pedido  				int,
 foreign key(id_pedido) references tb_pedido(id_pedido)
 );
 
-create table `tb_pedido_pag_boleto`(
-id_pedido_pag_boleto	int primary key auto_increment,
-id_pedido				int,
-foreign key(id_pedido) references tb_pedido(id_pedido)
-);
 
-create table `tb_pedido_pag_pix`(
-id_pedido_pag_pix	int primary key auto_increment,
-id_pedido			int,
-foreign key(id_pedido) references tb_pedido(id_pedido)	
-);
 
 create table `tb_item_pedido`(
 id_item_pedido         int primary key auto_increment,

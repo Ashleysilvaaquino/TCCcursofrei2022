@@ -18,7 +18,7 @@ export default function LivrosDePsicologia() {
             <div className='voltar2'>
                   <Link to="/">Voltar</Link>
                 </div>
-            <h2 className='livros-de-terror-h2'>LIVROS DE <span>BIOLOGIA</span></h2>
+            <h2 className='livros-de-terror-h2'>LIVROS DE <span>PSICOLOGIA</span></h2>
             <div className='livrinhos'> 
 
 <LivroUsuario></LivroUsuario>

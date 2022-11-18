@@ -2,7 +2,7 @@ import { Router } from "express";
 const server = Router();
 
 import { buscarProdutoPorId } from "../repository/admrepository.js";
-import { inserirPagamentoBoleto, inserirPagamentoCartao, inserirPagamentoPix, inserirPedido, inserirPedidoItem } from "../repository/compraUsuariorepository.js";
+import {inserirPagamentoCartao, inserirPedido, inserirPedidoItem } from "../repository/compraUsuariorepository.js";
 import {  criarNovoPedido } from "../services/pedidovalidacao.js";
 
 
