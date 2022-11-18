@@ -1,0 +1,49 @@
+.flexbox-status-cliente{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    
+}
+
+.quadrante-menor-status-pedido{
+    display: flex;
+    flex-direction: column;
+    
+    
+    width: 400px;
+    height: 200px;
+
+    margin-top: 50px;
+    margin-left: 400px;
+
+
+    border-radius: 10px;
+    
+    background-color: #3E7797;
+}
+
+.n1-img{
+    width: 20px;
+}
+
+.h3-status-pedido{
+    color: #ffff;
+
+    margin-top: 20px;
+
+    font-size: 20px;
+    text-align: center;
+}
+
+.status-fotos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    color: #ffff;
+
+    margin-top: 20px;
+
+
+}
