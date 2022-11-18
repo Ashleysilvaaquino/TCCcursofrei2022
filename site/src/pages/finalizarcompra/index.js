@@ -107,7 +107,7 @@ export default function FinalizarCompra() {
                         
                        <button className='bt-pg-finalizar' onClick={salvarpedido}>Pagar</button>
                     </div>
-
+                                                        
                     <div className='enderecos'>
                         {enderecos.map(item =>
                             <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco} />
