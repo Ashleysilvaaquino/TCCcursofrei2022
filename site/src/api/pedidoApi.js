@@ -6,7 +6,7 @@ const api = axios.create({
 })
 
 export async function salvarNovoPedido(idUsuario, novoPedido){
-    const r = await api.post('/api/pedido/' + idUsuario + novoPedido);
+    const r = await api.post('/api/pedido/' + idUsuario , novoPedido);
     console.log(r);
     return r.data; 
 }

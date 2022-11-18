@@ -19,10 +19,11 @@ export default function FinalizarCompra() {
 
     const [enderecos, setEnderecos] = useState([]);
     const [idEndereco, setIdEndereco] = useState();
-    const [numero , setNumero] = useState('');
+    const [numero , setNumero] = useState();
     const [cvv , setCvv] = useState('');
     const [vencimento, setVencimento] = useState('');
     const [nomeproprietario, setNomeproprietario] = useState('');
+
 
     const state = useLocation().state;
     console.log(state);
@@ -70,16 +71,17 @@ export default function FinalizarCompra() {
             
          }
          const r = await salvarNovoPedido(id, pedido);
-       
-
-         toast.dark('Pedido foi inserido com sucesso');
+         
+         
+         toast.dark('Pedido foi realizado com sucesso 🚀');
          storage('carrinho', []);
          navigate('/');
         } catch (err) {
-             console.log(err);
+            console.log(err);
             toast.error(err.response.data.erro);
         }
-          
+        
+      
           
     }
     return (
@@ -125,7 +127,7 @@ export default function FinalizarCompra() {
 
                             <label>Número do cartão:</label>
 
-                            <input type="text" placeholder='Insira seu número do cartão ' value={numero} onChange={e => setNumero(e.target.value)}/>
+                            <input type="text" placeholder='Insira seu número do cartão ' value={numero} onChange={e => setNumero(Number(e.target.value))}/>
                         </div>
 
                         
