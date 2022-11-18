@@ -11,9 +11,9 @@ import './index.scss';
 import { Link, useNavigate} from 'react-router-dom';
 import { listar } from '../../api/enderecoAPI';
 import { useState, useEffect } from 'react';
-import Storage from 'local-storage'
+import storage from 'local-storage'
 import { salvarNovoPedido } from '../../api/pedidoApi';
-
+import { useLocation } from 'react-router-dom';
 
 export default function FinalizarCompra() {
 
@@ -24,10 +24,12 @@ export default function FinalizarCompra() {
     const [vencimento, setVencimento] = useState('');
     const [nomeproprietario, setNomeproprietario] = useState('');
 
+    const state = useLocation().state;
+    console.log(state);
+
     async function carregarEnderecos() {
         try {
-            const id = Storage('usuario-logado').ID_CONTA_USUARIO;
-            console.log(id);
+            const id = storage('usuario-logado').ID_CONTA_USUARIO;
             const r = await listar(id);
             setEnderecos(r);
         } catch (error) {
@@ -39,14 +41,13 @@ export default function FinalizarCompra() {
         carregarEnderecos();
     }, []);
 
-    console.log(enderecos);
     const navigate = useNavigate();
 
     async function salvarpedido(){
 
         try {
-            let produtos = Storage('carrinho');  
-            let id = Storage('usuario-logado').ID_CONTA_USUARIO;
+            let produtos = storage('carrinho');  
+            let id = storage('usuario-logado').ID_CONTA_USUARIO;
  
             let pedido =
          {
@@ -70,7 +71,7 @@ export default function FinalizarCompra() {
        
 
          toast.dark('Pedido foi inserido com sucesso');
-         Storage('carrinho', []);
+         storage('carrinho', []);
          navigate('/');
         } catch (err) {
              console.log(err);
@@ -146,7 +147,13 @@ export default function FinalizarCompra() {
                 </div>
 
                 </section>
-          <Cardcarrinho></Cardcarrinho>
+                {state.itens.map((item)=>{
+                    return(
+                        <Cardcarrinho
+                            item={item}  
+                        />
+                    );
+                })}
 
         </main>
     )

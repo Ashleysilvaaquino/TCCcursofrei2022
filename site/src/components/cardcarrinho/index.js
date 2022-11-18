@@ -1,85 +1,89 @@
-import { listarTodosLivros } from '../../api/admAPI';
 
+
+import storage from 'local-storage'
 import './index.scss'
-import { useEffect, useState } from 'react';
-import {  useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 import { API_URL } from '../../api/config';
 
-export default function Carrinhocard(){
-    const [livros, setLivros] = useState([]);
+export default function Carrinhocard({ item , removerItem, carregarCarrinho }) {
+    console.log(item);
+    const [qtdProduto, setQtdProduto] = useState(item.qtd);
 
-    async function carregarTodosLivros() {
-        const resp = await listarTodosLivros();
-        setLivros(resp);
+    function remover() {
+        removerItem(item.produto.id);
     }
 
-      
-    useEffect(() => {
-        carregarTodosLivros();
-    }, []);
-
-    function abrirDetalhes(id){
-        navigate(`/finalizarcompra`);
+    function calcularSubtotal() {
+        const subtotal = qtdProduto * item.produto.preco;
+        return subtotal;
     }
-    const navigate = useNavigate();
-    
-    return(
+
+    function alterarQuantidade(novaQtd) {
+        setQtdProduto(novaQtd);
+
+        let carrinho = storage('carrinho');
+        let itemStorage = carrinho.find(item => item.id == item.produto.id);
+        itemStorage.qtd = novaQtd;
+
+        storage('carrinho', carrinho);
+        carregarCarrinho();
+    }
+
+    return (
         <div>
-          
-          
-          
-        
-            {livros.map(item =>
-                <div className='comp-card2' key={item.id} >
-                   
-                    <div className='capa'>
-                      <img src={API_URL + '/' + item.imagem}/>
-                     </div>                 
+            <div className='comp-card2' key={item.produto.id} >
+
+                <div className='capa'>
+                    <img src={API_URL + '/' + item.produto.imagem} />
+                </div>
 
 
-                    <div className="coluna-tx">
+                <div className="coluna-tx">
 
-                       
-                        <h3>{item.nome}</h3>
-                    </div>
-                    <div className="preco2">
+
+                    <h3>{item.produto.nome}</h3>
+                </div>
+                <div className="preco2">
 
                     <label>Preço</label>
-                    <p>{item.preco}</p>
+                    <p>{item.produto.preco}</p>
 
-                    </div>
+                </div>
 
-                    <div className="quantidade">
+                <div className="quantidade">
 
                     <label>Quantidade</label>
-                    <input type='Number'  className='qtd' ></input>
+                    <input type='Number' className='qtd' onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}></input>
 
-                
-                    </div>
-                    <div className="total">
+
+                </div>
+                <div className="total">
 
                     <label>Total</label>
-                    <p>{item.preco}</p>
+                    <p>{calcularSubtotal()}</p>
 
-                    </div>
+                </div>
 
-                 
-              
-              
-              <div className='botao-comprarcarrinho'>
-              <button onClick={() => abrirDetalhes(item.id)}>
-                    Comprar
-                </button>
-              </div>
-                    
-                </div> 
-            )}
-         
- 
-          
 
-         </div>
+
+
+                <div className='botao-comprarcarrinho'>
+
+                    <button onClick={remover}>
+                        Remover
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
     )
 }
