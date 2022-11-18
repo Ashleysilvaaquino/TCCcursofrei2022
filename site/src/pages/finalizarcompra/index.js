@@ -1,26 +1,28 @@
-import Carrinhocard from '../../components/cardcarrinho'
-import BarraPesquisa from '../../components/pesquisa'
-import CardEndereco from '../../components/cardEndereco'
 
+
+import CardEndereco from '../../components/cardEndereco'
+import Cardcarrinho from '../../components/cardcarrinho'
+import { toast } from "react-toastify";
 
 import './index.scss';
 
-import login from '../../assets/images/login.png'
-import carrinho from '../../assets/images/carrinho.png'
-import Pix from '../../assets/images/pix.png'
-import Cartao from '../../assets/images/cartaocredito.png'
-import Boleto from '../../assets/images/imgboleto.png'
 
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate} from 'react-router-dom';
 import { listar } from '../../api/enderecoAPI';
 import { useState, useEffect } from 'react';
 import Storage from 'local-storage'
+import { salvarNovoPedido } from '../../api/pedidoApi';
 
 
 export default function FinalizarCompra() {
 
     const [enderecos, setEnderecos] = useState([]);
     const [idEndereco, setIdEndereco] = useState();
+    const [numero , setNumero] = useState('');
+    const [cvv , setCvv] = useState('');
+    const [vencimento, setVencimento] = useState('');
+    const [nomeproprietario, setNomeproprietario] = useState('');
 
     async function carregarEnderecos() {
         try {
@@ -38,65 +40,113 @@ export default function FinalizarCompra() {
     }, []);
 
     console.log(enderecos);
+    const navigate = useNavigate();
+
+    async function salvarpedido(){
+
+        try {
+            let produtos = Storage('carrinho');  
+            let id = Storage('usuario-logado').ID_CONTA_USUARIO;
+ 
+            let pedido =
+         {
+             
+                 idEndereco: idEndereco,
+                 tipoPagamento: 'Cartao',
+                  cartao:{
+                    
+                       numero: numero,
+                       cvv: cvv,
+                       vencimento: vencimento,
+                      nomeProprietario: nomeproprietario
+                  },
+                   
+                  produtos: produtos
+              
+            
+            
+         }
+         const r = await salvarNovoPedido(id, pedido);
+       
+
+         toast.dark('Pedido foi inserido com sucesso');
+         Storage('carrinho', []);
+         navigate('/');
+        } catch (err) {
+             console.log(err);
+            toast.error(err.response.data.erro);
+        }
+          
+          
+    }
     return (
         <main className='pg-finalizarcompra'>
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
-                <div>
-                    <BarraPesquisa></BarraPesquisa>
-                </div>
-
-                <div className='login'>
-                    <Link to="/loginusuario" className='login'> <img src={login} /></Link>
-                    <p>Login</p>
-                </div>
-                <div className='carrinho'>
-                    <img src={carrinho} />
-                    <p>Meu carrinho</p>
-                </div>
+            
             </div>
-            <Link to='/menusuario'><p className='voltar-pg-finalizar'>Voltar</p></Link>
+            <div className='voltar2'>
+
+            <Link to='/homecliente'><p>Voltar</p></Link>
+            </div>
             <div>
-                <h3 className='h3-pag-finalizar'>Finalizar compra</h3>
+                <h3 className='h3-pag-finalizar'>Pedidos</h3>
             </div>
             <section className='parte-baixo-pg-finalizar'>
                 <div className='livros-pg-finalizar'>
-
-
-
+                        
                 </div>
-                <section className='pg-finalizar-f-direita'>
-                    <section className='cards-2-pag-finalizar'>
-                        <p>Selecione a forma de pagamento</p>
-                        <div>
-                            <div className='p-pg-finalizar' >
-                                
-                                <Link to= '/pagamentopix'><img src={Boleto} className='img-card2' /></Link> 
-                                <p> Boleto bancário </p>
-                            </div>
-                            <div className='p-pg-finalizar'>
-                            <Link to='/pagamentopix'><img src={Pix} className='img-card2' /></Link><p> Pix copia e cola </p> 
-                            </div>
-                            <div className='p-pg-finalizar'>
-                            
-                            <Link to= '/pagarcartao'><img src={Cartao} className='img-card2' /></Link> <p> Cartão de crédito </p>
-                            </div>
-                        </div>
-                    </section>
+               
+                    <div className='total-pg-finalizar'>
+                        <h3>Finalizar Compra</h3>
+                        
+                       <button className='bt-pg-finalizar' onClick={salvarpedido}>Pagar</button>
+                    </div>
 
                     <div className='enderecos'>
                         {enderecos.map(item =>
                             <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco} />
                         )}
+                        <Link to='/endereco'><button className='bt-pg-finalizar2'>Novo</button></Link>
                     </div>
 
-                    <div className='total-pg-finalizar'>
-                        <h3>Total</h3>
-                        <p>R$80,00</p>
-                        <button className='bt-pg-finalizar'>Avançar</button>
+                    <div className='pagarcomcartao'>
+                        <div className='cartao'>
+                            <label>Nome completo do títular:</label>
+                            <input type="text" placeholder='Insira seu nome ' value={nomeproprietario} onChange={e => setNomeproprietario(e.target.value)}/>
+
+                        </div>
+
+
+                        <div className='cartao2'>
+
+                            <label>Número do cartão:</label>
+
+                            <input type="text" placeholder='Insira seu número do cartão ' value={numero} onChange={e => setNumero(e.target.value)}/>
+                        </div>
+
+                        
                     </div>
+                
+
+
+                <div className='cartao2'>
+
+                    <div>
+                        <label>Código de segurança:</label>
+                        <input type="text" placeholder='Insira o codigo ' value={cvv} onChange={e => setCvv(e.target.value)} />
+                    </div>
+
+
+                    <div className='cartao2'>
+                        <label>Vencimento:</label>
+                        <input type="text" placeholder='Insira o vencimento ' value={vencimento} onChange={e => setVencimento(e.target.value)}/>
+                    </div>
+
+                </div>
+
                 </section>
-            </section>
+          <Cardcarrinho></Cardcarrinho>
 
         </main>
     )

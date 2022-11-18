@@ -53,10 +53,12 @@ export default function LivroDetalhe(){
             Storage('carrinho', carrinho);
             
         }
-        toast.dark('Produto adicionado ao carrinho!');
+        toast.dark('Produto adicionado ao carrinho 🛒');
         
     }
-
+    function abrirDetalhes(id){
+        navigate(`/finalizarcompra`);
+    }
 
     useEffect(() => {
         carregarLivro(); 
@@ -93,7 +95,7 @@ export default function LivroDetalhe(){
         
         <div className='buttons-pg-detalhe'>
             <button  onClick={AdicionarAoCarrinho} className='button-add' >ADICIONAR AO CARRINHO</button>
-            <button className='button-comprar'>COMPRAR</button>
+          <button className='button-comprar' onClick={() => abrirDetalhes(livro.id)}>COMPRAR</button>
         </div>
 
         <div>

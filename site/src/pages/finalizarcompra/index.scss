@@ -2,6 +2,23 @@
     display: flex;
     flex-direction: column;
 
+    .voltar2{
+      margin-top: 25px;
+      margin-left: 140px;
+      a{
+       font-family: 'Oswald';
+
+        font-weight: bold;
+       font-size: 18px;
+       line-height: 3px;
+     
+       text-decoration: none;
+   
+       color: #3E7797;
+      }
+      
+  }
+
     .voltar-pg-finalizar{
         font-family: 'Sansita';
         font-style: normal;
@@ -16,11 +33,14 @@
     .h3-pag-finalizar{
         text-align: center;
         font-size: 24px;
+        font-family: 'Mulish';
+        font-weight: bold;
     }
-    .parte-baixo-pg-finalizar{
+    .parte-baixo-pg-finalizar2{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+    
+        justify-items: right;
     }
     .livros-pg-finalizar{
         display: flex;
@@ -55,14 +75,75 @@
     
         
     }
+
+    .cartao{
+
+        margin-top: 30px;
+        margin-left: 35px;
+        label{
+          font-family: 'Mulish';
+          font-weight: bold;
+          font-size: 17px;
+        }
+        input{
+          background: #FFFFFF;
+          box-shadow: 0px 10px 10px rgba(34, 34, 34, 0.267);
+          border: none;
+          outline: none;
+          font-size: 14px;
+          height: 20px;
+          width: 18em;
+          margin-left: 15px;
+          padding-left: 5px;
+          border-radius: 2px;
+          letter-spacing: 1.5px;
+          font-family: 'Mulish';
+          font-weight: bold;
+        }
+        
+        
+      }
+      .cartao2{
+        margin-top: 40px;
+        margin-left: 35px;
+        label{
+          font-family: 'Mulish';
+          font-weight: bold;
+          font-size: 17px;
+        }
+        input{
+          background: #FFFFFF;
+          box-shadow: 0px 10px 10px rgba(34, 34, 34, 0.267);
+          border: none;
+          outline: none;
+          font-size: 14px;
+          height: 20px;
+          width: 18em;
+          margin-left: 15px;
+          padding-left: 5px;
+          border-radius: 2px;
+          letter-spacing: 1.5px;
+          font-weight: bold;
+          font-family: 'Mulish';
+        }
+        
+        
+      }
     .enderecos{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-bottom: 15px;
+     position: absolute;
+     left: 65%;
+      margin-top: 20px;
+      font-family: 'Mulish';
+     
+      label{
+        font-family: 'Mulish';
+        font-weight: bold;
+      }
+      margin-left: 25px;
     }
     .bt-pg-finalizar{
         font-family: "Oswald", sans-serif;
+        margin-top: 20px;
 
         padding: 8px;
         font-size: 20px;
@@ -89,6 +170,35 @@
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
     }
+    .bt-pg-finalizar2{
+      font-family: "Oswald", sans-serif;
+      margin-top: 20px;
+      margin-left: 150px;
+      padding: 8px;
+      font-size: 20px;
+      line-height: 4px;
+
+      background-image: linear-gradient(
+        to right,
+        #042f8dde,
+        #3e7797,
+        #4ea5c7cb
+      );
+      color: white;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      border: none;
+
+      width: 100px;
+      height: 40px;
+  }
+  button:hover {
+    animation-name: botao;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
     @keyframes botao {
       0% {
         transform: scale(1);
@@ -100,9 +210,17 @@
     }
 
     .total-pg-finalizar{
-        width: 380px;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        justify-content: flex-end;
+        margin-left: 35px;
+        margin-top: 40px;
+        font-family: 'Mulish';
+        font-weight: bold;
+        p{
+          margin-top: 8px;
+        }
+
+      
     }
 }

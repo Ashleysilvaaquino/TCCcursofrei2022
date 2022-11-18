@@ -9,18 +9,16 @@ export async function inserirPedido(pedidoNovo){
              id_usuario_endereco,
              dt_horario,
              tp_pagamento,
-             vl_pagamento,
              ds_status,
              cod_nota_fiscal
          )
-         values(?,?,?,?,?,?,?)
+         values(?,?,?,?,?,?)
     `
     const [info] = await con.query(comando, [
        pedidoNovo.idUsuario,
        pedidoNovo.idEndereco,
        pedidoNovo.data,
        pedidoNovo.tipoPagamento,
-       pedidoNovo.valorpagamento,
        pedidoNovo.status,
        pedidoNovo.notaFiscal
     ]);

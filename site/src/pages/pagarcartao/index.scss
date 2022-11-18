@@ -29,6 +29,7 @@
             border-radius: 3px;
             letter-spacing: 1.5px;
             font-family: 'Mulish';
+            font-weight: bold;
             
 
         }
@@ -87,6 +88,27 @@
             font-size: 17px;
             cursor: pointer;
             font-family: 'Oswald', sans-serif ;
+           
+            
+           
+          
+          
+
+            animation-name: botao;
+                animation-duration: 0.5s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+
+                @keyframes botao {
+        
+                    0%{
+                        transform: scale(1);
+                    }
+                    100%{
+                        transform: scale(1.05);
+                    }
+                }
 
              
             }

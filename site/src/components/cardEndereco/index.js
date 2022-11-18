@@ -2,12 +2,12 @@ import './index.scss';
 
 
 
-export default function CardEndereco({ item : { referencia, bairro, logradouro, estado, cidade, complemento, cep, residencia }}) {
+export default function CardEndereco({ item : {id, referencia, bairro, logradouro, estado, cidade, complemento, cep, residencia }, selecionar, selecionado}  ) {
     
     
-    console.log(referencia);
+    console.log(selecionar);
     return (
-        <main className="card-endereco">
+        <main className="card-endereco" onClick={() => selecionar(id)} style={{borderColor: selecionado ? '#3E7797' : '#34363d'}}>
             <div className="titulo-comp-endereco">
              
                 <h3>{referencia}</h3>

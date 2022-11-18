@@ -3,7 +3,9 @@
   flex-direction: column;
 
   h1{
-    font-family: "Oswald", sans-serif;
+    padding-top: 200px;
+    font-family: 'Mulish';
+    font-weight: bold;
     font-size: 30px;
     span{
       color: #3E7797;
@@ -12,7 +14,9 @@
 
   .titulo2{
     h1{
-    font-family: 'Montserrat', sans-serif, bold;
+    font-family: 'Mulish';
+    font-weight: bold;
+
     color: #3E7797;
     padding-left: 30px;
     padding-top: 15px;
@@ -33,19 +37,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: 60vh;
-  }
-  input {
-    background: #ffffff;
-    box-shadow: 0px 10px 10px rgba(34, 34, 34, 0.267);
-    border: none;
-    outline: none;
-    font-size: 19px;
-    height: 40px;
-    padding-left: 20px;
-    border-radius: 10px;
-    letter-spacing: 1.5px;
-    font-family: "Oswald", sans-serif;
-    font-weight: bold;
+    padding-top: 110px;
   }
   .pg-endereco-cep,
   .pg-endereco-numero,
@@ -57,17 +49,36 @@
   .pg-endereco-complemento {
     display: flex;
     flex-direction: column;
-
     font-family: "Oswald";
     font-size: 1em;
-
+  
     width: 550px;
-    height: 70px;
+  
+    input {
+      background: #ffffff;
+      box-shadow: 0px 10px 10px rgba(34, 34, 34, 0.267);
+      cursor: default;
+      border: none;
+      outline: none;
+      font-size: 19px;
+      height: 40px;
+  
+      padding-left: 20px;
+      border-radius: 10px;
+      letter-spacing: 1.5px;
+      font-family: 'Mulish';
+      font-weight: bold;
+     
+     
+    }
   }
-
+  
   label {
-    font-family: "Oswald";
-    font-size: 1.3em;
+    font-family: "Mulish";
+    font-weight: bold;
+    margin-top: 40px;
+   
+    font-size: 1.2em;
   }
 
   .botoes {
@@ -77,8 +88,8 @@
 
     width: 250px;
     position: absolute;
-    left: 70%;
-    top: 90%;
+    left: 75%;
+    top: 160%;
 
     button {
       font-family: "Oswald", sans-serif;

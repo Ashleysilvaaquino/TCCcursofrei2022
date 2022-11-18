@@ -2,8 +2,8 @@ import { listarTodosLivros } from '../../api/admAPI';
 
 import './index.scss'
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import CarrinhoTirar from '../../assets/images/tirarcarrinho.png'
+import {  useNavigate } from 'react-router-dom';
+
 
 import { API_URL } from '../../api/config';
 
@@ -33,9 +33,7 @@ export default function Carrinhocard(){
         
             {livros.map(item =>
                 <div className='comp-card2' key={item.id} >
-                    <div>
-                    <img src={CarrinhoTirar}/>
-                        </div>
+                   
                     <div className='capa'>
                       <img src={API_URL + '/' + item.imagem}/>
                      </div>                 

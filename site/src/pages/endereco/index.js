@@ -48,7 +48,7 @@ export default function Endereco() {
           <h1>LIVRARIA MONTES</h1>
         </div>
         <div className="voltar">
-          <Link to="/loginusuario">Voltar</Link>
+          <Link to="/finalizarcompra">Voltar</Link>
         </div>
       </section>
 
@@ -83,7 +83,7 @@ export default function Endereco() {
 
         <div className="pg-endereco-logradouro">
           <label>Logradouro:</label>
-          <input type="text" placeholder="Ex:Rua Um de Algum Lugar" value={logradouro} onChange={e => setLogradouro(e.target.value)} />
+          <input type="text" placeholder="Ex:Rua" value={logradouro} onChange={e => setLogradouro(e.target.value)} />
         </div>
 
         <div className="pg-endereco-bairro">
@@ -99,9 +99,6 @@ export default function Endereco() {
         <section className="botoes">
           <button onClick={salvarEndereco}>Cadastrar</button>
 
-          <Link to="/carrinho">
-            <button>Avançar</button>
-          </Link>
         </section>
       </section>
     </main>

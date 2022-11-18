@@ -1,18 +1,23 @@
 import './index.scss';
+import { useState } from "react";
 
-<<<<<<< HEAD
 
-import {Link} from 'react-router-dom';
 
-=======
 import { toast } from "react-toastify";
-
+import Storage from 'local-storage'
 import Logo from '../../assets/images/logo.png'
->>>>>>> aa9abb07716a896fde0af2afc7ca8caaa9ccba79
 import FotoCartao from '../../assets/images/cartao.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
+import { salvarNovoPedido } from '../../api/pedidoApi';
 
 function PagarCartao() {
+
+    const [numero , setNumero] = useState('');
+    const [cvv , setCvv] = useState('');
+    const [vencimento, setVencimento] = useState('');
+    const [nomeproprietario, setNomeproprietario] = useState('');
+    const [idpedido, setidpedido] = useState('');
+    const [idEndereco, setIdEndereco] = useState
 
     function SalvarClick(){
         try{
@@ -20,6 +25,43 @@ function PagarCartao() {
         }catch{
             console.log('Erro!')
         }
+    }
+
+    const navigate = useNavigate();
+
+    async function salvarpedido(){
+
+        try {
+            let produtos = Storage('carrinho');  
+            let id = Storage('usuario-logado').id;
+ 
+            let pedido =
+         {
+             
+                 idEndereco: idEndereco,
+                 tipoPagamento: 'Cartao',
+                  cartao:{
+                       idPedido: idpedido,
+                       numero: numero,
+                       cvv: cvv,
+                       vencimento: vencimento,
+                      nomeProprietario: nomeproprietario
+                  },
+                   
+                  produtos: produtos
+              
+            
+            
+         }
+         const r = await salvarNovoPedido(id, pedido);
+         toast.dark('Pedido foi inserido com sucesso');
+         Storage('carrinho', []);
+         navigate('/');
+        } catch (err) {
+            toast.error(err.response.data.erro);
+        }
+          
+          
     }
     return (
 
@@ -36,39 +78,36 @@ function PagarCartao() {
                     <div className='dados'>
 
 
-                        <div className='div1'>
+                        <div>
                             <label>Nome completo do títular:</label>
-                            <input type="text" placeholder='Insira seu nome ' />
+                            <input type="text" placeholder='Insira seu nome ' value={nomeproprietario} onChange={e => setNomeproprietario(e.target.value)}/>
 
                         </div>
 
 
-                        <div className='div1'>
+                        <div>
 
                             <label>Número do cartão:</label>
 
-                            <input type="text" placeholder='Insira seu número do cartão ' />
+                            <input type="text" placeholder='Insira seu número do cartão ' value={numero} onChange={e => setNumero(e.target.value)}/>
                         </div>
 
-                        <div className='cartaozinho'>
-                            <img src={FotoCartao} alt="" className='fotoCartao' />
-
-                        </div>
+                        
                     </div>
                 </div>
 
 
-                <div className='quadrado2'>
+                <div>
 
-                    <div className='div1'>
+                    <div>
                         <label>Código de segurança:</label>
-                        <input type="text" placeholder='Insira o codigo ' />
+                        <input type="text" placeholder='Insira o codigo ' value={cvv} onChange={e => setCvv(e.target.value)} />
                     </div>
 
 
-                    <div className='div1'>
+                    <div>
                         <label>Vencimento:</label>
-                        <input type="text" placeholder='Insira o vencimento ' />
+                        <input type="text" placeholder='Insira o vencimento ' value={vencimento} onChange={e => setVencimento(e.target.value)}/>
                     </div>
 
                     <p className='vamo'> O código do produto é:</p>
@@ -77,16 +116,11 @@ function PagarCartao() {
 
                 </div>
                 <div className='botoes'>
-<<<<<<< HEAD
-=======
 
-                    <div>
-                        <Link to='/'><p>Voltar</p></Link>
-                    </div>
+                    
 
->>>>>>> aa9abb07716a896fde0af2afc7ca8caaa9ccba79
                     <div className='botao2'>
-                        <button onClick={SalvarClick}>Pagar</button>
+                        <button onClick={salvarpedido}>Pagar</button>
                     </div>
             </div>
         </main>
