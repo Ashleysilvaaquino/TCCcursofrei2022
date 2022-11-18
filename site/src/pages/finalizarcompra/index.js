@@ -30,7 +30,9 @@ export default function FinalizarCompra() {
     async function carregarEnderecos() {
         try {
             const id = storage('usuario-logado').ID_CONTA_USUARIO;
+
             const r = await listar(id);
+            console.log(r);
             setEnderecos(r);
         } catch (error) {
             console.log(error.message);

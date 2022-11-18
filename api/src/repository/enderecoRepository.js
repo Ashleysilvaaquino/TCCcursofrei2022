@@ -3,6 +3,7 @@ import { con } from "./connection.js";
 //login usuario
 export async function listarEndereco(idUsuario) {
   const comando = ` select
+      id_usuario_endereco id,
       id_conta_usuario  idUsuario,
       ds_referencia		referencia,
       nr_cep				  cep,

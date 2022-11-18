@@ -53,6 +53,7 @@ function LandPage() {
 
     async function filtrar() {
         const resp = await buscarLivrosPorNome(filtro);
+        
         setLivros(resp);
     }
 
@@ -161,7 +162,7 @@ function LandPage() {
             </div>
 
             <div>
-                <h3 className='novidades-ladpage'>Novidades que você precisa conhecer</h3>
+                <h3 className='novidades-ladpage'>Novidades que você <span>precisa conhecer </span></h3>
                 <div className='livros-landpage'>
                     <LivroUsuario className="livros"/>
                 </div>

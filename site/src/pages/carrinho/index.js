@@ -67,8 +67,9 @@ export default function Carrinho() {
     }, [])
     return (
         <div className='pg-consultar'>
+          <Menu/>
             <div className='coluna-dir'>
-                <div className='f-card'>
+                <div className='f-card2'>
                 {itens.map(item => 
                         <Carrinhocard
                             item={item}

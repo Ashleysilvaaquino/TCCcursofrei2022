@@ -13,7 +13,8 @@ export default function LivroUsuario(){
     const [livros, setLivros] = useState([]);
 
     async function carregarTodosLivros() {
-        const resp = await listarTodosLivros();
+        let resp = await listarTodosLivros();
+        resp = resp.slice(0, 12);
         setLivros(resp);
     }
     useEffect(() => {
