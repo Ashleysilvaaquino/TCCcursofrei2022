@@ -1,18 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import storage from 'local-storage'
 import Menu from '../../components/menucliente';
-import { useEffect , useState } from 'react';
+import { useEffect, useState } from 'react';
 import './index.scss'
 import { buscarProdutoPorId } from '../../api/admAPI';
 import Carrinhocard from '../../components/cardcarrinho';
 
 export default function Carrinho() {
-     const navigate = useNavigate();
-    
-     const [itens, setItens] = useState([]);
-   
-     function irPedido() {
-        navigate('/finalizarcompra', {state: {itens: itens}})
+    const navigate = useNavigate();
+
+    const [itens, setItens] = useState([]);
+
+    function irPedido() {
+        navigate('/finalizarcompra', { state: { itens: itens } })
     }
 
 
@@ -26,7 +26,7 @@ export default function Carrinho() {
             console.log(item);
             total = total + item.produto.preco * item.qtd;
         }
-        return total;
+        return total.toFixed(2);
     }
 
 
@@ -44,7 +44,7 @@ export default function Carrinho() {
         if (carrinho) {
 
             let temp = [];
-            
+
             for (let produto of carrinho) {
                 let p = await buscarProdutoPorId(produto.id);
                 temp.push({
@@ -55,22 +55,24 @@ export default function Carrinho() {
             setItens(temp);
         }
     }
-   
 
-   console.log(itens);
+
+    console.log(itens);
     useEffect(() => {
-         if(!storage('adm-logado')){
-             navigate('/loginadm');
-        }else{
+        if (!storage('adm-logado')) {
+            navigate('/loginadm');
+        } else {
             carregarCarrinho();
         }
     }, [])
+
+
     return (
         <div className='pg-consultar'>
-          <Menu/>
+            <Menu />
             <div className='coluna-dir'>
                 <div className='f-card2'>
-                {itens.map(item => 
+                    {itens.map(item =>
                         <Carrinhocard
                             item={item}
                             removerItem={removerItem}
@@ -80,13 +82,15 @@ export default function Carrinho() {
 
             </div>
             <div className='resumo'>
-                    <h1> Subtotal </h1>
-                    <h3> ({qtdItens()} itens) </h3>
-                    <p> R$ {calcularValorTotal()} </p>
-                    <button onClick={irPedido}> Fechar Pedido </button>
-                </div>
 
-        
+                <h1> Subtotal </h1>
+                <h3> ({qtdItens()} itens) </h3>
+                <p> R$ {calcularValorTotal()} </p>
+                <button onClick={irPedido}> Fechar Pedido </button>
+
+            </div>
+
+
 
         </div>
     )

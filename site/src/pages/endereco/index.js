@@ -1,7 +1,7 @@
 import "./index.scss";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { salvar } from '../../api/enderecoAPI'
 import Storage from "local-storage";
 import { toast } from "react-toastify";
@@ -16,15 +16,17 @@ export default function Endereco() {
   const [estado, setEstado] = useState('')
   const [cidade, setCidade] = useState('')
   
+  const navigate = useNavigate('')
+  
 
 
   async function salvarEndereco() {
     try {
       const id = Storage('usuario-logado').ID_CONTA_USUARIO;
-      const r = await salvar(id , referencia, cep, residencia, estado, cidade, logradouro, complemento, bairro);
+      const r = await salvar( id , referencia, cep, residencia, estado, cidade, logradouro, complemento, bairro);
       console.log(r);
       toast.dark('Endereço salvo 🏘️');
-      
+      navigate('/carrinho')
     } catch (err) {
       
       toast.error(err.message);
@@ -48,7 +50,7 @@ export default function Endereco() {
           <h1>LIVRARIA MONTES</h1>
         </div>
         <div className="voltar">
-          <Link to="/finalizarcompra">Voltar</Link>
+          <Link to="/carrinho">Voltar</Link>
         </div>
       </section>
 
