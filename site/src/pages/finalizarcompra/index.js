@@ -73,7 +73,7 @@ export default function FinalizarCompra() {
          const r = await salvarNovoPedido(id, pedido);
          
          
-         toast.dark('Pedido foi realizado com sucesso 🚀');
+         toast('Seu pedido foi realizado com sucesso 🚀✨');
          storage('carrinho', []);
          navigate('/');
         } catch (err) {

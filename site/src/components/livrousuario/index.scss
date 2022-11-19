@@ -4,39 +4,37 @@
     flex-wrap: wrap;
     justify-content: space-around;
     
+    
+    
     div{
         margin-bottom: 30px;
         display: flex;
-    
-    flex-direction: column;
-     margin-left: 45px;
-    box-sizing: border-box;
- 
+        
+        flex-direction: column;
+        margin-left: 45px;
+        box-sizing: border-box;
+        
+        
+        width: 140px;
+        height: 270px;
+        
+        background: #FFFFFF;
+        border: 1px solid #EDEDED;
+        box-shadow: 0px 3.54120px 3.54148px rgba(0, 0, 0, 0.25);
+      
+        transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
+      
 
-    width: 140px;
-    height: 270px;
+        
     
-    background: #FFFFFF;
-    border: 1px solid #EDEDED;
-    box-shadow: 0px 3.54148px 3.54148px rgba(0, 0, 0, 0.25);
-    
-    div:hover{
-        cursor: pointer;
-        animation-name: botao;
-        animation-duration: 0.5s;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-    
-    
-    .livro-img-component-usuario{
+        .livro-img-component-usuario{
         width: 80px;
         height: 112px;
         margin-left: 25px;
         margin-top: 15px;
-      
+        
     }
+
 
     .nome-livro-usuario{
     font-family: 'Mulish';
@@ -55,16 +53,16 @@
         margin-top: 5px;
     }
     
-   
-        button{
-            font-family: 'Oswald';
-            margin-left: 30px;
-            
-            margin-top: 10px;
-            color: #FFFFFF;
-            background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
-            font-size: 13px;
-            border-radius: 15px;
+    
+    button{
+        font-family: 'Oswald';
+        margin-left: 30px;
+        
+        margin-top: 10px;
+        color: #FFFFFF;
+        background-image: linear-gradient(to right, rgba(4, 47, 141, 0.87), #3E7797, rgba(78, 165, 199, 0.795));;
+        font-size: 13px;
+        border-radius: 15px;
             border: none;
             
             width: 80px;
@@ -78,9 +76,17 @@
             animation-timing-function: ease-in-out;
         }
         
-      
-
-        }
+        
+        
+    }
+    div:hover{
+        transform: scale(1.15,1.15);
+    }
+    
+    div:hover::after{
+        opacity: 1;
+    }
+    
     }
     
     @keyframes botao {

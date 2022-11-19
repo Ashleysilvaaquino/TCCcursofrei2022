@@ -211,12 +211,13 @@
 
     .total-pg-finalizar{
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        flex-direction: column;    
+        justify-content: right;
         margin-left: 35px;
         margin-top: 40px;
         font-family: 'Mulish';
         font-weight: bold;
+
         p{
           margin-top: 8px;
         }

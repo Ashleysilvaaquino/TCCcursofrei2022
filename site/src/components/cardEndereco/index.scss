@@ -5,6 +5,7 @@
 
     width: 380px;
     margin-top: 20px;
+    transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
 
     background-color: #ffff;
 
@@ -25,6 +26,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        
     }
 
     .f-esquerda-comp-endereco {
@@ -50,4 +52,7 @@
 
     }
     
+}
+.card-endereco:hover{
+    transform: scale(1.05,1.05);
 }

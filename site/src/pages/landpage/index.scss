@@ -4,12 +4,6 @@
 .landpage {
 
     
-   
-
-
-
-
-
     .swiper-button-next::after{
         color: #ffffff; 
     }
@@ -92,15 +86,19 @@
     }
     .pt-carrosel{
         background-color: #3E7797;
-        height: 320px;
+        height: 340px;
+        margin-top: 5px;
+    }
+    .carrosel-pt1{
+        margin-top: 15px;
     }
     .explore-os-montes{
         padding-top: 20px;
         font-family: 'Mulish';
         font-style: normal;
-        font-weight: 400;
+       font-weight: bold;
         font-size: 28px;
-        line-height: 43px;
+       letter-spacing: 10px;
         text-align: center;
         margin-right: 30px;
       
@@ -163,6 +161,7 @@
         margin-top: 10px;
         font-family: 'Oswald';
         font-size: 20px;
+        transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
     }
 
     .div-infantil{
@@ -170,6 +169,7 @@
         margin-top: 10px;
         font-family: 'Oswald';
         font-size: 20px;
+        transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
         
     }
 
@@ -179,14 +179,16 @@
         margin-top: 20px;
         font-family: 'Oswald';
         font-size: 20px;
+        transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
     }
+
 
     .div-psico{
         text-align: center;
         margin-top: 10px;
         font-family: 'Oswald';
         font-size: 20px;
-         
+        transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
     }
 
     .div-romance{
@@ -194,7 +196,7 @@
         margin-top: 10px;
         font-family: 'Oswald';
         font-size: 20px;
-         
+        transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
     }
 
     .novidades-ladpage{
@@ -217,8 +219,9 @@
         background-size: 100vw;
         width: 100vw;
         height: 630px;
-       
-        
+
+     
+
 
         .titulo-land{
             font-family: 'Caveat';
@@ -255,7 +258,7 @@
             font-weight: 700;
             font-size: 16px;
             line-height: 29px;
-
+            transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
             
             padding-left: 30px;
             padding-right: 30px;
@@ -265,7 +268,8 @@
             }
 
         }
-
+        
+        
         .menina{
             
             display: flex;
@@ -291,7 +295,8 @@
             justify-content: space-between;
             width: 1200px;
           
-          
+            
+            
         }
         
         .administracao{
@@ -299,14 +304,14 @@
             flex-direction: column;
             justify-content: space-around;
             
-          
+            
             
         }
-
+        
         .agazinho2{
             width: 460px;
             height: 50px;
-    
+            
             font-family: 'Mulish';
             font-style: normal;
             font-weight: bold;
@@ -316,7 +321,7 @@
             
             
             margin-top: 80px;
-    
+            
             span{
                 color: 
                 #3E7797;
@@ -330,6 +335,7 @@
                 align-items: center;
                 justify-content: space-around;
                 padding-top: 30px;
+                transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
                
     
                 
@@ -354,6 +360,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
+            transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
     
            
     
@@ -380,6 +387,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
+            transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
             
             
     
@@ -405,6 +413,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
+            transition: all 0.6s cubic-bezier(0.145,0.70,0.44, 1);
             
             
             
@@ -461,6 +470,7 @@
     
             width: 400px;
             height: 200px;
+          
         }
     
        .quemsomos{
@@ -505,42 +515,42 @@
             
             padding-top: 10px;
             
-
-           font-family: 'Mulish';
-           font-weight: bold;
-            font-size: 20px;
-            line-height: 34px;
             
-
-            color: #000000;
+            font-family: 'Mulish';
+           font-weight: bold;
+           font-size: 20px;
+           line-height: 34px;
+           
+           
+           color: #000000;
         }
-
+        
         .r-redes{
             
             padding-top: 10px;
             
-
+            
             font-family: 'Mulish';
             font-weight: bold;
             font-size: 20px;
             line-height: 34px;
             
-
+            
             color: #000000;
             p{
                 font-family: 'Mulish';
             }
         }
-
+        
         .div-insta{
             display: flex;
             flex-direction: row;
             margin-top:10px;
             p{
                 font-family:'Mulish';
-
+                
             }
-
+            
             img{
                 margin-top: -33px;
                 
@@ -552,9 +562,9 @@
     .livros-landpage{
         display: flex;
         
-
+        
         margin: 50px;
-
+        
         .livros{
             display: flex;
             
@@ -562,4 +572,45 @@
             justify-content: space-evenly;
         }
     }
+    @keyframes botao {
+        
+        0%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(1.05);
+        }
+    }
+    .paragrafo1-landpage:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-isabella:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-ashley:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-ana:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-guilherme:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-terror:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-infantil:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-programacao:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-psico:hover{
+        transform: scale(1.15,1.15);
+    }
+    .div-romance:hover{
+        transform: scale(1.15,1.15);
+    }
+
+    
 }
