@@ -84,12 +84,12 @@
   .botoes {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    
+    margin-top: 40px;
+    margin-left: 60px;
+
 
     width: 250px;
-    position: absolute;
-    left: 75%;
-    top: 160%;
 
     button {
       font-family: "Oswald", sans-serif;

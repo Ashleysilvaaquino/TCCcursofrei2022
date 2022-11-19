@@ -48,14 +48,6 @@ import { listarTodosLivros } from '../../api/admAPI';
 function LandPage() {
     const [livros, setLivros] = useState([]);
 
-    const [filtro, setFiltro] = useState('');
-
-
-    async function filtrar() {
-        const resp = await buscarLivrosPorNome(filtro);
-        
-        setLivros(resp);
-    }
 
 
 
@@ -66,12 +58,6 @@ function LandPage() {
             <div className='cabecalho-principal'>
                 <p className='logo-branca'>Livraria Montes</p>
                 <div>
-                    <div>
-                        <div className='comp-pesquisa2'>
-                            <input type="text" placeholder='Pesquise aqui...' className='input-pesquisa' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                            <img src={lupa} onClick={filtrar} />
-                        </div>
-                    </div>
                     
                     {livros.map(item =>
                         <div className='comp-card' key={item.id}>
