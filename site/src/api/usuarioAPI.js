@@ -36,7 +36,7 @@ export async function usuarioendereco(cep, numero, estado){
 } 
 
 export async function LoginCliente(email, senha){
-    const r= await axios.post('http://localhost:5000/cliente/login', 
+    const r= await axios.post('http://192.168.3.15:5061/cliente/login', 
     {
         email:email, 
         senha: senha

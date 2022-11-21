@@ -10,7 +10,7 @@ const api = axios.create({
 
 
 export async function Login(email, senha){
-    const r= await axios.post('http://localhost:5000/loginadm', 
+    const r= await axios.post('http:/192.168.3.15:5061/loginadm', 
     {
         email:email, 
         senha: senha
