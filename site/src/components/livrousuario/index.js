@@ -14,7 +14,6 @@ export default function LivroUsuario(){
 
     async function carregarTodosLivros() {
         let resp = await listarTodosLivros();
-        resp = resp.slice(0, 12);
         setLivros(resp);
     }
     useEffect(() => {

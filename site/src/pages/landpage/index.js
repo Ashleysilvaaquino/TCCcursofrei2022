@@ -24,7 +24,7 @@ import Harry from '../../assets/images/harry-potter.png'
 import Poesia from '../../assets/images/poesia.png'
 import Famoso from '../../assets/images/revista.png'
 import lupa from '../../assets/images/lupa-pretinha.png';
-import { buscarLivrosPorNome } from '../../api/admAPI';
+
 
 import Musica from '../../assets/images/notas-musicais.png'
 
@@ -33,8 +33,7 @@ import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
-import { useEffect, useState } from 'react';
-
+import { useState } from 'react';
 import 'swiper/scss'
 import "swiper/scss/free-mode";
 import 'swiper/scss/navigation';
@@ -118,23 +117,23 @@ function LandPage() {
 
                         >
 
-                            <SwiperSlide className='div-terror'> <Link to='/livrosdeterror'><img src={Terror} className='img-terror' /></Link> <p >TERROR</p> </SwiperSlide>
-                            <SwiperSlide className='div-infantil'><Link to='/livrosinfantis'><img src={InfantilGenero} className='img-infantil' /></Link><p>INFANTIL</p></SwiperSlide>
-                            <SwiperSlide className='div-programacao'><Link to='/livrosdeprogramacao'><img src={Programacao} className='img-programacao' /></Link>
+                            <SwiperSlide className='div-terror'> <img src={Terror} className='img-terror' /> <p >TERROR</p> </SwiperSlide>
+                            <SwiperSlide className='div-infantil'><img src={InfantilGenero} className='img-infantil' /><p>INFANTIL</p></SwiperSlide>
+                            <SwiperSlide className='div-programacao'><img src={Programacao} className='img-programacao' />
                                 <p>PROGRAMAÇÃO</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><Link to='/livrosdepsicologia'><img src={Psico} className='img-psico' /></Link><p>PSICOLOGIA</p></SwiperSlide>
-                            <SwiperSlide className='div-romance'><Link to='/livrosderomance'><img src={Romance} className='img-romance' /></Link>
+                            <SwiperSlide className='div-psico'><img src={Psico} className='img-psico' /><p>PSICOLOGIA</p></SwiperSlide>
+                            <SwiperSlide className='div-romance'><img src={Romance} className='img-romance' />
                                 <p>ROMANCE</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><Link to='/livrosdebiologia'><img src={Biologia} className='img-romance' /></Link>
+                            <SwiperSlide className='div-psico'><img src={Biologia} className='img-romance' />
                                 <p>BIOLOGIA</p></SwiperSlide>
-                            <SwiperSlide className='div-romance'><Link to='/livrosdefantasia'><img src={Harry} className='img-romance' />
-                            </Link>                            <p>FANTASIA</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><Link to='/livrosdepoesia'><img src={Poesia} className='img-romance' />
-                            </Link>                            <p>POESIA</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><Link to='/livrosdeartistas'><img src={Famoso} className='img-romance' /></Link>
+                            <SwiperSlide className='div-romance'><img src={Harry} className='img-romance' />
+                                                     <p>FANTASIA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Poesia} className='img-romance' />
+                                                     <p>POESIA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Famoso} className='img-romance' />
                                 <p>ARTÍSTAS</p></SwiperSlide>
-                            <SwiperSlide className='div-psico'><Link to='/livrosdemusica'><img src={Musica} className='img-romance' />
-                            </Link>                            <p>MUSICA</p></SwiperSlide>
+                            <SwiperSlide className='div-psico'><img src={Musica} className='img-romance' />
+                                                    <p>MUSICA</p></SwiperSlide>
                         </Swiper>
 
 
